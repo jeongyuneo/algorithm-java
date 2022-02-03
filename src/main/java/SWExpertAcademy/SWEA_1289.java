@@ -10,15 +10,13 @@ public class SWEA_1289 {
         int testCase = scanner.nextInt();
         for (int i = 1; i <= testCase; i++) {
             char[] initialMemory = scanner.next().toCharArray();
-            int memoryLength = initialMemory.length;
 
             int count = 0;
-            int[] currentMemory = new int[memoryLength];
-            for (int j = 0; j < memoryLength; j++) {
-                if (initialMemory[j]-48 != currentMemory[j]) {
-                    for (int k = j; k < memoryLength; k++) {
-                        currentMemory[k] = initialMemory[j]-48;
-                    }
+            if (initialMemory[0] == '1') {
+                count++;
+            }
+            for (int j = 1; j < initialMemory.length; j++) {
+                if (initialMemory[j] != initialMemory[j-1]) {
                     count++;
                 }
             }
