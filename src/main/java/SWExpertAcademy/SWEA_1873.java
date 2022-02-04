@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SWEA_1873 {
 
-    private static final char[] TANKS = {'^', 'v', '>', '<'};
+    private static final char[] DIRECTIONS = {'^', 'v', '>', '<'};
     private static final int[][] DELTAS = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
     public static void main(String[] args) {
@@ -16,14 +16,14 @@ public class SWEA_1873 {
             char[][] space = new char[height][width];
             int x = 0;
             int y = 0;
-            int tankDirection = 0;
+            int directionIdx = 0;
             for (int i = 0; i < height; i++) {
                 String next = scanner.next();
                 for (int j = 0; j < width; j++) {
                     space[i][j] = next.charAt(j);
-                    for (int k = 0; k < TANKS.length; k++) {
-                        if (space[i][j] == TANKS[k]) {
-                            tankDirection = k;
+                    for (int k = 0; k < DIRECTIONS.length; k++) {
+                        if (space[i][j] == DIRECTIONS[k]) {
+                            directionIdx = k;
                             x = i;
                             y = j;
                         }
@@ -36,20 +36,20 @@ public class SWEA_1873 {
                 char exec = input.charAt(i);
                 if (exec == 'U' || exec == 'D' || exec == 'L' || exec == 'R') {
                     if (exec == 'U') {
-                        tankDirection = 0;
-                        space[x][y] = TANKS[tankDirection];
+                        directionIdx = 0;
+                        space[x][y] = DIRECTIONS[directionIdx];
                     } else if (exec == 'D') {
-                        tankDirection = 1;
-                        space[x][y] = TANKS[tankDirection];
+                        directionIdx = 1;
+                        space[x][y] = DIRECTIONS[directionIdx];
                     } else if (exec == 'R') {
-                        tankDirection = 2;
-                        space[x][y] = TANKS[tankDirection];
+                        directionIdx = 2;
+                        space[x][y] = DIRECTIONS[directionIdx];
                     } else if (exec == 'L') {
-                        tankDirection = 3;
-                        space[x][y] = TANKS[tankDirection];
+                        directionIdx = 3;
+                        space[x][y] = DIRECTIONS[directionIdx];
                     }
-                    int dx = x + DELTAS[tankDirection][0];
-                    int dy = y + DELTAS[tankDirection][1];
+                    int dx = x + DELTAS[directionIdx][0];
+                    int dy = y + DELTAS[directionIdx][1];
                     if (dx >= 0 && dx < height && dy >= 0 && dy < width && space[dx][dy] == '.') {
                         space[dx][dy] = space[x][y];
                         space[x][y] = '.';
@@ -57,8 +57,8 @@ public class SWEA_1873 {
                         y = dy;
                     }
                 } else if (exec == 'S') {
-                    int dx = x + DELTAS[tankDirection][0];
-                    int dy = y + DELTAS[tankDirection][1];
+                    int dx = x + DELTAS[directionIdx][0];
+                    int dy = y + DELTAS[directionIdx][1];
                     while (dx >= 0 && dx < height && dy >= 0 && dy < width && (space[dx][dy] == '.' || space[dx][dy] == '*' || space[dx][dy] == '-')) {
                         if (space[dx][dy] == '.') {
                             space[dx][dy] = '.';
@@ -68,8 +68,8 @@ public class SWEA_1873 {
                         } else if (space[dx][dy] == '#') {
                             break;
                         }
-                        dx += DELTAS[tankDirection][0];
-                        dy += DELTAS[tankDirection][1];
+                        dx += DELTAS[directionIdx][0];
+                        dy += DELTAS[directionIdx][1];
                     }
                 }
             }
