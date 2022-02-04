@@ -21,6 +21,7 @@
     <summary>SW Expert Academy</summary>
 
 - 1289 - [원재의 메모리 복구하기](src/main/java/SWExpertAcademy/SWEA_1289.java)
+- 1873 - [상호의 배틀필드](src/main/java/SWExpertAcademy/SWEA_1873.java)
 - 1954 - [달팽이 숫자](src/main/java/SWExpertAcademy/SWEA_1954.java)
 - 2072 - [홀수만 더하기](src/main/java/SWExpertAcademy/SWEA_2072.java)
 </details>
