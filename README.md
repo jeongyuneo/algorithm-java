@@ -5,6 +5,7 @@
 <details>
     <summary>Baekjoon Online Judge</summary>
 
+- 1018 - [체스판 다시 칠하기](src/main/java/Baekjoon/BOJ_1018.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
