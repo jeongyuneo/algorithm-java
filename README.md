@@ -29,4 +29,5 @@
 - 1954 - [달팽이 숫자](src/main/java/SWExpertAcademy/SWEA_1954.java)
 - 2001 - [파리 퇴치](src/main/java/SWExpertAcademy/SWEA_2001.java)
 - 2072 - [홀수만 더하기](src/main/java/SWExpertAcademy/SWEA_2072.java)
+- 5215 - [햄버거 다이어트](src/main/java/SWExpertAcademy/SWEA_5215.java)
 </details>
