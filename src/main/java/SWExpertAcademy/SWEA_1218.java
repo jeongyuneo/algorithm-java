@@ -7,10 +7,10 @@ import java.util.Stack;
 
 public class SWEA_1218 {
 
-    static Map<String, String> pairs = new HashMap<>();
-    static Stack<String> inputStack = new Stack<>();
-    static Stack<String> stack = new Stack<>();
-    static String next;
+    private static Map<String, String> pairs = new HashMap<>();
+    private static Stack<String> inputStack = new Stack<>();
+    private static Stack<String> stack = new Stack<>();
+    private static String next;
 
     public static void main(String[] args) {
         pairs.put("(", ")");
