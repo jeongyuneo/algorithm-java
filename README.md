@@ -8,6 +8,7 @@
 - 1018 - [체스판 다시 칠하기](src/main/java/Baekjoon/BOJ_1018.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
+- 2493 - [탑](src/main/java/Baekjoon/BOJ_2493.java)
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
