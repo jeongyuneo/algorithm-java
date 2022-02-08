@@ -30,4 +30,5 @@
 - 2001 - [파리 퇴치](src/main/java/SWExpertAcademy/SWEA_2001.java)
 - 2072 - [홀수만 더하기](src/main/java/SWExpertAcademy/SWEA_2072.java)
 - 5215 - [햄버거 다이어트](src/main/java/SWExpertAcademy/SWEA_5215.java)
+- 9229 - [한빈이와 Spot Mart](src/main/java/SWExpertAcademy/SWEA_9229.java)
 </details>
