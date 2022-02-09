@@ -25,6 +25,7 @@
 
 - 1208 - [[S/W 문제해결 기본] 1일차 - Flatten](src/main/java/SWExpertAcademy/SWEA_1208.java)
 - 1218 - [[S/W 문제해결 기본] 4일차 - 괄호 짝짓기](src/main/java/SWExpertAcademy/SWEA_1218.java)
+- 1218 - [[S/W 문제해결 기본] 6일차 - 계산기2](src/main/java/SWExpertAcademy/SWEA_1223.java)
 - 1228 - [[S/W 문제해결 기본] 8일차 - 암호문1](src/main/java/SWExpertAcademy/SWEA_1228.java)
 - 1289 - [원재의 메모리 복구하기](src/main/java/SWExpertAcademy/SWEA_1289.java)
 - 1873 - [상호의 배틀필드](src/main/java/SWExpertAcademy/SWEA_1873.java)
