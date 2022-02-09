@@ -24,6 +24,7 @@
     <summary>SW Expert Academy</summary>
 
 - 1208 - [[S/W 문제해결 기본] 1일차 - Flatten](src/main/java/SWExpertAcademy/SWEA_1208.java)
+- 1210 - [[S/W 문제해결 기본] 2일차 - Ladder1](src/main/java/SWExpertAcademy/SWEA_1210.java)
 - 1218 - [[S/W 문제해결 기본] 4일차 - 괄호 짝짓기](src/main/java/SWExpertAcademy/SWEA_1218.java)
 - 1223 - [[S/W 문제해결 기본] 6일차 - 계산기2](src/main/java/SWExpertAcademy/SWEA_1223.java)
 - 1228 - [[S/W 문제해결 기본] 8일차 - 암호문1](src/main/java/SWExpertAcademy/SWEA_1228.java)
