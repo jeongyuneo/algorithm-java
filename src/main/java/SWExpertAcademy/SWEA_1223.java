@@ -17,24 +17,24 @@ public class SWEA_1223 {
             numbers = new Stack<>();
             int length = Integer.parseInt(bufferedReader.readLine());
             String input = bufferedReader.readLine();
-            for (int i = 0; i < length; i++) {
+            int sum = 0;
+            for (int i = length-1; i >= 0; i--) {
                 char next = input.charAt(i);
                 if (next >= 48 && next < 58) {
+                    if (i == 0) {
+                        sum += next-48;
+                        break;
+                    }
                     numbers.push(next-48);
                 } else {
+                    if (next == '+') {
+                        sum += numbers.pop();
+                    } else {
+                        numbers.push(numbers.pop() * (input.charAt(--i)-48));
+                    }
                     operators.push(String.valueOf(next));
                 }
-            }
-            int sum = 0;
-            while (!operators.isEmpty() && !numbers.isEmpty()) {
-                String operator = operators.pop();
-                if (operator.equals("+")) {
-                    sum += numbers.pop();
-                } else {
-                    int multiNum = numbers.pop() * numbers.pop();
-                    numbers.push(multiNum);
-                }
-                if (numbers.size() == 1) {
+                if (i == 0 && !numbers.isEmpty()) {
                     sum += numbers.pop();
                 }
             }
