@@ -10,7 +10,10 @@ import java.util.StringTokenizer;
 public class SWEA_1210 {
 
     private static final int TOP = -1;
-    private static final int[] RIGHT_AND_LEFT = {1, -1};
+    private static final int RIGHT = 1;
+    private static final int LEFT = -1;
+
+    private static List<Integer> legs;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -20,43 +23,40 @@ public class SWEA_1210 {
         for (int t = 1; t <= 10; t++) {
             bufferedReader.readLine();
             int[][] space = new int[n][n];
+            int y = n-1;
+            legs = new ArrayList<>();
             for (int i = 0; i < n; i++) {
                 stringTokenizer = new StringTokenizer(bufferedReader.readLine());
                 for (int j = 0; j < n; j++) {
                     space[i][j] = Integer.parseInt(stringTokenizer.nextToken());
+                    if (space[i][j] == 2) {
+                        y = j;
+                    }
+                    if (i == 0 && space[i][j] == 1) {
+                        legs.add(j);
+                    }
                 }
             }
-            List<Integer> legs = new ArrayList<>();
-            int y = n - 1;
-            for (int i = 0; i < n; i++) {
-                if (space[99][i] == 2) {
-                    y = i;
-                }
-                if (space[0][i] == 1) {
-                    legs.add(i);
-                }
-            }
-            int x = n - 2;
+            int x = n-2;
             while (x > 0) {
-                if (y + RIGHT_AND_LEFT[0] >= 0 && y + RIGHT_AND_LEFT[0] < n && space[x][y + RIGHT_AND_LEFT[0]] == 1) {
-                    for (int i = 0; i < legs.size(); i++) {
-                        if (legs.get(i) == y) {
-                            y = legs.get(i + 1);
-                            break;
-                        }
-                    }
-                } else if (y + RIGHT_AND_LEFT[1] >= 0 && y + RIGHT_AND_LEFT[1] < n && space[x][y + RIGHT_AND_LEFT[1]] == 1) {
-                    for (int i = 0; i < legs.size(); i++) {
-                        if (legs.get(i) == y) {
-                            y = legs.get(i - 1);
-                            break;
-                        }
-                    }
+                if (y + RIGHT >= 0 && y + RIGHT < n && space[x][y + RIGHT] == 1) {
+                    y = nextY(y, RIGHT);
+                } else if (y + LEFT >= 0 && y + LEFT < n && space[x][y + LEFT] == 1) {
+                    y = nextY(y, LEFT);
                 }
                 x += TOP;
-                stringBuilder.append("#" + t + " " + y + "\n");
             }
-            System.out.println(stringBuilder);
+            stringBuilder.append("#" + t + " " + y + "\n");
         }
+        System.out.println(stringBuilder);
+    }
+
+    private static int nextY(int y, int direction) {
+        for (int i = 0; i < legs.size(); i++) {
+            if (legs.get(i) == y) {
+                return legs.get(i + direction);
+            }
+        }
+        return 0;
     }
 }
