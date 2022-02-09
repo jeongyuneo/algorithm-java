@@ -13,22 +13,19 @@ public class SWEA_2805 {
         for (int t = 1; t <= testCast; t++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int n = Integer.parseInt(stringTokenizer.nextToken());
-            int[][] farm = new int[n][n];
             String input;
+            int sum = 0;
+            int start = n/2;
+            int farmRange = 0;
             for (int i = 0; i < n; i++) {
                 input = bufferedReader.readLine();
                 for (int j = 0; j < n; j++) {
-                    farm[i][j] = input.charAt(j)-48;
+                    int produce = input.charAt(j)-48;
+                    if (j >= start && j <= start+farmRange) {
+                        sum += produce;
+                    }
                 }
-            }
-            int sum = 0;
-            int start = n/2;
-            int farmRange = 1;
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < farmRange; j++) {
-                    sum += farm[i][start+j];
-                }
-                if (i <= start) {
+                if (i < n/2) {
                     start--;
                     farmRange += 2;
                 } else {
