@@ -9,6 +9,7 @@
 - 1158 - [요세푸스 문제](src/main/java/Baekjoon/BOJ_1158.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
+- 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
 - 2493 - [탑](src/main/java/Baekjoon/BOJ_2493.java)
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
