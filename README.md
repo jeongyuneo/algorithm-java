@@ -15,6 +15,7 @@
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
+- 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
 </details>
 
