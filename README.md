@@ -12,6 +12,7 @@
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
 - 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
+- 2477 - [참외밭](src/main/java/Baekjoon/BOJ_2477.java)
 - 2493 - [탑](src/main/java/Baekjoon/BOJ_2493.java)
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
 - 2669 - [직사각형 네개의 합집합의 면적 구하기](src/main/java/Baekjoon/BOJ_2669.java)
