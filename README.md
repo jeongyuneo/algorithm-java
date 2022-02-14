@@ -45,5 +45,6 @@
 - 2805 - [농작물 수확하기](src/main/java/SWExpertAcademy/SWEA_2805.java)
 - 3499 - [퍼펙트 셔플](src/main/java/SWExpertAcademy/SWEA_3499.java)
 - 5215 - [햄버거 다이어트](src/main/java/SWExpertAcademy/SWEA_5215.java)
+- 6808 - [규영이와 인영이의 카드게임](src/main/java/SWExpertAcademy/SWEA_6808.java)
 - 9229 - [한빈이와 Spot Mart](src/main/java/SWExpertAcademy/SWEA_9229.java)
 </details>
