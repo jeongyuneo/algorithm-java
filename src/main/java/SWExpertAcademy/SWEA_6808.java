@@ -13,7 +13,6 @@ public class SWEA_6808 {
     private static final List<Integer> GYUYEONG_CARDS = new ArrayList<>();
     private static final List<Integer> INYEONG_CARDS = new ArrayList<>();
     private static final int[] SELECTED_INYEONG_CARDS = new int[9];
-    private static final boolean[] IS_SELECTED = new boolean[9];
 
     private static int gyuyeongWin;
     private static int gyuyeongLose;
@@ -43,7 +42,7 @@ public class SWEA_6808 {
             gyuyeongWin = 0;
             gyuyeongLose = 0;
 
-            permutation(0);
+            permutation(0, 0);
 
             GYUYEONG_CARDS.clear();
             INYEONG_CARDS.clear();
@@ -56,7 +55,7 @@ public class SWEA_6808 {
         System.out.println(stringBuilder);
     }
 
-    private static void permutation(int cnt) {
+    private static void permutation(int cnt, int flag) {
         if (cnt == 9) {
             int gyuyeongScore = 0;
             int inyeongScore = 0;
@@ -77,13 +76,11 @@ public class SWEA_6808 {
             return;
         }
         for (int i = 0; i < 9; i++) {
-            if (IS_SELECTED[i]) {
+            if ((flag & 1 << i) != 0) {
                 continue;
             }
             SELECTED_INYEONG_CARDS[cnt] = INYEONG_CARDS.get(i);
-            IS_SELECTED[i] = true;
-            permutation(cnt+1);
-            IS_SELECTED[i] = false;
+            permutation(cnt+1, flag | 1 << i);
         }
     }
 }
