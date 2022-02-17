@@ -24,10 +24,6 @@ public class BOJ_1992 {
     }
 
     private static void divide(int[][] data, int startX, int startY, int length) {
-        if (length == 0) {
-            return;
-        }
-
         int area = getArea(data, startX, startY, length);
         int half = length / 2;
 
