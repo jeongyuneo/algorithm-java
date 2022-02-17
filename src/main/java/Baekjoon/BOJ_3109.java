@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class BOJ_3109 {
 
-    private static final int[][] DELTAS = {{-1, 1}, {0, 1}, {1, 1}};
+    private static final int[] DELTAS = {-1, 0, 1};
 
     private static char[][] space;
     private static boolean isReached;
@@ -40,15 +40,14 @@ public class BOJ_3109 {
             result++;
             isReached = true;
             return;
-        } else if (space[x][y] == 'x' || space[x][y] == 'o' || isReached) {
+        } else if (space[x][y] == 'x' || isReached) {
             return;
         }
-        space[x][y] = 'o';
-        for (int[] delta : DELTAS) {
-            int dx = x + delta[0];
-            int dy = y + delta[1];
+        space[x][y] = 'x';
+        for (int delta : DELTAS) {
+            int dx = x + delta;
             if (dx >= 0 && dx < r && !isReached) {
-                setUpPipe(dx, dy);
+                setUpPipe(dx, y+1);
             }
         }
     }
