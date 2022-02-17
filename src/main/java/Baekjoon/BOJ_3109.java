@@ -40,7 +40,7 @@ public class BOJ_3109 {
             result++;
             isReached = true;
             return;
-        } else if (space[x][y] == 'x' || isReached) {
+        } else if (space[x][y] == 'x') {
             return;
         }
         space[x][y] = 'x';
