@@ -22,6 +22,7 @@
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
 - 2961 - [도영이가 만든 맛있는 음식](src/main/java/Baekjoon/BOJ_2961.java)
 - 3040 - [백설 공주와 일곱 난쟁이](src/main/java/Baekjoon/BOJ_3040.java)
+- 3109 - [빵집](src/main/java/Baekjoon/BOJ_3109.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
 - 16926 - [배열 돌리기1](src/main/java/Baekjoon/BOJ_16926.java)
