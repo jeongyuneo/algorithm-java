@@ -63,5 +63,6 @@
 - 3499 - [퍼펙트 셔플](src/main/java/SWExpertAcademy/SWEA_3499.java)
 - 5215 - [햄버거 다이어트](src/main/java/SWExpertAcademy/SWEA_5215.java)
 - 6808 - [규영이와 인영이의 카드게임](src/main/java/SWExpertAcademy/SWEA_6808.java)
+- 7465 - [창용 마을 무리의 개수](src/main/java/SWExpertAcademy/SWEA_7465.java)
 - 9229 - [한빈이와 Spot Mart](src/main/java/SWExpertAcademy/SWEA_9229.java)
 </details>
