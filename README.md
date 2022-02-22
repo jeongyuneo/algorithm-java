@@ -59,6 +59,7 @@
 - 2001 - [파리 퇴치](src/main/java/SWExpertAcademy/SWEA_2001.java)
 - 2072 - [홀수만 더하기](src/main/java/SWExpertAcademy/SWEA_2072.java)
 - 2805 - [농작물 수확하기](src/main/java/SWExpertAcademy/SWEA_2805.java)
+- 3289 - [서로소 집합](src/main/java/SWExpertAcademy/SWEA_3289.java)
 - 3499 - [퍼펙트 셔플](src/main/java/SWExpertAcademy/SWEA_3499.java)
 - 5215 - [햄버거 다이어트](src/main/java/SWExpertAcademy/SWEA_5215.java)
 - 6808 - [규영이와 인영이의 카드게임](src/main/java/SWExpertAcademy/SWEA_6808.java)
