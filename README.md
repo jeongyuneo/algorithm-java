@@ -23,6 +23,7 @@
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
 - 2564 - [경비원](src/main/java/Baekjoon/BOJ_2564.java)
 - 2605 - [줄 세우기](src/main/java/Baekjoon/BOJ_2605.java)
+- 2628 - [종이자르기](src/main/java/Baekjoon/BOJ_2628.java)
 - 2669 - [직사각형 네개의 합집합의 면적 구하기](src/main/java/Baekjoon/BOJ_2669.java)
 - 2839 - [설탕 배달](src/main/java/Baekjoon/BOJ_2839.java)
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
