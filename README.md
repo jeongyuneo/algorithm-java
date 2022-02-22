@@ -8,6 +8,7 @@
 - 1018 - [체스판 다시 칠하기](src/main/java/Baekjoon/BOJ_1018.java)
 - 1158 - [요세푸스 문제](src/main/java/Baekjoon/BOJ_1158.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
+- 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
 - 1592 - [영식이와 친구들](src/main/java/Baekjoon/BOJ_1592.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
 - 1987 - [알파벳](src/main/java/Baekjoon/BOJ_1987.java)
