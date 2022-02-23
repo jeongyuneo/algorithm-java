@@ -20,6 +20,7 @@
 - 2477 - [참외밭](src/main/java/Baekjoon/BOJ_2477.java)
 - 2491 - [수열](src/main/java/Baekjoon/BOJ_2491.java)
 - 2493 - [탑](src/main/java/Baekjoon/BOJ_2493.java)
+- 2527 - [직사각형](src/main/java/Baekjoon/BOJ_2527.java)
 - 2559 - [수열](src/main/java/Baekjoon/BOJ_2559.java)
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
 - 2564 - [경비원](src/main/java/Baekjoon/BOJ_2564.java)
