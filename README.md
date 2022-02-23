@@ -34,6 +34,7 @@
 - 3040 - [백설 공주와 일곱 난쟁이](src/main/java/Baekjoon/BOJ_3040.java)
 - 3109 - [빵집](src/main/java/Baekjoon/BOJ_3109.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
+- 10026 - [적록색약](src/main/java/Baekjoon/BOJ_10026.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
 - 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
 - 15686 - [치킨 배달](src/main/java/Baekjoon/BOJ_15686.java)
