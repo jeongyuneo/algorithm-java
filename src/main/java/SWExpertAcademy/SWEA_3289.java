@@ -60,6 +60,9 @@ public class SWEA_3289 {
     private static void union(int a, int b) {
         int aRoot = findSet(a);
         int bRoot = findSet(b);
+        if (aRoot == bRoot) {
+            return;
+        }
         parents[aRoot] = parents[bRoot];
     }
 }
