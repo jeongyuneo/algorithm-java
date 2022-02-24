@@ -66,7 +66,7 @@ public class BOJ_1753 {
         }
 
         for (int i = 1; i <= v; i++) {
-            if (distance[i] != Integer.MAX_VALUE) {
+            if (visited[i]) {
                 stringBuilder.append(distance[i]);
             } else {
                 stringBuilder.append("INF");
