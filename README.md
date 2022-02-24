@@ -47,6 +47,7 @@
     <summary>Jungol</summary>
 
 - 124 - [선택제어문-형성평가5](src/main/java/Jungol/Jungol_124.java)
+- 1681 - [해밀턴 순환회로](src/main/java/Jungol/Jungol_1681.java)
 - 1828 - [냉장고](src/main/java/Jungol/Jungol_1828.java)
 </details>
 
