@@ -33,7 +33,7 @@ public class Jungol_1681 {
             return;
         }
 
-        if (currentCost > minCost) {
+        if (currentCost >= minCost) {
             return;
         }
 
