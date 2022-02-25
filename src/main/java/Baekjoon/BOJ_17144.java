@@ -15,7 +15,7 @@ public class BOJ_17144 {
     private static final List<Integer> AIR_CLEANER = new ArrayList<>();
 
     private static int[][] room;
-    private static int[][] spreadRoom;
+    private static int[][] spreadInfo;
     private static int r;
     private static int c;
     private static int t;
@@ -28,7 +28,7 @@ public class BOJ_17144 {
         c = Integer.parseInt(stringTokenizer.nextToken());
         t = Integer.parseInt(stringTokenizer.nextToken());
         room = new int[r][c];
-        spreadRoom = new int[r][c];
+        spreadInfo = new int[r][c];
         for (int i = 0; i < r; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < c; j++) {
@@ -50,8 +50,7 @@ public class BOJ_17144 {
             return;
         }
         spread();
-        updateSpread();
-        wind();
+        circulate();
         operate(time+1);
     }
 
@@ -65,7 +64,7 @@ public class BOJ_17144 {
                         int dx = i + spreadDelta[0];
                         int dy = j + spreadDelta[1];
                         if (dx >= 0 && dx < r && dy >= 0 && dy < c && room[dx][dy] != -1) {
-                            spreadRoom[dx][dy] += spreadDust;
+                            spreadInfo[dx][dy] += spreadDust;
                             spreadCnt++;
                         }
                     }
@@ -73,20 +72,21 @@ public class BOJ_17144 {
                 }
             }
         }
+        updateSpreadInfo();
     }
 
-    private static void updateSpread() {
+    private static void updateSpreadInfo() {
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                if (spreadRoom[i][j] != 0) {
-                    room[i][j] += spreadRoom[i][j];
-                    spreadRoom[i][j] = 0;
+                if (spreadInfo[i][j] != 0) {
+                    room[i][j] += spreadInfo[i][j];
+                    spreadInfo[i][j] = 0;
                 }
             }
         }
     }
 
-    private static void wind() {
+    private static void circulate() {
         int direction = 0;
         int upSideX = AIR_CLEANER.get(0) + UPSIDE_DELTAS[direction][0];
         int upSideY = UPSIDE_DELTAS[direction][1];
