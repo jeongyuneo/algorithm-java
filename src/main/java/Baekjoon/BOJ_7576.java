@@ -13,7 +13,6 @@ public class BOJ_7576 {
 
     private static int m;
     private static int n;
-    private static int day;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -22,30 +21,28 @@ public class BOJ_7576 {
         n = Integer.parseInt(stringTokenizer.nextToken());
         int[][] box = new int[n][m];
         Queue<int[]> tomatoes = new LinkedList<>();
+        int unRipeCnt = 0;
         for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < m; j++) {
                 int input = Integer.parseInt(stringTokenizer.nextToken());
                 if (input == RIPE_TOMATO) {
                     tomatoes.offer(new int[]{i, j});
+                } else if (input == UNRIPE_TOMATO) {
+                    unRipeCnt++;
                 }
                 box[i][j] = input;
             }
         }
-        ripen(box, tomatoes);
-        if (isContainUnripeTomatoes(box)) {
-            System.out.println(-1);
+        if (unRipeCnt == 0) {
+            System.out.println(0);
         } else {
-            System.out.println(day);
+            ripen(box, tomatoes, unRipeCnt);
         }
     }
 
-    private static void ripen(int[][] box, Queue<int[]> tomatoes) {
-        if (!isContainUnripeTomatoes(box)) {
-            return;
-        }
-
-        day = 1;
+    private static void ripen(int[][] box, Queue<int[]> tomatoes, int unRipeCnt) {
+        int day = 1;
         while (!tomatoes.isEmpty()) {
             int size = tomatoes.size();
             while (size-- > 0) {
@@ -55,25 +52,17 @@ public class BOJ_7576 {
                     int dy = current[1] + delta[1];
                     if (dx >= 0 && dx < n && dy >= 0 && dy < m && box[dx][dy] == UNRIPE_TOMATO) {
                         box[dx][dy] = RIPE_TOMATO;
+                        unRipeCnt--;
                         tomatoes.offer(new int[]{dx, dy});
                     }
                 }
             }
-            if (!isContainUnripeTomatoes(box)) {
-                break;
+            if (unRipeCnt == 0) {
+                System.out.println(day);
+                return;
             }
             day++;
         }
-    }
-
-    private static boolean isContainUnripeTomatoes(int[][] box) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (box[i][j] == UNRIPE_TOMATO) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        System.out.println(-1);
     }
 }
