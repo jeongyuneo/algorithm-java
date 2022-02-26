@@ -40,6 +40,7 @@
 - 10026 - [적록색약](src/main/java/Baekjoon/BOJ_10026.java)
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
+- 10250 - [ACM 호텔](src/main/java/Baekjoon/BOJ_10250.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
 - 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
 - 15686 - [치킨 배달](src/main/java/Baekjoon/BOJ_15686.java)
