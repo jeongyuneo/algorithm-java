@@ -33,6 +33,7 @@ public class BOJ_14503 {
             }
         }
         operate(space, x, y, direction);
+        System.out.println(cnt);
     }
 
     private static void operate(int[][] space, int x, int y, int direction) {
@@ -48,8 +49,9 @@ public class BOJ_14503 {
             int left = (direction - 1 + DELTAS.length) % DELTAS.length;
             int dx = x + DELTAS[left][0];
             int dy = y + DELTAS[left][1];
-            if (dx >= 0 && dx < n && dy >= 0 && dy < m && space[dx][dy] == EMPTY) {
+            if (space[dx][dy] == EMPTY) {
                 operate(space, dx, dy, left);
+                return;
             } else {
                 direction = left;
             }
@@ -57,11 +59,8 @@ public class BOJ_14503 {
         int back = (direction + 2) % DELTAS.length;
         int dx = x + DELTAS[back][0];
         int dy = y + DELTAS[back][1];
-        if (dx >= 0 && dx < n && dy >= 0 && dy < m && space[dx][dy] != WALL) {
+        if (space[dx][dy] != WALL) {
             searchFourDirections(space, dx, dy, direction);
-        } else {
-            System.out.println(cnt);
-            System.exit(0);
         }
     }
 }
