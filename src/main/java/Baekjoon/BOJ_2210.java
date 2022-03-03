@@ -44,7 +44,7 @@ public class BOJ_2210 {
         for (int[] delta : DELTAS) {
             int dx = x + delta[0];
             int dy = y + delta[1];
-            if (dx >= 0 && dx < SIZE && dy >= 0 && dy < SIZE && cnt < 6) {
+            if (dx >= 0 && dx < SIZE && dy >= 0 && dy < SIZE) {
                 dfs(board, dx, dy, number*10+board[dx][dy], cnt+1);
             }
         }
