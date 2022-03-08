@@ -26,11 +26,13 @@ public class BOJ_14502 {
         n = Integer.parseInt(stringTokenizer.nextToken());
         m = Integer.parseInt(stringTokenizer.nextToken());
         laboratory = new int[n][m];
+        int blanks = 0;
         for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < m; j++) {
                 int input = Integer.parseInt(stringTokenizer.nextToken());
                 if (input == EMPTY_SPACE) {
+                    blanks++;
                     EMPTY_SPACES.add(new int[]{i, j});
                 } else if(input == VIRUS) {
                     VIRUSES.add(new int[]{i, j});
@@ -40,14 +42,14 @@ public class BOJ_14502 {
         }
 
         maxSafeZone = Integer.MIN_VALUE;
-        setNewWalls(0);
+        setNewWalls(0, blanks);
         System.out.println(maxSafeZone);
     }
 
-    private static void setNewWalls(int cnt) {
+    private static void setNewWalls(int cnt, int blanks) {
         if (cnt == WALL_COUNT) {
-            int[][] spreadVirusLaboratory = getSpreadVirusLaboratory();
-            maxSafeZone = Math.max(maxSafeZone, getSafeZone(spreadVirusLaboratory));
+            int safeZone = getSafeZoneAfterSpreadVirus(blanks);
+            maxSafeZone = Math.max(maxSafeZone, safeZone);
             return;
         }
 
@@ -56,12 +58,12 @@ public class BOJ_14502 {
                 continue;
             }
             laboratory[newWall[0]][newWall[1]] = WALL;
-            setNewWalls(cnt + 1);
+            setNewWalls(cnt+1, blanks-1);
             laboratory[newWall[0]][newWall[1]] = EMPTY_SPACE;
         }
     }
 
-    private static int[][] getSpreadVirusLaboratory() {
+    private static int getSafeZoneAfterSpreadVirus(int blanks) {
         int[][] tempLaboratory = new int[n][m];
         for (int i = 0, tempLaboratoryLength = tempLaboratory.length; i < tempLaboratoryLength; i++) {
             tempLaboratory[i] = laboratory[i].clone();
@@ -81,22 +83,11 @@ public class BOJ_14502 {
                 int dy = y + delta[1];
                 if (dx >= 0 && dx < n && dy >= 0 && dy < m && tempLaboratory[dx][dy] == EMPTY_SPACE) {
                     tempLaboratory[dx][dy] = VIRUS;
+                    blanks--;
                     queue.offer(new int[]{dx, dy});
                 }
             }
         }
-        return tempLaboratory;
-    }
-
-    private static int getSafeZone(int[][] tempLaboratory) {
-        int cnt = 0;
-        for (int[] line : tempLaboratory) {
-            for (int space : line) {
-                if (space == EMPTY_SPACE) {
-                    cnt++;
-                }
-            }
-        }
-        return cnt;
+        return blanks;
     }
 }
