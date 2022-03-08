@@ -26,13 +26,11 @@ public class BOJ_14502 {
         n = Integer.parseInt(stringTokenizer.nextToken());
         m = Integer.parseInt(stringTokenizer.nextToken());
         laboratory = new int[n][m];
-        int blanks = 0;
         for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < m; j++) {
                 int input = Integer.parseInt(stringTokenizer.nextToken());
                 if (input == EMPTY_SPACE) {
-                    blanks++;
                     EMPTY_SPACES.add(new int[]{i, j});
                 } else if(input == VIRUS) {
                     VIRUSES.add(new int[]{i, j});
@@ -42,7 +40,7 @@ public class BOJ_14502 {
         }
 
         maxSafeZone = Integer.MIN_VALUE;
-        setNewWalls(0, blanks);
+        setNewWalls(0, EMPTY_SPACES.size());
         System.out.println(maxSafeZone);
     }
 
