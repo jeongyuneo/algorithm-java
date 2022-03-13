@@ -11,6 +11,7 @@
 - 1158 - [요세푸스 문제](src/main/java/Baekjoon/BOJ_1158.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
+- 1541 - [잃어버린 괄호](src/main/java/Baekjoon/BOJ_1541.java)
 - 1592 - [영식이와 친구들](src/main/java/Baekjoon/BOJ_1592.java)
 - 1753 - [최단경로](src/main/java/Baekjoon/BOJ_1753.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
