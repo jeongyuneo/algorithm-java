@@ -52,6 +52,7 @@
 - 14502 - [연구소](src/main/java/Baekjoon/BOJ_14502.java)
 - 14503 - [로봇 청소기](src/main/java/Baekjoon/BOJ_14503.java)
 - 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
+- 14889 - [스타트와 링크](src/main/java/Baekjoon/BOJ_14889.java)
 - 15686 - [치킨 배달](src/main/java/Baekjoon/BOJ_15686.java)
 - 16926 - [배열 돌리기1](src/main/java/Baekjoon/BOJ_16926.java)
 - 17144 - [미세먼지 안녕!](src/main/java/Baekjoon/BOJ_17144.java)
