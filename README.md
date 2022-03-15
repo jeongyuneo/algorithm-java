@@ -49,6 +49,7 @@
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
 - 10250 - [ACM 호텔](src/main/java/Baekjoon/BOJ_10250.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
+- 14500 - [테트로미노](src/main/java/Baekjoon/BOJ_14500.java)
 - 14502 - [연구소](src/main/java/Baekjoon/BOJ_14502.java)
 - 14503 - [로봇 청소기](src/main/java/Baekjoon/BOJ_14503.java)
 - 14696 - [딱지놀이](src/main/java/Baekjoon/BOJ_14696.java)
