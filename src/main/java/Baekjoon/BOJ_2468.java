@@ -3,6 +3,8 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class BOJ_2468 {
@@ -54,13 +56,20 @@ public class BOJ_2468 {
         return cnt;
     }
 
-    private static void searchArea(int x, int y, int sunkHeight) {
-        for (int[] delta : DELTAS) {
-            int dx = x + delta[0];
-            int dy = y + delta[1];
-            if (dx >= 0 && dx < n && dy >= 0 && dy < n && !isVisited[dx][dy] && heightInfo[dx][dy] > sunkHeight) {
-                isVisited[dx][dy] = true;
-                searchArea(dx, dy, sunkHeight);
+    private static void searchArea(int startX, int startY, int sunkHeight) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{startX, startY});
+        while (!queue.isEmpty()) {
+            int[] poll = queue.poll();
+            int x = poll[0];
+            int y = poll[1];
+            for (int[] delta : DELTAS) {
+                int dx = x + delta[0];
+                int dy = y + delta[1];
+                if (dx >= 0 && dx < n && dy >= 0 && dy < n && !isVisited[dx][dy] && heightInfo[dx][dy] > sunkHeight) {
+                    isVisited[dx][dy] = true;
+                    queue.offer(new int[]{dx, dy});
+                }
             }
         }
     }
