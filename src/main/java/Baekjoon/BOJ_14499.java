@@ -23,6 +23,7 @@ public class BOJ_14499 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder stringBuilder = new StringBuilder();
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int m = Integer.parseInt(stringTokenizer.nextToken());
@@ -52,9 +53,11 @@ public class BOJ_14499 {
                 }
                 x = dx;
                 y = dy;
-                System.out.println(DICE[sixthSide]);
+                stringBuilder.append(DICE[sixthSide])
+                        .append("\n");
             }
         }
+        System.out.println(stringBuilder);
     }
 
     private static void roll(int direction) {
