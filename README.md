@@ -42,6 +42,7 @@
 - 3040 - [백설 공주와 일곱 난쟁이](src/main/java/Baekjoon/BOJ_3040.java)
 - 3109 - [빵집](src/main/java/Baekjoon/BOJ_3109.java)
 - 3187 - [양치기 꿍](src/main/java/Baekjoon/BOJ_3187.java)
+- 3190 - [뱀](src/main/java/Baekjoon/BOJ_3190.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 4963 - [섬의 개수](src/main/java/Baekjoon/BOJ_4963.java)
 - 7576 - [토마토](src/main/java/Baekjoon/BOJ_7576.java)
