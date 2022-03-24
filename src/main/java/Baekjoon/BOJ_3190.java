@@ -50,7 +50,7 @@ public class BOJ_3190 {
         while (dx > 0 && dx <= n && dy > 0 && dy <= n && board[dx][dy] != SNAKE) {
             if (time == nextTurnTime) {
                 if (nextTurnDirection.equals(LEFT)) {
-                    direction = direction > 0 ? direction - 1 : DELTAS.length - 1;
+                    direction = (direction + 3) %  DELTAS.length;
                 } else {
                     direction = (direction + 1) % DELTAS.length;
                 }
