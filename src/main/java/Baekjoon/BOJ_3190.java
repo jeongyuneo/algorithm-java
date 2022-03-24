@@ -39,14 +39,9 @@ public class BOJ_3190 {
     }
 
     private static void play(Queue<String[]> directionChangeInfos, int[][] board, Queue<int[]> snake, int n) {
-        String[] nextTurn;
-        int nextTurnTime = n * n;
-        String nextTurnDirection = "L";
-        if (!directionChangeInfos.isEmpty()) {
-            nextTurn = directionChangeInfos.poll();
-            nextTurnTime = Integer.parseInt(nextTurn[0]);
-            nextTurnDirection = nextTurn[1];
-        }
+        String[] nextTurn = directionChangeInfos.poll();
+        int nextTurnTime = Integer.parseInt(nextTurn[0]);
+        String nextTurnDirection = nextTurn[1];
 
         int direction = 0;
         int dx = 1 + DELTAS[direction][0];
