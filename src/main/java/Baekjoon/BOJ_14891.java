@@ -11,7 +11,7 @@ public class BOJ_14891 {
     private static final int MET_SIDE_NUM = 3;
     private static final int SAWTOOTH = 8;
     private static final int CLOCKWISE = 1;
-    private static final int COUNTERCLOCKWISE = -1;
+    private static final int REVERSE = -1;
     private static final int[][] COGWHEELS = new int[COGWHEEL_NUM + 1][SAWTOOTH];
     private static final int[] TOPS = new int[COGWHEEL_NUM + 1];
     private static final boolean[] IS_SAME_SIDES = new boolean[MET_SIDE_NUM + 1];
@@ -48,7 +48,7 @@ public class BOJ_14891 {
         int nextRotationDirection = rotationDirection;
         for (int cogwheel = rotationCogwheel - 1; cogwheel >= 1; cogwheel--) {
             if (!IS_SAME_SIDES[cogwheel]) {
-                nextRotationDirection = getNextDirection(nextRotationDirection, cogwheel);
+                nextRotationDirection *= REVERSE;
                 rotate(cogwheel, nextRotationDirection);
             } else {
                 break;
@@ -58,7 +58,7 @@ public class BOJ_14891 {
         nextRotationDirection = rotationDirection;
         for (int cogwheel = rotationCogwheel + 1; cogwheel <= COGWHEEL_NUM; cogwheel++) {
             if (!IS_SAME_SIDES[cogwheel - 1]) {
-                nextRotationDirection = getNextDirection(nextRotationDirection, cogwheel);
+                nextRotationDirection *= REVERSE;
                 rotate(cogwheel, nextRotationDirection);
             } else {
                 break;
@@ -81,14 +81,6 @@ public class BOJ_14891 {
             } else {
                 IS_SAME_SIDES[i] = false;
             }
-        }
-    }
-
-    private static int getNextDirection(int nextRotationDirection, int cogwheel) {
-        if (nextRotationDirection == CLOCKWISE) {
-            return COUNTERCLOCKWISE;
-        } else {
-            return CLOCKWISE;
         }
     }
 }
