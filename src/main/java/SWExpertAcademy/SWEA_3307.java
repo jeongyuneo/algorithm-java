@@ -3,6 +3,7 @@ package SWExpertAcademy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class SWEA_3307 {
@@ -19,21 +20,22 @@ public class SWEA_3307 {
                 array[i] = Integer.parseInt(stringTokenizer.nextToken());
             }
 
-            int maxLength = 0;
             int[] table = new int[n];
+            int size = 0;
             for (int i = 0; i < n; i++) {
-                table[i] = 1;
-                for (int j = 0; j < i; j++) {
-                    if (array[j] < array[i]) {
-                        table[i] = Math.max(table[i], table[j] + 1);
-                    }
+                int insertIndex = Arrays.binarySearch(table, 0, size, array[i]);
+                insertIndex = Math.abs(insertIndex) - 1;
+                table[insertIndex] = array[i];
+
+                if (size == insertIndex) {
+                    size++;
                 }
-                maxLength = Math.max(maxLength, table[i]);
             }
+
             stringBuilder.append("#")
                     .append(t)
                     .append(" ")
-                    .append(maxLength)
+                    .append(size)
                     .append("\n");
         }
         System.out.println(stringBuilder);
