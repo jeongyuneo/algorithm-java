@@ -89,6 +89,7 @@
 - 1228 - [[S/W 문제해결 기본] 8일차 - 암호문1](src/main/java/SWExpertAcademy/SWEA_1228.java)
 - 1233 - [[S/W 문제해결 기본] 9일차 - 사칙연산 유효성 검사](src/main/java/SWExpertAcademy/SWEA_1233.java)
 - 1238 - [[S/W 문제해결 기본] 10일차 - Contact](src/main/java/SWExpertAcademy/SWEA_1238.java)
+- 1249 - [[S/W 문제해결 응용] 4일차 - 보급로](src/main/java/SWExpertAcademy/SWEA_1249.java)
 - 1289 - [원재의 메모리 복구하기](src/main/java/SWExpertAcademy/SWEA_1289.java)
 - 1873 - [상호의 배틀필드](src/main/java/SWExpertAcademy/SWEA_1873.java)
 - 1954 - [달팽이 숫자](src/main/java/SWExpertAcademy/SWEA_1954.java)
