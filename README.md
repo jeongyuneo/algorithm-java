@@ -69,6 +69,7 @@
 - 17144 - [미세먼지 안녕!](src/main/java/Baekjoon/BOJ_17144.java)
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
 - 20055 - [컨베이어 벨트 위의 로봇](src/main/java/Baekjoon/BOJ_20055.java)
+- 21610 - [마법사 상어와 비바라기](src/main/java/Baekjoon/BOJ_21610.java)
 </details>
 
 <details>
