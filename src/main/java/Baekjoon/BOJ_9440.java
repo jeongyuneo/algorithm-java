@@ -26,22 +26,17 @@ public class BOJ_9440 {
             }
 
             List<Integer> numbers = new ArrayList<>();
+            int zeroCount = 0;
             for (int i = 0; i < n; i++) {
-                numbers.add(Integer.parseInt(stringTokenizer.nextToken()));
+                int number = Integer.parseInt(stringTokenizer.nextToken());
+                if (number == 0) {  // 0 개수 count
+                    zeroCount++;
+                }
+                numbers.add(number);
             }
 
             // 오름차순 정렬
             numbers = numbers.stream().sorted().collect(Collectors.toList());
-
-            // 0의 개수 count
-            int zeroCount = 0;
-            for (int number : numbers) {
-                if (number == 0) {
-                    zeroCount++;
-                } else {
-                    break;
-                }
-            }
 
             int answer;
             // 각 숫자의 첫 번째 자릿수는 0이 아닌 숫자들로 세팅
