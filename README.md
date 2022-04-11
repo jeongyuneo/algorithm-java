@@ -47,6 +47,7 @@
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 4963 - [섬의 개수](src/main/java/Baekjoon/BOJ_4963.java)
 - 7576 - [토마토](src/main/java/Baekjoon/BOJ_7576.java)
+- 9440 - [숫자 더하기](src/main/java/Baekjoon/BOJ_9440.java)
 - 10026 - [적록색약](src/main/java/Baekjoon/BOJ_10026.java)
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
