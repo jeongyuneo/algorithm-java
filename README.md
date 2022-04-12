@@ -74,6 +74,12 @@
 </details>
 
 <details>
+    <summary>Programmers</summary>
+
+- Level 2 - [N개의 최소공배수](src/main/java/Programmers/Programmers_Level2_N개의최소공배수.java)
+</details>
+
+<details>
     <summary>Jungol</summary>
 
 - 124 - [선택제어문-형성평가5](src/main/java/Jungol/Jungol_124.java)
