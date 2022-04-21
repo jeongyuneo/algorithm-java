@@ -10,12 +10,6 @@ public class BOJ_16236 {
     private static final int[][] DELTAS = {{0, -1}, {-1, 0}, {1, 0}, {0, 1}};
     private static final int EMPTY = 0;
     private static final int[] BABY_SHARK = new int[2];
-    private static final PriorityQueue<int[]> EATABLE_FISH = new PriorityQueue<>((o1, o2) -> {
-        if (o1[0] == o2[0]) {
-            return o1[1] - o2[1];
-        }
-        return o1[0] - o2[0];
-    });
 
     private static int[][] space;
     private static int n;
@@ -43,21 +37,20 @@ public class BOJ_16236 {
         }
 
         while (true) {
-            findFeed();
-            if (EATABLE_FISH.isEmpty()) {
+            int[] feed = findFeed();
+            if (feed == null) {
                 break;
             }
-            int[] feed = EATABLE_FISH.poll();
-            eat(feed);
         }
         System.out.println(time);
     }
 
-    private static void findFeed() {
-        EATABLE_FISH.clear();
+    private static int[] findFeed() {
+        int[] feed = new int[]{n, n};
         boolean[][] isVisited = new boolean[n][n];
         Queue<int[]> queue = new LinkedList<>();
 
+        boolean hasFeed = false;
         int currentTime = 0;
         queue.offer(BABY_SHARK);
         while (!queue.isEmpty()) {
@@ -73,7 +66,11 @@ public class BOJ_16236 {
                     int dy = y + delta[1];
                     if (dx >= 0 && dx < n && dy >= 0 && dy < n && !isVisited[dx][dy] && space[dx][dy] <= size) {
                         if (space[dx][dy] != EMPTY && space[dx][dy] < size) {
-                            EATABLE_FISH.offer(new int[]{dx, dy});
+                            if (feed[0] > dx || feed[0] == dx && feed[1] > dy) {
+                                feed[0] = dx;
+                                feed[1] = dy;
+                            }
+                            hasFeed = true;
                         } else if (space[dx][dy] == EMPTY || space[dx][dy] == size) {
                             queue.offer(new int[]{dx, dy});
                         }
@@ -82,11 +79,13 @@ public class BOJ_16236 {
                 }
             }
 
-            if (!EATABLE_FISH.isEmpty()) {
+            if (hasFeed) {
+                eat(feed);
                 time += currentTime;
-                return;
+                return feed;
             }
         }
+        return null;
     }
 
     public static void eat(int[] feed) {
