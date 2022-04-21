@@ -78,6 +78,7 @@
 - 20055 - [컨베이어 벨트 위의 로봇](src/main/java/Baekjoon/BOJ_20055.java)
 - 20058 - [마법사 상어와 파이어스톰](src/main/java/Baekjoon/BOJ_20058.java)
 - 21610 - [마법사 상어와 비바라기](src/main/java/Baekjoon/BOJ_21610.java)
+- 23288 - [주사위 굴리기 2](src/main/java/Baekjoon/BOJ_23288.java)
 </details>
 
 <details>
