@@ -16,6 +16,7 @@
 - 1541 - [잃어버린 괄호](src/main/java/Baekjoon/BOJ_1541.java)
 - 1592 - [영식이와 친구들](src/main/java/Baekjoon/BOJ_1592.java)
 - 1753 - [최단경로](src/main/java/Baekjoon/BOJ_1753.java)
+- 1755 - [숫자놀이](src/main/java/Baekjoon/BOJ_1755.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
 - 1890 - [암호 만들기](src/main/java/Baekjoon/BOJ_1890.java)
 - 1987 - [알파벳](src/main/java/Baekjoon/BOJ_1987.java)
