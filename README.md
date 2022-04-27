@@ -60,6 +60,7 @@
 - 11053 - [가장 긴 증가하는 부분 수열](src/main/java/Baekjoon/BOJ_11053.java)
 - 11722 - [가장 긴 감소하는 부분 수열](src/main/java/Baekjoon/BOJ_11722.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
+- 12851 - [숨바꼭질 2](src/main/java/Baekjoon/BOJ_12851.java)
 - 12904 - [A와 B](src/main/java/Baekjoon/BOJ_12904.java)
 - 14499 - [주사위 굴리기](src/main/java/Baekjoon/BOJ_14499.java)
 - 14500 - [테트로미노](src/main/java/Baekjoon/BOJ_14500.java)
