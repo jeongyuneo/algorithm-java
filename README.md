@@ -94,7 +94,13 @@
 <details>
     <summary>Programmers</summary>
 
-- Level 2 - [N개의 최소공배수](src/main/java/Programmers/Programmers_Level2_N개의최소공배수.java)
+- Level 1
+    - [2021-kakao-신규 아이디 추천](src/main/java/Programmers/Programmers_2021_Kakao_Level1_신규아이디추천.java)
+- Level 2
+    - [N개의 최소공배수](src/main/java/Programmers/Programmers_연습문제_Level2_N개의최소공배수.java)
+    - [2020-kakao-문자열 압축](src/main/java/Programmers/Programmers_2020_Kakao_Level2_문자열압축.java)
+    - [2022-kakao-주차 요금 계산](src/main/java/Programmers/Programmers_2022_Kakao_Level2_주차요금계산.java)
+    - [Summer/Winter-Coding-배달](src/main/java/Programmers/Programmers_2022_Kakao_Level2_주차요금계산.java)
 </details>
 
 <details>
