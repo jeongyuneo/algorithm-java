@@ -1,6 +1,6 @@
 package Programmers;
 
-public class Programmers_2020_Kakao_문자열압축 {
+public class Programmers_2020_Kakao_Level2_문자열압축 {
 
     public static void main(String[] args) {
         System.out.println(solution("aabbaccc"));
