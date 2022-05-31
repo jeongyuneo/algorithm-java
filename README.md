@@ -18,6 +18,7 @@
 - 1753 - [최단경로](src/main/java/Baekjoon/BOJ_1753.java)
 - 1755 - [숫자놀이](src/main/java/Baekjoon/BOJ_1755.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
+- 1874 - [스택 수열](src/main/java/Baekjoon/BOJ_1874.java)
 - 1890 - [암호 만들기](src/main/java/Baekjoon/BOJ_1890.java)
 - 1987 - [알파벳](src/main/java/Baekjoon/BOJ_1987.java)
 - 1992 - [쿼드트리](src/main/java/Baekjoon/BOJ_1992.java)
