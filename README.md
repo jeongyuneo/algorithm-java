@@ -59,6 +59,7 @@
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
 - 10250 - [ACM 호텔](src/main/java/Baekjoon/BOJ_10250.java)
+- 10816 - [숫자 카드 2](src/main/java/Baekjoon/BOJ_10816.java)
 - 11053 - [가장 긴 증가하는 부분 수열](src/main/java/Baekjoon/BOJ_11053.java)
 - 11722 - [가장 긴 감소하는 부분 수열](src/main/java/Baekjoon/BOJ_11722.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
