@@ -7,66 +7,60 @@ import java.util.StringTokenizer;
 
 public class BOJ_16926 {
 
-    private static final int[][] DELTAS = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
-
-    private static int[][] array;
-    private static int n;
-    private static int m;
-    private static int r;
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder stringBuilder = new StringBuilder();
-
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        n = Integer.parseInt(stringTokenizer.nextToken());
-        m = Integer.parseInt(stringTokenizer.nextToken());
-        r = Integer.parseInt(stringTokenizer.nextToken());
-
-        array = new int[n+1][m+1];
-        for (int i = 1; i <= n; i++) {
+        int n = Integer.parseInt(stringTokenizer.nextToken());
+        int m = Integer.parseInt(stringTokenizer.nextToken());
+        int r = Integer.parseInt(stringTokenizer.nextToken());
+        int[][] map = new int[n][m];
+        for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-            for (int j = 1; j <= m; j++) {
-                array[i][j] = Integer.parseInt(stringTokenizer.nextToken());
+            for (int j = 0; j < m; j++) {
+                map[i][j] = Integer.parseInt(stringTokenizer.nextToken());
             }
         }
 
-        for (int i = 0; i < r; i++) {
-            rotate();
+        for (int rotate = 0; rotate < r; rotate++) {
+            rotate(n, m, map);
         }
-
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= m; j++) {
-                stringBuilder.append(array[i][j])
-                        .append(" ");
-            }
-            stringBuilder.append("\n");
-        }
-        System.out.println(stringBuilder);
+        print(map);
     }
 
-    private static void rotate() {
-        int rotationNum = Math.min(n, m) / 2;
-        for (int i = 1; i <= rotationNum; i++) {
-            int x = i;
-            int y = i;
-            int currentNumber = array[x][y];
-
-            int direction = 0;
-            while (direction < 4) {
-                int dx = x + DELTAS[direction][0];
-                int dy = y + DELTAS[direction][1];
-                if (dx >= i && dx <= n-i+1 && dy >= i && dy <= m-i+1) {
-                    x += DELTAS[direction][0];
-                    y += DELTAS[direction][1];
-
-                    int nextNumber = array[x][y];
-                    array[x][y] = currentNumber;
-                    currentNumber = nextNumber;
-                } else {
-                    direction++;
-                }
+    private static void print(int[][] map) {
+        StringBuilder answer = new StringBuilder();
+        for (int[] line : map) {
+            for (int field : line) {
+                answer.append(field)
+                        .append(" ");
             }
+            answer.append("\n");
+        }
+        System.out.println(answer);
+    }
+
+    private static void rotate(int n, int m, int[][] map) {
+        int rotationEnd = Math.min(n, m) / 2;
+        int x = 0;
+        int y = 0;
+        while (rotationEnd-- > 0) {
+            int init = map[x][y];
+            for (int i = 1; i < m; i++) {
+                map[x][y] = map[x][++y];
+            }
+            for (int i = 1; i < n; i++) {
+                map[x][y] = map[++x][y];
+            }
+            for (int i = 1; i < m; i++) {
+                map[x][y] = map[x][--y];
+            }
+            for (int i = 2; i < n; i++) {
+                map[x][y] = map[--x][y];
+            }
+            map[x][y] = init;
+            y++;
+            n -= 2;
+            m -= 2;
         }
     }
 }
