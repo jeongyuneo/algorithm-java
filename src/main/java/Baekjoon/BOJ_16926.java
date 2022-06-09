@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
 
 public class BOJ_16926 {
 
+    private static final int[][] DELTAS = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
@@ -20,9 +22,8 @@ public class BOJ_16926 {
                 map[i][j] = Integer.parseInt(stringTokenizer.nextToken());
             }
         }
-
         for (int rotate = 0; rotate < r; rotate++) {
-            rotate(n, m, map);
+            map = rotate(n, m, map);
         }
         print(map);
     }
@@ -39,28 +40,45 @@ public class BOJ_16926 {
         System.out.println(answer);
     }
 
-    private static void rotate(int n, int m, int[][] map) {
+    private static int[][] rotate(int n, int m, int[][] map) {
         int rotationEnd = Math.min(n, m) / 2;
-        int x = 0;
-        int y = 0;
+        int initX = 0;
+        int initY = 0;
+        int minX = 0;
+        int maxX = n;
+        int minY = 0;
+        int maxY = m;
         while (rotationEnd-- > 0) {
-            int init = map[x][y];
-            for (int i = 1; i < m; i++) {
-                map[x][y] = map[x][++y];
+            int init = map[initX][initY];
+            int x = initX;
+            int y = initY;
+            int direction = 0;
+            int dx = initX + DELTAS[direction][0];
+            int dy = initY + DELTAS[direction][1];
+            while (true) {
+                if (dx < minX || dx >= maxX || dy < minY || dy >= maxY) {
+                    dx -= DELTAS[direction][0];
+                    dy -= DELTAS[direction][1];
+                    direction++;
+                }
+                if (direction == 4) {
+                    map[initX + 1][initY] = init;
+                    break;
+                }
+                map[x][y] = map[dx][dy];
+                x = dx;
+                y = dy;
+                dx += DELTAS[direction][0];
+                dy += DELTAS[direction][1];
+
             }
-            for (int i = 1; i < n; i++) {
-                map[x][y] = map[++x][y];
-            }
-            for (int i = 1; i < m; i++) {
-                map[x][y] = map[x][--y];
-            }
-            for (int i = 2; i < n; i++) {
-                map[x][y] = map[--x][y];
-            }
-            map[x][y] = init;
-            y++;
-            n -= 2;
-            m -= 2;
+            initX++;
+            initY++;
+            minX++;
+            maxX--;
+            minY++;
+            maxY--;
         }
+        return map;
     }
 }
