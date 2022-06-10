@@ -54,6 +54,7 @@
 - 3190 - [뱀](src/main/java/Baekjoon/BOJ_3190.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 4963 - [섬의 개수](src/main/java/Baekjoon/BOJ_4963.java)
+- 6603 - [로또](src/main/java/Baekjoon/BOJ_6603.java)
 - 7576 - [토마토](src/main/java/Baekjoon/BOJ_7576.java)
 - 9205 - [맥주 마시면서 걸어가기](src/main/java/Baekjoon/BOJ_9205.java)
 - 9440 - [숫자 더하기](src/main/java/Baekjoon/BOJ_9440.java)
