@@ -78,6 +78,7 @@
 - 14891 - [톱니바퀴](src/main/java/Baekjoon/BOJ_14891.java)
 - 15649 - [N과 M (1)](src/main/java/Baekjoon/BOJ_15649.java)
 - 15650 - [N과 M (2)](src/main/java/Baekjoon/BOJ_15650.java)
+- 15651 - [N과 M (3)](src/main/java/Baekjoon/BOJ_15651.java)
 - 15684 - [사다리 조작](src/main/java/Baekjoon/BOJ_15684.java)
 - 15685 - [드래곤 커브](src/main/java/Baekjoon/BOJ_15685.java)
 - 15686 - [치킨 배달](src/main/java/Baekjoon/BOJ_15686.java)
