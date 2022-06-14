@@ -17,39 +17,36 @@ public class BOJ_12851 {
         int time = 0;
         int way = 1;
         if (n < k) {
-            boolean[] isVisited = new boolean[100001];
-            Queue<Integer> queue = new LinkedList<>();
-            queue.offer(n);
             way = 0;
-            while (!queue.isEmpty()) {
+            Queue<Integer> subin = new LinkedList<>();
+            boolean[] isVisited = new boolean[100001];
+            subin.add(n);
+            boolean isFound = false;
+            while (!subin.isEmpty()) {
                 time++;
-                int size = queue.size();
-                // 5 -> 1
-                // 4, 6, 10 -> 2
-                // 3, 5, 8, 5, 7, 12, 9, 11, 20 -> 3
-                // 2, 4, 6, 4, 6, 10, ..., 19, 21, 40 -> 4
+                int size = subin.size();
                 while (size-- > 0) {
-                    int previous = queue.poll();
-                    isVisited[previous] = true;
-                    int[] currents = {previous - 1, previous + 1, previous * 2};
-                    for (int current : currents) {
-                        if (current > 0 && current <= 100000 && !isVisited[current]) {
-                            if (current == k) {
+                    int current = subin.poll();
+                    isVisited[current] = true;
+                    int[] nexts = {current - 1, current + 1, current * 2};
+                    for (int next : nexts) {
+                        if (next >= 0 && next <= 100000 && !isVisited[next]) {
+                            if (next == k) {
+                                isFound = true;
                                 way++;
                             } else {
-                                queue.offer(current);
+                                subin.offer(next);
                             }
                         }
                     }
                 }
-                if (way != 0) {
-                    queue.clear();
+                if (isFound) {
+                    break;
                 }
             }
         } else if (n > k) {
             time = n - k;
         }
-
         System.out.println(time);
         System.out.println(way);
     }
