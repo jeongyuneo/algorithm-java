@@ -17,29 +17,23 @@ public class BOJ_15961 {
         int[] rail = new int[n];
         int[] sushi = new int[d + 1];
         sushi[c]++;
-        Queue<Integer> pick = new LinkedList<>();
         int max = 1;
         for (int i = 0; i < n; i++) {
             int input = Integer.parseInt(bufferedReader.readLine());
             rail[i] = input;
-            if (i < k) {
-                if (++sushi[input] == 1) {
-                    max++;
-                }
-                pick.offer(input);
+            if (i < k && ++sushi[input] == 1) {
+                max++;
             }
         }
 
         int cnt = max;
-        for (int i = 1; i < n; i++) {
-            if (--sushi[pick.poll()] == 0) {
+        for (int start = 0, end = k; start < n - 1; start++, end++) {
+            if (--sushi[rail[start]] == 0) {
                 cnt--;
             }
-            int next = rail[(k + i - 1) % n];
-            if (++sushi[next] == 1) {
+            if (++sushi[rail[end % n]] == 1) {
                 cnt++;
             }
-            pick.offer(next);
             max = Math.max(max, cnt);
         }
         System.out.println(max);
