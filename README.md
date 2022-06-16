@@ -86,6 +86,7 @@
 - 15684 - [사다리 조작](src/main/java/Baekjoon/BOJ_15684.java)
 - 15685 - [드래곤 커브](src/main/java/Baekjoon/BOJ_15685.java)
 - 15686 - [치킨 배달](src/main/java/Baekjoon/BOJ_15686.java)
+- 15961 - [회전 초밥](src/main/java/Baekjoon/BOJ_15961.java)
 - 16234 - [인구 이동](src/main/java/Baekjoon/BOJ_16234.java)
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
 - 16926 - [배열 돌리기1](src/main/java/Baekjoon/BOJ_16926.java)
