@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 public class BOJ_2456 {
 
     private static final int CANDIDATE_NUMBER = 0;
-    private static final int SCORE_ONE = 1;
     private static final int SCORE_TWO = 2;
     private static final int SCORE_THREE = 3;
     private static final int TOTAL_SCORE = 4;
@@ -41,6 +40,7 @@ public class BOJ_2456 {
             }
             return o1[TOTAL_SCORE] - o2[TOTAL_SCORE];
         });
+
         StringBuilder answer = new StringBuilder();
         if (electable(candidates)) {
             answer.append(candidates[2][CANDIDATE_NUMBER]);
@@ -56,6 +56,7 @@ public class BOJ_2456 {
         if (candidates[2][TOTAL_SCORE] > candidates[1][TOTAL_SCORE]) {
             return true;
         }
+
         for (int i = candidates.length - 2; i >= 0; i--) {
             if (candidates[i][TOTAL_SCORE] != candidates[2][TOTAL_SCORE]) {
                 continue;
