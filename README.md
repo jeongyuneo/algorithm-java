@@ -31,6 +31,7 @@
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
 - 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
+- 2456 - [나는 학급회장이다](src/main/java/Baekjoon/BOJ_2456.java)
 - 2468 - [안전 영역](src/main/java/Baekjoon/BOJ_2468.java)
 - 2477 - [참외밭](src/main/java/Baekjoon/BOJ_2477.java)
 - 2491 - [수열](src/main/java/Baekjoon/BOJ_2491.java)
