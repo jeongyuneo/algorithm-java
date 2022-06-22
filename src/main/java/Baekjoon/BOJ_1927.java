@@ -16,12 +16,11 @@ public class BOJ_1927 {
             int input = Integer.parseInt(bufferedReader.readLine());
             if (input == 0) {
                 if (priorityQueue.isEmpty()) {
-                    answer.append(0)
-                            .append("\n");
+                    answer.append(0);
                 } else {
-                    answer.append(priorityQueue.poll())
-                            .append("\n");
+                    answer.append(priorityQueue.poll());
                 }
+                answer.append("\n");
             } else {
                 priorityQueue.add(input);
             }
