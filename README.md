@@ -44,6 +44,7 @@
 - 2491 - [수열](src/main/java/Baekjoon/BOJ_2491.java)
 - 2493 - [탑](src/main/java/Baekjoon/BOJ_2493.java)
 - 2508 - [사탕 박사 고창영](src/main/java/Baekjoon/BOJ_2508.java)
+- 2512 - [예산](src/main/java/Baekjoon/BOJ_2512.java)
 - 2527 - [직사각형](src/main/java/Baekjoon/BOJ_2527.java)
 - 2559 - [수열](src/main/java/Baekjoon/BOJ_2559.java)
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
