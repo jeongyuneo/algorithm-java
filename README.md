@@ -29,6 +29,7 @@
 - 1927 - [최소 힙](src/main/java/Baekjoon/BOJ_1927.java)
 - 1987 - [알파벳](src/main/java/Baekjoon/BOJ_1987.java)
 - 1992 - [쿼드트리](src/main/java/Baekjoon/BOJ_1992.java)
+- 2002 - [추월](src/main/java/Baekjoon/BOJ_2002.java)
 - 2003 - [수들의 합 2](src/main/java/Baekjoon/BOJ_2003.java)
 - 2075 - [N번째 큰 수](src/main/java/Baekjoon/BOJ_2075.java)
 - 2116 - [주사위 쌓기](src/main/java/Baekjoon/BOJ_2116.java)
