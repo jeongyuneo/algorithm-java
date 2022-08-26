@@ -14,26 +14,17 @@ public class Programmers_startup_internship_Level2_영어끝말잇기 {
 
     public static int[] solution(int n, String[] words) {
         int[] answer = new int[2];
-        Set<String> toldWord = new HashSet<>();
-        int length = words.length;
-        for (int turn = 0; turn < length; turn++) {
+        Set<String> toldWords = new HashSet<>();
+        toldWords.add(words[0]);
+        char lastAlphabetOfPreviousWord = words[0].charAt(words[0].length() - 1);
+        for (int turn = 1, length = words.length; turn < length; turn++) {
             String word = words[turn];
-            if (toldWord.contains(word)) {
+            if (toldWords.contains(word) || lastAlphabetOfPreviousWord != word.charAt(0)) {
                 updateAnswer(n, answer, turn);
                 break;
-            } else {
-                toldWord.add(word);
             }
-        }
-        if (answer[0] == 0) {
-            for (int turn = 1; turn < length; turn++) {
-                String currentWord = words[turn];
-                String previousWord = words[turn - 1];
-                if (previousWord.charAt(previousWord.length() - 1) != currentWord.charAt(0)) {
-                    updateAnswer(n, answer, turn);
-                    break;
-                }
-            }
+            lastAlphabetOfPreviousWord = word.charAt(word.length() - 1);
+            toldWords.add(word);
         }
         return answer;
     }
