@@ -30,6 +30,6 @@ public class Programmers_startup_internship_Level2_영어끝말잇기 {
 
     private static void updateAnswer(int n, int[] answer, int turn) {
         answer[0] = turn % n + 1;
-        answer[1] = (int) Math.ceil((double) (turn + 1) / n);
+        answer[1] = turn / n + 1;
     }
 }
