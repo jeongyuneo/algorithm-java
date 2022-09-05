@@ -34,6 +34,7 @@
 - 2002 - [추월](src/main/java/Baekjoon/BOJ_2002.java)
 - 2003 - [수들의 합 2](src/main/java/Baekjoon/BOJ_2003.java)
 - 2075 - [N번째 큰 수](src/main/java/Baekjoon/BOJ_2075.java)
+- 2110 - [공유기 설치](src/main/java/Baekjoon/BOJ_2110.java)
 - 2116 - [주사위 쌓기](src/main/java/Baekjoon/BOJ_2116.java)
 - 2146 - [다리 만들기](src/main/java/Baekjoon/BOJ_2146.java)
 - 2178 - [미로 탐색](src/main/java/Baekjoon/BOJ_2178.java)
