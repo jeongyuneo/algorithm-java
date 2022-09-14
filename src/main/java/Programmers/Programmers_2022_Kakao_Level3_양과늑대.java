@@ -47,8 +47,8 @@ public class Programmers_2022_Kakao_Level3_양과늑대 {
         maxSheepCount = Math.max(maxSheepCount, sheep);
         for (int i = 0; i < binaryTree[current].size(); i++) {
             int next = binaryTree[current].get(i);
-            int currentValue = info[current];
             if (!isVisited[next][sheep][wolves]) {
+                int currentValue = info[current];
                 isVisited[current][sheep][wolves] = true;
                 info[current] = -1;
                 getCatchableSheep(info, next, sheep, wolves);
