@@ -39,7 +39,7 @@ public class BOJ_1080 {
     private static void flip(int[][] A, int x, int y) {
         for (int i = x; i < x + 3; i++) {
             for (int j = y; j < y + 3; j++) {
-                A[i][j] = Math.abs(A[i][j] - 1);
+                A[i][j] = 1 - A[i][j];
             }
         }
     }
