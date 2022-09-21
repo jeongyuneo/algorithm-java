@@ -17,9 +17,6 @@ public class BOJ_3055 {
     private static final char BEAVER = 'D';
     private static final char HEDGEHOG = 'S';
 
-    private static int goalX;
-    private static int goalY;
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
@@ -28,6 +25,8 @@ public class BOJ_3055 {
         char[][] map = new char[r][c];
         Queue<int[]> hedgehog = new ArrayDeque<>();
         Queue<int[]> water = new ArrayDeque<>();
+        int goalX = 0;
+        int goalY = 0;
         for (int i = 0; i < r; i++) {
             String inputLine = bufferedReader.readLine();
             for (int j = 0; j < c; j++) {
@@ -49,6 +48,15 @@ public class BOJ_3055 {
             Arrays.fill(visited[i], r * c);
         }
 
+        int minTime = getMinTime(r, c, map, hedgehog, water, goalX, goalY, visited);
+        if (minTime == r * c) {
+            System.out.println("KAKTUS");
+        } else {
+            System.out.println(minTime);
+        }
+    }
+
+    private static int getMinTime(int r, int c, char[][] map, Queue<int[]> hedgehog, Queue<int[]> water, int goalX, int goalY, int[][] visited) {
         boolean[][] isSpread = new boolean[r][c];
         int minTime = r * c;
         int time = 0;
@@ -78,12 +86,7 @@ public class BOJ_3055 {
             }
             time++;
         }
-
-        if (minTime == r * c) {
-            System.out.println("KAKTUS");
-        } else {
-            System.out.println(minTime);
-        }
+        return minTime;
     }
 
     private static void spreadWater(int r, int c, char[][] map, Queue<int[]> water, boolean[][] isSpread) {
