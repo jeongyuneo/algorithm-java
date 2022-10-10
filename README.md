@@ -121,6 +121,7 @@
 - 17143 - [낚시왕](src/main/java/Baekjoon/BOJ_17143.java)
 - 17144 - [미세먼지 안녕!](src/main/java/Baekjoon/BOJ_17144.java)
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
+- 17779 - [게리맨더링 2](src/main/java/Baekjoon/BOJ_17779.java)
 - 19236 - [청소년 상어](src/main/java/Baekjoon/BOJ_19236.java)
 - 19237 - [어른 상어](src/main/java/Baekjoon/BOJ_19237.java)
 - 20055 - [컨베이어 벨트 위의 로봇](src/main/java/Baekjoon/BOJ_20055.java)
