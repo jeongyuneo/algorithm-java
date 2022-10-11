@@ -9,56 +9,71 @@ import java.util.StringTokenizer;
 
 public class BOJ_15686 {
 
-    private static final int X = 0;
-    private static final int Y = 1;
+    private static final int HOUSE = 1;
+    private static final int CHICKEN_STORE = 2;
 
-    private static int minDistance = Integer.MAX_VALUE;
-    private static int n;
-    private static int m;
+    private static List<int[]> houses;
+    private static List<int[]> chickenStores;
+    private static boolean[] isClosed;
+    private static int closedCount;
+    private static int min;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        n = Integer.parseInt(stringTokenizer.nextToken());
-        m = Integer.parseInt(stringTokenizer.nextToken());
-        int[][] city = new int[n+1][n+1];
-        List<int[]> chickenShops = new ArrayList<>();
-        List<int[]> houses = new ArrayList<>();
-        for (int i = 1; i <= n; i++) {
+        int n = Integer.parseInt(stringTokenizer.nextToken());
+        int m = Integer.parseInt(stringTokenizer.nextToken());
+        int[][] map = new int[n][n];
+        houses = new ArrayList<>();
+        chickenStores = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-            for (int j = 1; j <= n; j++) {
+            for (int j = 0; j < n; j++) {
                 int input = Integer.parseInt(stringTokenizer.nextToken());
-                if (input == 2) {
-                    chickenShops.add(new int[]{i, j});
-                } else if (input == 1) {
+                map[i][j] = input;
+                if (input == HOUSE) {
                     houses.add(new int[]{i, j});
+                } else if (input == CHICKEN_STORE) {
+                    chickenStores.add(new int[]{i, j});
                 }
-                city[i][j] = input;
             }
         }
-
-        combination(chickenShops, houses, 0, 0, new ArrayList<>());
-        System.out.println(minDistance);
+        isClosed = new boolean[chickenStores.size()];
+        closedCount = chickenStores.size() - m;
+        min = Integer.MAX_VALUE;
+        selectChickenStore(0, 0);
+        System.out.println(min);
     }
 
-    private static void combination(List<int[]> chickenShops, List<int[]> houses, int cnt, int start, List<int[]> selectedChickenShops) {
-        if (cnt == m) {
-            int totalDistance = 0;
-            for (int[] house : houses) {
-                int distance = n*n;
-                for (int[] selectedChickenShop : selectedChickenShops) {
-                    distance = Math.min(distance, Math.abs(selectedChickenShop[X] - house[X]) + Math.abs(selectedChickenShop[Y] - house[Y]));
-                }
-                totalDistance += distance;
-            }
-            minDistance = Math.min(minDistance, totalDistance);
+    private static void selectChickenStore(int cnt, int start) {
+        if (cnt == closedCount) {
+            getMinChickenDistance();
             return;
         }
 
-        for (int i = start; i < chickenShops.size(); i++) {
-            selectedChickenShops.add(chickenShops.get(i));
-            combination(chickenShops, houses, cnt+1, i+1, selectedChickenShops);
-            selectedChickenShops.remove(chickenShops.get(i));
+        for (int i = start; i < chickenStores.size(); i++) {
+            isClosed[i] = true;
+            selectChickenStore(cnt + 1, i + 1);
+            isClosed[i] = false;
         }
+    }
+
+    private static void getMinChickenDistance() {
+        int sum = 0;
+        for (int[] house : houses) {
+            int chickenDistance = Integer.MAX_VALUE;
+            for (int i = 0; i < chickenStores.size(); i++) {
+                if (!isClosed[i]) {
+                    int[] chickenStore = chickenStores.get(i);
+                    chickenDistance = Math.min(chickenDistance, getDistance(house[0], house[1], chickenStore[0], chickenStore[1]));
+                }
+            }
+            sum += chickenDistance;
+        }
+        min = Math.min(min, sum);
+    }
+
+    private static int getDistance(int r1, int c1, int r2, int c2) {
+        return Math.abs(r1 - r2) + Math.abs(c1 - c2);
     }
 }
