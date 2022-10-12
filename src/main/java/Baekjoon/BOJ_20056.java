@@ -60,8 +60,7 @@ public class BOJ_20056 {
                         int odd = 0;
                         int weight = 0;
                         int speed = 0;
-                        int tmpSize = size;
-                        while (tmpSize-- > 0) {
+                        while (!moveMap[x][y].isEmpty()) {
                             int[] current = moveMap[x][y].poll();
                             weight += current[0];
                             speed += current[1];
@@ -69,15 +68,13 @@ public class BOJ_20056 {
                                 odd++;
                             }
                         }
+                        sum -= weight;
 
                         // step 4. 질량이 0인 파이어볼 소멸
-                        if (weight / 5 == 0) {
-                            sum -= weight;
+                        if ((weight /= 5) == 0) {
                             continue;
                         }
 
-                        sum -= weight;
-                        weight /= 5;
                         speed /= size;
                         if (odd == 0 || odd == size) {
                             for (int d = 0; d < 8; d += 2) {
@@ -89,7 +86,7 @@ public class BOJ_20056 {
                             }
                         }
                         sum += weight * 4;
-                    } else if (moveMap[x][y].size() == 1) {
+                    } else if (size == 1) {
                         map[x][y].offer(moveMap[x][y].poll());
                     }
                 }
