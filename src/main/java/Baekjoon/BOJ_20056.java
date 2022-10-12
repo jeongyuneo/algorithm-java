@@ -3,95 +3,109 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class BOJ_20056 {
+
+    static class FireBall {
+
+        int mass;
+        int speed;
+        int direction;
+
+        public FireBall(int mass, int speed, int direction) {
+            this.mass = mass;
+            this.speed = speed;
+            this.direction = direction;
+        }
+    }
+
+    private static int[][] directions;
 
     public static void main(String[] ars) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
-        int fireballNum = Integer.parseInt(stringTokenizer.nextToken());
+        int m = Integer.parseInt(stringTokenizer.nextToken());
         int k = Integer.parseInt(stringTokenizer.nextToken());
-        int[][] deltas = {{n - 1, 0}, {n - 1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, n - 1}, {0, n - 1}, {n - 1, n - 1}};
-        Queue<int[]>[][] map = new Queue[n][n];
-        Queue<int[]>[][] moveMap = new Queue[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                map[i][j] = new LinkedList<>();
-                moveMap[i][j] = new LinkedList<>();
-            }
-        }
-
-        int sum = 0;
-        for (int i = 0; i < fireballNum; i++) {
+        List<FireBall>[][] map = getMap(n);
+        directions = new int[][]{{n - 1, 0}, {n - 1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, n - 1}, {0, n - 1}, {n - 1, n - 1}};
+        int totalMass = 0;
+        for (int i = 0; i < m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int r = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int c = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-            int m = Integer.parseInt(stringTokenizer.nextToken());
-            int s = Integer.parseInt(stringTokenizer.nextToken());
-            int d = Integer.parseInt(stringTokenizer.nextToken());
-            sum += m;
-            map[r][c].offer(new int[]{m, s, d});
+            int mass = Integer.parseInt(stringTokenizer.nextToken());
+            int speed = Integer.parseInt(stringTokenizer.nextToken());
+            int direction = Integer.parseInt(stringTokenizer.nextToken());
+            map[r][c].add(new FireBall(mass, speed, direction));
+            totalMass += mass;
         }
 
-        for (int i = 0; i < k; i++) {
-            // step 1. 모든 파이어볼 이동
+        while (k-- > 0) {
+            List<FireBall>[][] copiedMap = getMap(n);
             for (int x = 0; x < n; x++) {
                 for (int y = 0; y < n; y++) {
-                    while (!map[x][y].isEmpty()) {
-                        int[] poll = map[x][y].poll();
-                        int s = poll[1];
-                        int d = poll[2];
-                        int dx = (x + deltas[d][0] * s) % n;
-                        int dy = (y + deltas[d][1] * s) % n;
-                        moveMap[dx][dy].offer(poll);
+                    if (map[x][y].size() > 0) {
+                        List<FireBall> current = map[x][y];
+                        for (FireBall fireBall : current) {
+                            int dx = (x + directions[fireBall.direction][0] * fireBall.speed) % n;
+                            int dy = (y + directions[fireBall.direction][1] * fireBall.speed) % n;
+                            copiedMap[dx][dy].add(fireBall);
+                        }
                     }
                 }
             }
 
-            // step 2. 2개 이상 파이어볼 네개로 나누기
-            for (int x = 0; x < n; x++) {
-                for (int y = 0; y < n; y++) {
-                    int size = moveMap[x][y].size();
-                    if (size > 1) {
-                        int odd = 0;
-                        int weight = 0;
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (copiedMap[i][j].size() >= 2) {
+                        List<FireBall> current = copiedMap[i][j];
+                        int mass = 0;
                         int speed = 0;
-                        while (!moveMap[x][y].isEmpty()) {
-                            int[] current = moveMap[x][y].poll();
-                            weight += current[0];
-                            speed += current[1];
-                            if (current[2] % 2 == 1) {
-                                odd++;
+                        int oddCount = 0;
+                        int size = current.size();
+                        for (FireBall fireBall : current) {
+                            mass += fireBall.mass;
+                            speed += fireBall.speed;
+                            if (fireBall.direction % 2 == 1) {
+                                oddCount++;
                             }
                         }
-                        sum -= weight;
-
-                        // step 4. 질량이 0인 파이어볼 소멸
-                        if ((weight /= 5) == 0) {
+                        totalMass -= mass;
+                        if ((mass /= 5) == 0) {
+                            copiedMap[i][j].clear();
                             continue;
                         }
-
+                        totalMass += mass * 4;
                         speed /= size;
-                        if (odd == 0 || odd == size) {
-                            for (int d = 0; d < 8; d += 2) {
-                                map[x][y].offer(new int[]{weight, speed, d});
+                        copiedMap[i][j].clear();
+                        if (oddCount == 0 || oddCount == size) {
+                            for (int nextDirection = 0; nextDirection <= 6; nextDirection += 2) {
+                                copiedMap[i][j].add(new FireBall(mass, speed, nextDirection));
                             }
                         } else {
-                            for (int d = 1; d < 8; d += 2) {
-                                map[x][y].offer(new int[]{weight, speed, d});
+                            for (int nextDirection = 1; nextDirection <= 7; nextDirection += 2) {
+                                copiedMap[i][j].add(new FireBall(mass, speed, nextDirection));
                             }
                         }
-                        sum += weight * 4;
-                    } else if (size == 1) {
-                        map[x][y].offer(moveMap[x][y].poll());
                     }
                 }
             }
+            map = copiedMap;
         }
-        System.out.println(sum);
+        System.out.println(totalMass);
+    }
+
+    private static List<FireBall>[][] getMap(int n) {
+        List<FireBall>[][] map = new List[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                map[i][j] = new ArrayList<>();
+            }
+        }
+        return map;
     }
 }
