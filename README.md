@@ -189,3 +189,9 @@
 - 7465 - [창용 마을 무리의 개수](src/main/java/SWExpertAcademy/SWEA_7465.java)
 - 9229 - [한빈이와 Spot Mart](src/main/java/SWExpertAcademy/SWEA_9229.java)
 </details>
+
+<details>
+    <summary>CodeTree</summary>
+
+- [예술성](src/main/java/CodeTree/CodeTree_예술성.java)
+</details>
