@@ -51,24 +51,22 @@ public class BOJ_21939 {
         for (int i = 0; i < m; i++) {
             StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             String operator = stringTokenizer.nextToken();
-            int number;
             if (operator.equals(RECOMMEND)) {
                 int x = Integer.parseInt(stringTokenizer.nextToken());
                 if (x == 1) {
-                    number = problems.last().number;
+                    answer.append(problems.last().number);
                 } else {
-                    number = problems.first().number;
+                    answer.append(problems.first().number);
                 }
-                answer.append(number).append("\n");
+                answer.append("\n");
             } else if (operator.equals(ADD)) {
-                number = Integer.parseInt(stringTokenizer.nextToken());
+                int number = Integer.parseInt(stringTokenizer.nextToken());
                 int level = Integer.parseInt(stringTokenizer.nextToken());
                 problems.add(new Problem(number, level));
                 PROBLEMS[number] = level;
             } else if (operator.equals(SOLVED)) {
-                number = Integer.parseInt(stringTokenizer.nextToken());
-                int level = PROBLEMS[number];
-                problems.remove(new Problem(number, level));
+                int number = Integer.parseInt(stringTokenizer.nextToken());
+                problems.remove(new Problem(number, PROBLEMS[number]));
             }
         }
         System.out.println(answer);
