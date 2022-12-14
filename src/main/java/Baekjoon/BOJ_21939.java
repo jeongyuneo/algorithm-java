@@ -75,13 +75,9 @@ public class BOJ_21939 {
     }
 
     private static void recommend(PriorityQueue<Problem> problems, StringBuilder answer) {
-        while (true) {
-            Problem problem = problems.peek();
-            if (problem.level == PROBLEMS[problem.number]) {
-                answer.append(problem.number);
-                break;
-            }
+        while (PROBLEMS[problems.peek().number] != problems.peek().level) {
             problems.poll();
         }
+        answer.append(problems.peek().number);
     }
 }
