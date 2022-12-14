@@ -33,16 +33,19 @@ public class BOJ_21939 {
     private static final String DELIMITER = " ";
     private static final int PROBLEM = 0;
     private static final int LEVEL = 1;
+    private static final int REMOVE = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
-        TreeSet<Problem> problems = new TreeSet<>();
+        PriorityQueue<Problem> problemsSortedAsc = new PriorityQueue<>();
+        PriorityQueue<Problem> problemsSortedDesc = new PriorityQueue<>(Comparator.reverseOrder());
         for (int i = 0; i < n; i++) {
             String[] inputs = bufferedReader.readLine().split(DELIMITER);
             int number = Integer.parseInt(inputs[PROBLEM]);
             int level = Integer.parseInt(inputs[LEVEL]);
-            problems.add(new Problem(number, level));
+            problemsSortedAsc.offer(new Problem(number, level));
+            problemsSortedDesc.offer(new Problem(number, level));
             PROBLEMS[number] = level;
         }
 
@@ -52,23 +55,33 @@ public class BOJ_21939 {
             StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             String operator = stringTokenizer.nextToken();
             if (operator.equals(RECOMMEND)) {
-                int x = Integer.parseInt(stringTokenizer.nextToken());
-                if (x == 1) {
-                    answer.append(problems.last().number);
+                if (Integer.parseInt(stringTokenizer.nextToken()) == 1) {
+                    recommend(problemsSortedDesc, answer);
                 } else {
-                    answer.append(problems.first().number);
+                    recommend(problemsSortedAsc, answer);
                 }
                 answer.append("\n");
             } else if (operator.equals(ADD)) {
                 int number = Integer.parseInt(stringTokenizer.nextToken());
                 int level = Integer.parseInt(stringTokenizer.nextToken());
-                problems.add(new Problem(number, level));
+                problemsSortedAsc.offer(new Problem(number, level));
+                problemsSortedDesc.offer(new Problem(number, level));
                 PROBLEMS[number] = level;
             } else if (operator.equals(SOLVED)) {
-                int number = Integer.parseInt(stringTokenizer.nextToken());
-                problems.remove(new Problem(number, PROBLEMS[number]));
+                PROBLEMS[Integer.parseInt(stringTokenizer.nextToken())] = REMOVE;
             }
         }
         System.out.println(answer);
+    }
+
+    private static void recommend(PriorityQueue<Problem> problems, StringBuilder answer) {
+        while (true) {
+            Problem problem = problems.peek();
+            if (problem.level == PROBLEMS[problem.number]) {
+                answer.append(problem.number);
+                break;
+            }
+            problems.poll();
+        }
     }
 }
