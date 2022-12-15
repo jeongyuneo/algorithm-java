@@ -1,6 +1,8 @@
 package Programmers;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Programmers_해시_Level2_전화번호목록 {
 
@@ -10,11 +12,14 @@ public class Programmers_해시_Level2_전화번호목록 {
         System.out.println(solution(new String[]{"12", "123", "1235", "567", "88"}));
     }
 
-    public static boolean solution(String[] phone_book) {
-        Arrays.sort(phone_book);
-        for (int i = 0; i < phone_book.length - 1; i++) {
-            if (phone_book[i + 1].startsWith(phone_book[i])) {
-                return false;
+    public static boolean solution(String[] phoneBook) {
+        Set<String> phones = new HashSet<>();
+        Collections.addAll(phones, phoneBook);
+        for (String phone : phoneBook) {
+            for (int i = 0; i < phone.length(); i++) {
+                if (phones.contains(phone.substring(0, i))) {
+                    return false;
+                }
             }
         }
         return true;
