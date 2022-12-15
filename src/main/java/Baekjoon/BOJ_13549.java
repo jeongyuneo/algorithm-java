@@ -15,29 +15,30 @@ public class BOJ_13549 {
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int k = Integer.parseInt(stringTokenizer.nextToken());
-        int[] space = new int[100001];
-        Arrays.fill(space, Integer.MAX_VALUE);
-        space[n] = 0;
+        boolean[] isVisited = new boolean[100001];
+        isVisited[n] = true;
         Deque<int[]> deque = new ArrayDeque<>();
         deque.offer(new int[]{n, 0});
         while (!deque.isEmpty()) {
             int[] current = deque.poll();
             int location = current[LOCATION];
+            int time = current[TIME];
             if (location == k) {
+                System.out.println(time);
                 break;
             }
-            int time = current[TIME];
+            int nextLocation = location * 2;
+            if (nextLocation <= 100000 && !isVisited[nextLocation]) {
+                isVisited[nextLocation] = true;
+                deque.offerFirst(new int[]{nextLocation, time});
+            }
             for (int move = -1; move <= 1; move += 2) {
-                if (location + move >= 0 && location + move <= 100000 && space[location + move] > time + 1) {
-                    space[location + move] = time + 1;
-                    deque.offer(new int[]{location + move, time + 1});
+                nextLocation = location + move;
+                if (nextLocation >= 0 && nextLocation <= 100000 && !isVisited[nextLocation]) {
+                    isVisited[nextLocation] = true;
+                    deque.offer(new int[]{nextLocation, time + 1});
                 }
             }
-            if (location * 2 <= 100000 && space[location * 2] > time) {
-                space[location * 2] = time;
-                deque.offerFirst(new int[]{location * 2, time});
-            }
         }
-        System.out.println(space[k]);
     }
 }
