@@ -13,15 +13,12 @@ public class Programmers_해시_Level2_위장 {
 
     public static int solution(String[][] clothes) {
         Map<String, Integer> closet = new HashMap<>();
-        for (String[] clothe : clothes) {
-            String type = clothe[TYPE];
-            closet.put(type, closet.getOrDefault(type, 0) + 1);
-        }
-
-        int answer = 1;
-        for (int countOfClothes : closet.values()) {
-            answer *= countOfClothes + 1;
-        }
-        return answer - 1;
+        Arrays.stream(clothes)
+                .map(clothe -> clothe[TYPE])
+                .forEach(type -> closet.put(type, closet.getOrDefault(type, 0) + 1));
+        return closet.values()
+                .stream()
+                .mapToInt(countOfClothes -> countOfClothes + 1)
+                .reduce(1, (a, b) -> a * b) - 1;
     }
 }
