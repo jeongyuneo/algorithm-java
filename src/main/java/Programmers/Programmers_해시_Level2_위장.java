@@ -2,8 +2,11 @@ package Programmers;
 
 import java.util.*;
 
+import static java.util.stream.Collectors.*;
+
 public class Programmers_해시_Level2_위장 {
 
+    private static final int NAME = 0;
     private static final int TYPE = 1;
 
     public static void main(String[] args) {
@@ -12,13 +15,11 @@ public class Programmers_해시_Level2_위장 {
     }
 
     public static int solution(String[][] clothes) {
-        Map<String, Integer> closet = new HashMap<>();
-        Arrays.stream(clothes)
-                .map(clothe -> clothe[TYPE])
-                .forEach(type -> closet.put(type, closet.getOrDefault(type, 0) + 1));
-        return closet.values()
+        return Arrays.stream(clothes)
+                .collect(groupingBy(clothe -> clothe[TYPE], mapping(clothe -> clothe[NAME], counting())))
+                .values()
                 .stream()
-                .mapToInt(countOfClothes -> countOfClothes + 1)
-                .reduce(1, (a, b) -> a * b) - 1;
+                .reduce(1L, (a, b) -> a * (b + 1))
+                .intValue() - 1;
     }
 }
