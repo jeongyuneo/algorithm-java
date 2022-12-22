@@ -1,7 +1,7 @@
 package Programmers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Programmers_해시_Level1_폰켓몬 {
 
@@ -12,10 +12,10 @@ public class Programmers_해시_Level1_폰켓몬 {
     }
 
     public static int solution(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> ponkemons = new HashSet<>();
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            ponkemons.add(num);
         }
-        return Math.min(map.size(), nums.length / 2);
+        return Math.min(ponkemons.size(), nums.length / 2);
     }
 }
