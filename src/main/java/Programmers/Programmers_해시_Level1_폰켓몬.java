@@ -1,7 +1,7 @@
 package Programmers;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class Programmers_해시_Level1_폰켓몬 {
 
@@ -12,10 +12,6 @@ public class Programmers_해시_Level1_폰켓몬 {
     }
 
     public static int solution(int[] nums) {
-        Set<Integer> ponkemons = new HashSet<>();
-        for (int num : nums) {
-            ponkemons.add(num);
-        }
-        return Math.min(ponkemons.size(), nums.length / 2);
+        return Math.min(Arrays.stream(nums).boxed().collect(Collectors.toSet()).size(), nums.length / 2);
     }
 }
