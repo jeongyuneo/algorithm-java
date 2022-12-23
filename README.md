@@ -155,6 +155,7 @@
   - [해시-폰켓몬](src/main/java/Programmers/Programmers_해시_Level1_폰켓몬.java)
   - [2021-kakao-신규 아이디 추천](src/main/java/Programmers/Programmers_2021_Kakao_Level1_신규아이디추천.java)
   - [2022-kakao-internship-성격 유형 검사하기](src/main/java/Programmers/Programmers_2022_Kakao_Internship_Level1_성격유형검사하기.java)
+  - [2022-kakao-신고 결과 받기](src/main/java/Programmers/Programmers_2022_Kakao_Level1_신고결과받기.java)
 - Level 2
   - [연습문제-N개의 최소공배수](src/main/java/Programmers/Programmers_연습문제_Level2_N개의최소공배수.java)
   - [힙-더 맵게](src/main/java/Programmers/Programmers_힙_Level2_더맵게.java)
