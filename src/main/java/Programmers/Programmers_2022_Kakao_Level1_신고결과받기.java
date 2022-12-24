@@ -13,34 +13,28 @@ public class Programmers_2022_Kakao_Level1_신고결과받기 {
     private static final int REPORTING_USER = 0;
     private static final int REPORTED_USER = 1;
 
-    public static int[] solution(String[] id_list, String[] reports, int k) {
-        Map<String, Set<String>> reportingIds = new HashMap<>();
-        for (String id : id_list) {
-            reportingIds.put(id, new HashSet<>());
-        }
-
+    public static int[] solution(String[] id_list, String[] report, int k) {
         List<String> ids = Arrays.asList(id_list);
-        int idCount = id_list.length;
-        int[] reportedCounts = new int[idCount];
-        for (String report : reports) {
-            String[] reportInfos = report.split(DELIMITER);
-            String reportingUser = reportInfos[REPORTING_USER];
-            String reportedUser = reportInfos[REPORTED_USER];
-            Set<String> reportInfo = reportingIds.get(reportedUser);
-            if (!reportInfo.contains(reportingUser)) {
-                reportedCounts[ids.indexOf(reportedUser)]++;
-            }
-            reportInfo.add(reportingUser);
-        }
+        Map<String, Set<String>> reportingInfos = new HashMap<>();
+        Map<String, Integer> reportedCounts = new HashMap<>();
+        Arrays.stream(report)
+                .distinct()
+                .forEach(reportInfo -> {
+                    String[] reportInfos = reportInfo.split(DELIMITER);
+                    String reportingId = reportInfos[REPORTING_USER];
+                    String reportedId = reportInfos[REPORTED_USER];
+                    Set<String> reportingIds = reportingInfos.getOrDefault(reportingId, new HashSet<>());
+                    reportingIds.add(reportedId);
+                    reportingInfos.put(reportingId, reportingIds);
+                    reportedCounts.put(reportedId, reportedCounts.getOrDefault(reportedId, 0) + 1);
+                });
 
-        int[] answer = new int[idCount];
-        for (int i = 0; i < idCount; i++) {
-            if (reportedCounts[i] >= k) {
-                for (String reportingUser : reportingIds.get(ids.get(i))) {
-                    answer[ids.indexOf(reportingUser)]++;
-                }
-            }
-        }
+        int[] answer = new int[id_list.length];
+        reportingInfos.keySet()
+                .forEach(reportingId -> reportingInfos.get(reportingId)
+                        .stream()
+                        .filter(reportedId -> reportedCounts.get(reportedId) >= k)
+                        .forEach(reportedId -> answer[ids.indexOf(reportingId)]++));
         return answer;
     }
 }
