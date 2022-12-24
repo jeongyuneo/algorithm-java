@@ -1,7 +1,6 @@
 package Programmers;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Programmers_2022_Kakao_Level1_신고결과받기 {
 
@@ -11,22 +10,31 @@ public class Programmers_2022_Kakao_Level1_신고결과받기 {
     }
 
     private static final String DELIMITER = " ";
+    private static final int REPORTING_USER = 0;
     private static final int REPORTED_USER = 1;
 
     public static int[] solution(String[] id_list, String[] reports, int k) {
-        List<String> reportsWithoutOverlap = Arrays.stream(reports).distinct().collect(Collectors.toList());
-        Map<String, Integer> reportedCounts = new HashMap<>();
-        reportsWithoutOverlap.stream()
-                .map(report -> report.split(DELIMITER)[REPORTED_USER])
-                .forEach(reportedId -> reportedCounts.put(reportedId, reportedCounts.getOrDefault(reportedId, 0) + 1));
-        return Arrays.stream(id_list)
-                .map(id -> reportsWithoutOverlap.stream()
-                        .filter(report -> report.startsWith(id + DELIMITER))
-                        .collect(Collectors.toList())
-                        .stream()
-                        .filter(report -> reportedCounts.getOrDefault(report.split(DELIMITER)[REPORTED_USER], 0) >= k)
-                        .count())
-                .mapToInt(Long::intValue)
-                .toArray();
+        Map<String, Set<String>> reportedInfos = new HashMap<>();
+        Map<String, Integer> ids = new HashMap<>();
+        for (int i = 0; i < id_list.length; i++) {
+            String id = id_list[i];
+            ids.put(id, i);
+            reportedInfos.put(id, new HashSet<>());
+        }
+
+        for (String report : reports) {
+            String[] reportInfos = report.split(DELIMITER);
+            reportedInfos.get(reportInfos[REPORTED_USER]).add(reportInfos[REPORTING_USER]);
+        }
+
+        int[] answer = new int[id_list.length];
+        for (Set<String> reportingIds : reportedInfos.values()) {
+            if (reportingIds.size() >= k) {
+                for (String reportingId : reportingIds) {
+                    answer[ids.get(reportingId)]++;
+                }
+            }
+        }
+        return answer;
     }
 }
