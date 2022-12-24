@@ -14,28 +14,30 @@ public class Programmers_2022_Kakao_Level1_신고결과받기 {
     private static final int REPORTED_USER = 1;
 
     public static int[] solution(String[] id_list, String[] reports, int k) {
-        int[] answer = new int[id_list.length];
         Map<String, Set<String>> reportingIds = new HashMap<>();
-        Map<String, Integer> reportedIds = new HashMap<>();
         for (String id : id_list) {
             reportingIds.put(id, new HashSet<>());
-            reportedIds.put(id, 0);
         }
 
+        List<String> ids = Arrays.asList(id_list);
+        int idCount = id_list.length;
+        int[] reportedCounts = new int[idCount];
         for (String report : reports) {
             String[] reportInfos = report.split(DELIMITER);
+            String reportingUser = reportInfos[REPORTING_USER];
             String reportedUser = reportInfos[REPORTED_USER];
-            Set<String> reportInfo = reportingIds.get(reportInfos[REPORTING_USER]);
-            if (!reportInfo.contains(reportedUser)) {
-                reportedIds.put(reportedUser, reportedIds.get(reportedUser) + 1);
+            Set<String> reportInfo = reportingIds.get(reportedUser);
+            if (!reportInfo.contains(reportingUser)) {
+                reportedCounts[ids.indexOf(reportedUser)]++;
             }
-            reportInfo.add(reportedUser);
+            reportInfo.add(reportingUser);
         }
 
-        for (int i = 0; i < id_list.length; i++) {
-            for (String reportedId : reportingIds.get(id_list[i])) {
-                if (reportedIds.get(reportedId) >= k) {
-                    answer[i]++;
+        int[] answer = new int[idCount];
+        for (int i = 0; i < idCount; i++) {
+            if (reportedCounts[i] >= k) {
+                for (String reportingUser : reportingIds.get(ids.get(i))) {
+                    answer[ids.indexOf(reportingUser)]++;
                 }
             }
         }
