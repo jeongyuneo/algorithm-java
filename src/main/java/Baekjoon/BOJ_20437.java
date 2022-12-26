@@ -3,10 +3,7 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BOJ_20437 {
 
@@ -23,23 +20,17 @@ public class BOJ_20437 {
                 continue;
             }
 
-            Map<Character, List<Integer>> indexInfo = new HashMap<>();
-            int[] counts = new int[26];
-            for (int j = 0, wLength = w.length; j < wLength; j++) {
-                char c = w[j];
-                indexInfo.computeIfAbsent(c, index -> new ArrayList<>()).add(j);
-                counts[c - 97]++;
-            }
-
+            Map<Character, Queue<Integer>> indexInfo = new HashMap<>();
             int minLength = w.length;
             int maxLength = -1;
-            for (Map.Entry<Character, List<Integer>> indexes : indexInfo.entrySet()) {
-                if (counts[indexes.getKey() - 97] >= k) {
-                    List<Integer> index = indexes.getValue();
-                    for (int j = 0; j <= index.size() - k; j++) {
-                        minLength = Math.min(minLength, index.get(j + k - 1) - index.get(j) + 1);
-                        maxLength = Math.max(maxLength, index.get(j + k - 1) - index.get(j) + 1);
-                    }
+            for (int lastIndex = 0, wLength = w.length; lastIndex < wLength; lastIndex++) {
+                char c = w[lastIndex];
+                indexInfo.computeIfAbsent(c, index -> new ArrayDeque<>()).offer(lastIndex);
+                Queue<Integer> indexes = indexInfo.get(c);
+                if (indexes.size() >= k) {
+                    int length = lastIndex - indexes.poll() + 1;
+                    minLength = Math.min(minLength, length);
+                    maxLength = Math.max(maxLength, length);
                 }
             }
 
