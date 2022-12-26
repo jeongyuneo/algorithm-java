@@ -1,6 +1,7 @@
 package Programmers;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Programmers_2022_Kakao_Level1_신고결과받기 {
 
@@ -16,25 +17,23 @@ public class Programmers_2022_Kakao_Level1_신고결과받기 {
     public static int[] solution(String[] id_list, String[] reports, int k) {
         Map<String, Set<String>> reportedInfos = new HashMap<>();
         Map<String, Integer> ids = new HashMap<>();
-        for (int i = 0; i < id_list.length; i++) {
-            String id = id_list[i];
-            ids.put(id, i);
-            reportedInfos.put(id, new HashSet<>());
-        }
+        IntStream.range(0, id_list.length)
+                .forEach(i -> {
+                    String id = id_list[i];
+                    ids.put(id, i);
+                    reportedInfos.put(id, new HashSet<>());
+                });
 
-        for (String report : reports) {
-            String[] reportInfos = report.split(DELIMITER);
-            reportedInfos.get(reportInfos[REPORTED_USER]).add(reportInfos[REPORTING_USER]);
-        }
+        Arrays.stream(reports)
+                .map(report -> report.split(DELIMITER))
+                .forEach(reportInfos -> reportedInfos.get(reportInfos[REPORTED_USER]).add(reportInfos[REPORTING_USER]));
 
         int[] answer = new int[id_list.length];
-        for (Set<String> reportingIds : reportedInfos.values()) {
-            if (reportingIds.size() >= k) {
-                for (String reportingId : reportingIds) {
-                    answer[ids.get(reportingId)]++;
-                }
-            }
-        }
+        reportedInfos.values()
+                .stream()
+                .filter(reportingIds -> reportingIds.size() >= k)
+                .flatMap(Collection::stream)
+                .forEach(reportingId -> answer[ids.get(reportingId)]++);
         return answer;
     }
 }
