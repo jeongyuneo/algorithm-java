@@ -10,20 +10,18 @@ public class Programmers_스택큐_Level1_같은숫자는싫어 {
     }
 
     public static int[] solution(int[] arr) {
-        Deque<Integer> deque = new ArrayDeque<>();
-        deque.offer(arr[0]);
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(arr[0]);
         for (int i = 1, arrLength = arr.length; i < arrLength; i++) {
-            int number = arr[i];
-            if (deque.peekLast() == number) {
+            if (arr[i] == arr[i - 1]) {
                 continue;
             }
-            deque.offer(number);
+            numbers.add(arr[i]);
         }
 
-        int[] answer = new int[deque.size()];
-        int index = 0;
-        while (!deque.isEmpty()) {
-            answer[index++] = deque.poll();
+        int[] answer = new int[numbers.size()];
+        for (int i = 0; i < numbers.size(); i++) {
+            answer[i] = numbers.get(i);
         }
         return answer;
     }
