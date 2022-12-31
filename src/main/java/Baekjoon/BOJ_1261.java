@@ -3,13 +3,14 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class BOJ_1261 {
 
     private static final int[][] DELTAS = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    private static final int WALL = 1;
     private static final int BREAKING_COUNT = 2;
 
     public static void main(String[] args) throws IOException {
@@ -25,11 +26,11 @@ public class BOJ_1261 {
                 map[i][j] = readLine.charAt(j) - 48;
             }
         }
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(Comparator.comparing(location -> location[BREAKING_COUNT]));
-        priorityQueue.offer(new int[]{0, 0, 0});
+        Deque<int[]> deque = new ArrayDeque<>();
+        deque.offer(new int[]{0, 0, 0});
         isVisited[0][0] = true;
-        while (!priorityQueue.isEmpty()) {
-            int[] current = priorityQueue.poll();
+        while (!deque.isEmpty()) {
+            int[] current = deque.poll();
             int x = current[0];
             int y = current[1];
             int count = current[BREAKING_COUNT];
@@ -41,8 +42,12 @@ public class BOJ_1261 {
                 int dx = x + delta[0];
                 int dy = y + delta[1];
                 if (dx >= 0 && dx < n && dy >= 0 && dy < m && !isVisited[dx][dy]) {
+                    if (map[dx][dy] == WALL) {
+                        deque.offer(new int[]{dx, dy, count + 1});
+                    } else {
+                        deque.offerFirst(new int[]{dx, dy, count});
+                    }
                     isVisited[dx][dy] = true;
-                    priorityQueue.offer(new int[]{dx, dy, map[dx][dy] + count});
                 }
             }
         }
