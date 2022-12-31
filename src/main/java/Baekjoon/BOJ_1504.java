@@ -33,8 +33,9 @@ public class BOJ_1504 {
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int v1 = Integer.parseInt(stringTokenizer.nextToken()) - 1;
         int v2 = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-        int minDistance = Math.min(getDistance(undirectedGraph, distances, 0, v1) + getDistance(undirectedGraph, distances, v1, v2) + getDistance(undirectedGraph, distances, v2, n - 1),
-                getDistance(undirectedGraph, distances, 0, v2) + getDistance(undirectedGraph, distances, v2, v1) + getDistance(undirectedGraph, distances, v1, n - 1));
+        int distanceFromV1toV2 = getDistance(undirectedGraph, distances, v1, v2);
+        int minDistance = Math.min(getDistance(undirectedGraph, distances, 0, v1) + distanceFromV1toV2 + getDistance(undirectedGraph, distances, v2, n - 1),
+                getDistance(undirectedGraph, distances, 0, v2) + distanceFromV1toV2 + getDistance(undirectedGraph, distances, v1, n - 1));
         if (minDistance < MAX_ACCUMULATED_DISTANCE) {
             System.out.println(minDistance);
         } else {
