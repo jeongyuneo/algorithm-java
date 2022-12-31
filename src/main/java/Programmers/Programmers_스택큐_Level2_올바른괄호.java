@@ -1,7 +1,5 @@
 package Programmers;
 
-import java.util.Stack;
-
 public class Programmers_스택큐_Level2_올바른괄호 {
 
     public static void main(String[] args) {
@@ -12,22 +10,18 @@ public class Programmers_스택큐_Level2_올바른괄호 {
     }
 
     private static final char OPENING_BRACKET = '(';
-    private static final char CLOSING_BRACKET = ')';
 
     public static boolean solution(String s) {
-        Stack<Character> stack = new Stack<>();
+        int bracket = 0;
         for (int i = 0; i < s.length(); i++) {
-            char current = s.charAt(i);
-            if (current == CLOSING_BRACKET) {
-                if (!stack.isEmpty() && stack.peek() == OPENING_BRACKET) {
-                    stack.pop();
-                } else {
+            if (s.charAt(i) == OPENING_BRACKET) {
+                bracket++;
+            } else {
+                if (--bracket < 0) {
                     return false;
                 }
-            } else {
-                stack.push(current);
             }
         }
-        return stack.isEmpty();
+        return bracket == 0;
     }
 }
