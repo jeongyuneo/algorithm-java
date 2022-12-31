@@ -13,6 +13,7 @@
 - 1182 - [부분수열의 합](src/main/java/Baekjoon/BOJ_1182.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
+- 1261 - [알고스팟](src/main/java/Baekjoon/BOJ_1261.java)
 - 1269 - [대칭 차집합](src/main/java/Baekjoon/BOJ_1269.java)
 - 1463 - [1로 만들기](src/main/java/Baekjoon/BOJ_1463.java)
 - 1504 - [특정한 최단 경로](src/main/java/Baekjoon/BOJ_1504.java)
