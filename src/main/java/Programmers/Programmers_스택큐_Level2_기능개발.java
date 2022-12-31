@@ -10,17 +10,15 @@ public class Programmers_스택큐_Level2_기능개발 {
     }
 
     public static int[] solution(int[] progresses, int[] speeds) {
-        List<Integer> answer = new ArrayList<>();
-        Queue<Integer> doneProgresses = new ArrayDeque<>();
+        int[] distributionDays = new int[100];
+        int previousDistribution = 0;
         for (int i = 0; i < progresses.length; i++) {
-            int duration = (int) Math.ceil((100 - progresses[i]) / (double) speeds[i]);
-            if (!doneProgresses.isEmpty() && doneProgresses.peek() < duration) {
-                answer.add(doneProgresses.size());
-                doneProgresses.clear();
+            int distribution = (int) Math.ceil((100 - progresses[i]) / (double) speeds[i]);
+            if (previousDistribution < distribution) {
+                previousDistribution = distribution;
             }
-            doneProgresses.offer(duration);
+            distributionDays[previousDistribution]++;
         }
-        answer.add(doneProgresses.size());
-        return answer.stream().mapToInt(Integer::intValue).toArray();
+        return Arrays.stream(distributionDays).filter(distributionDay -> distributionDay != 0).toArray();
     }
 }
