@@ -47,13 +47,12 @@ public class BOJ_1238 {
         while (!PRIORITY_QUEUE.isEmpty()) {
             int[] current = PRIORITY_QUEUE.poll();
             int number = current[NUMBER];
-            int time = current[TIME];
             if (number == destination) {
-                return time;
+                return current[TIME];
             }
             for (int[] town : towns[number]) {
                 int nextTown = town[NUMBER];
-                int nextTime = town[TIME] + time;
+                int nextTime = distances[number] + town[TIME];
                 if (distances[nextTown] > nextTime) {
                     distances[nextTown] = nextTime;
                     PRIORITY_QUEUE.offer(new int[]{nextTown, nextTime});
