@@ -13,19 +13,16 @@ public class BOJ_1158 {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         StringBuilder stringBuilder = new StringBuilder();
-
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int k = Integer.parseInt(stringTokenizer.nextToken());
-
         List<Integer> array = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
             array.add(i);
         }
-        int idx = k-1;
+        int idx = k - 1;
         stringBuilder.append("<");
         while (array.size() > 0) {
-            stringBuilder.append(array.get(idx))
-                    .append(", ");
+            stringBuilder.append(array.get(idx)).append(", ");
             array.remove(idx--);
             int cnt = 0;
             while (cnt < k) {
@@ -35,7 +32,7 @@ public class BOJ_1158 {
                 }
             }
         }
-        stringBuilder.setLength(stringBuilder.length()-2);
+        stringBuilder.setLength(stringBuilder.length() - 2);
         stringBuilder.append(">");
         System.out.println(stringBuilder);
     }
