@@ -15,6 +15,7 @@
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
 - 1269 - [대칭 차집합](src/main/java/Baekjoon/BOJ_1269.java)
 - 1463 - [1로 만들기](src/main/java/Baekjoon/BOJ_1463.java)
+- 1504 - [특정한 최단 경로](src/main/java/Baekjoon/BOJ_1504.java)
 - 1520 - [내리막 길](src/main/java/Baekjoon/BOJ_1520.java)
 - 1541 - [잃어버린 괄호](src/main/java/Baekjoon/BOJ_1541.java)
 - 1592 - [영식이와 친구들](src/main/java/Baekjoon/BOJ_1592.java)
