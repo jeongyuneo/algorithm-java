@@ -24,6 +24,7 @@
 - 1654 - [랜선 자르기](src/main/java/Baekjoon/BOJ_1654.java)
 - 1697 - [숨바꼭질](src/main/java/Baekjoon/BOJ_1697.java)
 - 1715 - [카드 정렬하기](src/main/java/Baekjoon/BOJ_1715.java)
+- 1717 - [집합의 표현](src/main/java/Baekjoon/BOJ_1717.java)
 - 1753 - [최단경로](src/main/java/Baekjoon/BOJ_1753.java)
 - 1755 - [숫자놀이](src/main/java/Baekjoon/BOJ_1755.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
