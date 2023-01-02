@@ -10,19 +10,20 @@ public class BOJ_10775 {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int gateNum = Integer.parseInt(bufferedReader.readLine());
         int airPlaneNum = Integer.parseInt(bufferedReader.readLine());
-        int[] tries = new int[gateNum + 1];
-        int dockingCount = 0;
-        for (int i = 0; i < airPlaneNum; i++) {
+        int[] parents = new int[gateNum + 1];
+        for (int i = 1; i <= gateNum; i++) {
+            parents[i] = i;
+        }
+        int dockingCount;
+        for (dockingCount = 0; dockingCount < airPlaneNum; dockingCount++) {
             int airplane = Integer.parseInt(bufferedReader.readLine());
-            while (tries[airplane] != 0) {
-                airplane -= tries[airplane]++;
+            while (parents[airplane] != airplane) {
+                airplane = parents[airplane]--;
             }
-            if (airplane != 0) {
-                tries[airplane]++;
-                dockingCount++;
-            } else {
+            if (airplane == 0) {
                 break;
             }
+            parents[airplane]--;
         }
         System.out.println(dockingCount);
     }
