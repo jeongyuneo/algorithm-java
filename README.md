@@ -80,6 +80,7 @@
 - 3187 - [양치기 꿍](src/main/java/Baekjoon/BOJ_3187.java)
 - 3190 - [뱀](src/main/java/Baekjoon/BOJ_3190.java)
 - 3273 - [두 수의 합](src/main/java/Baekjoon/BOJ_3273.java)
+- 4195 - [친구 네트워크](src/main/java/Baekjoon/BOJ_4195.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 4963 - [섬의 개수](src/main/java/Baekjoon/BOJ_4963.java)
 - 5972 - [택배 배송](src/main/java/Baekjoon/BOJ_5972.java)
