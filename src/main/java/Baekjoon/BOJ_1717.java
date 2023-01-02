@@ -45,12 +45,7 @@ public class BOJ_1717 {
     }
 
     private static void joinSet(int a, int b) {
-        int rootOfA = findSet(a);
-        int rootOfB = findSet(b);
-        if (rootOfA == rootOfB) {
-            return;
-        }
-        roots[rootOfA] = rootOfB;
+        roots[findSet(a)] = findSet(b);
     }
 
     private static boolean isSameSet(int a, int b) {
