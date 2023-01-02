@@ -28,20 +28,21 @@ public class BOJ_4195 {
                 StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
                 String first = stringTokenizer.nextToken();
                 String second = stringTokenizer.nextToken();
-                if (!FRIENDS.containsKey(first)) {
-                    FRIENDS.put(first, root);
-                    roots[root] = root;
-                    friends[root++]++;
-                }
-                if (!FRIENDS.containsKey(second)) {
-                    FRIENDS.put(second, root);
-                    roots[root] = root;
-                    friends[root++]++;
-                }
+                root = getRoot(root, first);
+                root = getRoot(root, second);
                 join(FRIENDS.get(first), FRIENDS.get(second));
             }
         }
         System.out.println(ANSWER);
+    }
+
+    private static int getRoot(int root, String name) {
+        if (!FRIENDS.containsKey(name)) {
+            FRIENDS.put(name, root);
+            roots[root] = root;
+            friends[root++]++;
+        }
+        return root;
     }
 
     private static void join(int first, int second) {
