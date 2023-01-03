@@ -3,73 +3,79 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 public class BOJ_1939 {
 
-    private static final Queue<Integer> QUEUE = new ArrayDeque<>();
-    private static final int NUMBER = 0;
-    private static final int LIMIT = 1;
+    private static final int FROM = 0;
+    private static final int TO = 1;
+    private static final int LIMIT = 2;
 
-    private static List<int[]>[] islands;
-    private static boolean[] isVisited;
-    private static int start;
-    private static int end;
+    private static int[] roots;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int m = Integer.parseInt(stringTokenizer.nextToken());
-        islands = new List[n];
-        for (int i = 0; i < n; i++) {
-            islands[i] = new ArrayList<>();
-        }
-        int minWeight = 1000000001;
-        int maxWeight = 0;
+        PriorityQueue<int[]> islands = new PriorityQueue<>((island1, island2) -> island2[LIMIT] - island1[LIMIT]);
         for (int i = 0; i < m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int a = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int b = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int c = Integer.parseInt(stringTokenizer.nextToken());
-            islands[a].add(new int[]{b, c});
-            islands[b].add(new int[]{a, c});
-            minWeight = Math.min(minWeight, c);
-            maxWeight = Math.max(maxWeight, c);
+            islands.offer(new int[]{a, b, c});
         }
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        start = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-        end = Integer.parseInt(stringTokenizer.nextToken()) - 1;
+        int start = Integer.parseInt(stringTokenizer.nextToken()) - 1;
+        int end = Integer.parseInt(stringTokenizer.nextToken()) - 1;
 
-        isVisited = new boolean[n];
-        while (minWeight <= maxWeight) {
-            int midWeight = (minWeight + maxWeight) / 2;
-            if (canPathAllBridges(midWeight)) {
-                minWeight = midWeight + 1;
-            } else {
-                maxWeight = midWeight - 1;
-            }
-        }
-        System.out.println(minWeight);
+        initialize(n);
+        System.out.println(getMaxWeight(islands, start, end));
     }
 
-    private static boolean canPathAllBridges(int weight) {
-        Arrays.fill(isVisited, false);
-        QUEUE.clear();
-        QUEUE.offer(start);
-        while (!QUEUE.isEmpty()) {
-            int island = QUEUE.poll();
-            if (island == end) {
-                return true;
+    private static void initialize(int n) {
+        roots = new int[n];
+        for (int i = 0; i < n; i++) {
+            roots[i] = i;
+        }
+    }
+
+    private static int getMaxWeight(PriorityQueue<int[]> islands, int start, int end) {
+        int maxWeight = Integer.MAX_VALUE;
+        while (!islands.isEmpty()) {
+            if (isSameSet(start, end)) {
+                break;
             }
-            for (int[] next : islands[island]) {
-                int nextIsland = next[NUMBER];
-                if (!isVisited[nextIsland] && weight < next[LIMIT]) {
-                    isVisited[nextIsland] = true;
-                    QUEUE.offer(nextIsland);
-                }
+            int[] island = islands.poll();
+            if (canJoin(island[FROM], island[TO])) {
+                maxWeight = Math.min(maxWeight, island[LIMIT]);
             }
         }
-        return false;
+        return maxWeight;
+    }
+
+    private static boolean isSameSet(int from, int to) {
+        int fromRoot = find(from);
+        int toRoot = find(to);
+        return fromRoot == toRoot;
+    }
+
+    private static boolean canJoin(int from, int to) {
+        int fromRoot = find(from);
+        int toRoot = find(to);
+        if (fromRoot == toRoot) {
+            return false;
+        }
+        roots[toRoot] = fromRoot;
+        return true;
+    }
+
+    private static int find(int element) {
+        if (roots[element] == element) {
+            return element;
+        }
+        return roots[element] = find(roots[element]);
     }
 }
