@@ -7,18 +7,26 @@ import java.util.*;
 
 public class BOJ_1939 {
 
+    private static final Queue<Integer> QUEUE = new ArrayDeque<>();
     private static final int NUMBER = 0;
     private static final int LIMIT = 1;
+
+    private static List<int[]>[] islands;
+    private static boolean[] isVisited;
+    private static int start;
+    private static int end;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int m = Integer.parseInt(stringTokenizer.nextToken());
-        List<int[]>[] islands = new List[n];
+        islands = new List[n];
         for (int i = 0; i < n; i++) {
             islands[i] = new ArrayList<>();
         }
+        int minWeight = 1000000001;
+        int maxWeight = 0;
         for (int i = 0; i < m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int a = Integer.parseInt(stringTokenizer.nextToken()) - 1;
@@ -26,30 +34,42 @@ public class BOJ_1939 {
             int c = Integer.parseInt(stringTokenizer.nextToken());
             islands[a].add(new int[]{b, c});
             islands[b].add(new int[]{a, c});
+            minWeight = Math.min(minWeight, c);
+            maxWeight = Math.max(maxWeight, c);
         }
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        int start = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-        int end = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-        int[] maximumWeights = new int[n];
-        maximumWeights[start] = Integer.MAX_VALUE;
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((island1, island2) -> island2[LIMIT] - island1[LIMIT]);
-        priorityQueue.add(new int[]{start, Integer.MAX_VALUE});
-        while (!priorityQueue.isEmpty()) {
-            int[] current = priorityQueue.poll();
-            int island = current[NUMBER];
-            int limit = current[LIMIT];
-            if (maximumWeights[island] > limit) {
-                continue;
+        start = Integer.parseInt(stringTokenizer.nextToken()) - 1;
+        end = Integer.parseInt(stringTokenizer.nextToken()) - 1;
+
+        isVisited = new boolean[n];
+        while (minWeight <= maxWeight) {
+            int midWeight = (minWeight + maxWeight) / 2;
+            if (canPathAllBridges(midWeight)) {
+                minWeight = midWeight + 1;
+            } else {
+                maxWeight = midWeight - 1;
+            }
+        }
+        System.out.println(minWeight);
+    }
+
+    private static boolean canPathAllBridges(int weight) {
+        Arrays.fill(isVisited, false);
+        QUEUE.clear();
+        QUEUE.offer(start);
+        while (!QUEUE.isEmpty()) {
+            int island = QUEUE.poll();
+            if (island == end) {
+                return true;
             }
             for (int[] next : islands[island]) {
                 int nextIsland = next[NUMBER];
-                int nextLimit = Math.min(next[LIMIT], limit);
-                if (maximumWeights[nextIsland] < nextLimit) {
-                    maximumWeights[nextIsland] = nextLimit;
-                    priorityQueue.offer(new int[]{nextIsland, nextLimit});
+                if (!isVisited[nextIsland] && weight < next[LIMIT]) {
+                    isVisited[nextIsland] = true;
+                    QUEUE.offer(nextIsland);
                 }
             }
         }
-        System.out.println(maximumWeights[end]);
+        return false;
     }
 }
