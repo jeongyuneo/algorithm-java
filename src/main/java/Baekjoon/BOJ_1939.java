@@ -43,33 +43,26 @@ public class BOJ_1939 {
     }
 
     private static int getMaxWeight(PriorityQueue<int[]> islands, int start, int end) {
-        int maxWeight = Integer.MAX_VALUE;
         while (!islands.isEmpty()) {
-            if (isSameSet(start, end)) {
-                break;
-            }
             int[] island = islands.poll();
-            if (canJoin(island[FROM], island[TO])) {
-                maxWeight = Math.min(maxWeight, island[LIMIT]);
+            join(island[FROM], island[TO]);
+            if (isSameSet(start, end)) {
+                return island[LIMIT];
             }
         }
-        return maxWeight;
+        return 0;
     }
 
     private static boolean isSameSet(int from, int to) {
-        int fromRoot = find(from);
-        int toRoot = find(to);
-        return fromRoot == toRoot;
+        return find(from) == find(to);
     }
 
-    private static boolean canJoin(int from, int to) {
+    private static void join(int from, int to) {
         int fromRoot = find(from);
         int toRoot = find(to);
-        if (fromRoot == toRoot) {
-            return false;
+        if (fromRoot != toRoot) {
+            roots[toRoot] = fromRoot;
         }
-        roots[toRoot] = fromRoot;
-        return true;
     }
 
     private static int find(int element) {
