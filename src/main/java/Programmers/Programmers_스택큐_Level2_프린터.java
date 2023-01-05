@@ -1,7 +1,7 @@
 package Programmers;
 
 import java.util.ArrayDeque;
-import java.util.PriorityQueue;
+import java.util.Arrays;
 import java.util.Queue;
 
 public class Programmers_스택큐_Level2_프린터 {
@@ -11,39 +11,24 @@ public class Programmers_스택큐_Level2_프린터 {
         System.out.println(solution(new int[]{1, 1, 9, 1, 1, 1}, 0));
     }
 
-    static class Document implements Comparable<Document> {
-
-        int location;
-        int priority;
-
-        public Document(int location, int priority) {
-            this.location = location;
-            this.priority = priority;
-        }
-
-        @Override
-        public int compareTo(Document o) {
-            return o.priority - priority;
-        }
-    }
-
     public static int solution(int[] priorities, int location) {
-        Queue<Document> printer = new ArrayDeque<>();
-        for (int i = 0; i < priorities.length; i++) {
-            int priority = priorities[i];
-            printer.offer(new Document(i, priority));
+        int order = 0;
+        Queue<Integer> printer = new ArrayDeque<>();
+        for (int priority : priorities) {
+            printer.offer(priority);
         }
-        int order = 1;
+        Arrays.sort(priorities);
+        int documentNumber = priorities.length - 1;
         while (!printer.isEmpty()) {
-            Document document = printer.poll();
-            PriorityQueue<Document> sortedWaitingDocuments = new PriorityQueue<>(printer);
-            if (!sortedWaitingDocuments.isEmpty() && document.priority < sortedWaitingDocuments.poll().priority) {
-                printer.offer(document);
-            } else {
-                if (document.location == location) {
+            int priority = printer.poll();
+            if (priority == priorities[documentNumber - order]) {
+                order++;
+                if (--location < 0) {
                     break;
                 }
-                order++;
+            } else {
+                printer.add(priority);
+                location = (location + printer.size() - 1) % printer.size();
             }
         }
         return order;
