@@ -16,7 +16,7 @@ public class Programmers_스택큐_Level2_주식가격 {
         int priceLength = prices.length;
         int[] answer = new int[priceLength];
         Stack<int[]> stocks = new Stack<>();
-        for (int current = 0; current < priceLength; current++) {
+        for (int current = 0; current < priceLength - 1; current++) {
             answer[current] = priceLength - current - 1;
             while (!stocks.isEmpty() && stocks.peek()[PRICE] > prices[current]) {
                 int reductionIndex = stocks.pop()[INDEX];
