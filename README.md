@@ -135,6 +135,7 @@
 - 16918 - [봄버맨](src/main/java/Baekjoon/BOJ_16918.java)
 - 16926 - [배열 돌리기1](src/main/java/Baekjoon/BOJ_16926.java)
 - 17140 - [이차원 배열과 연산](src/main/java/Baekjoon/BOJ_17140.java)
+- 17141 - [연구소 2](src/main/java/Baekjoon/BOJ_17141.java)
 - 17142 - [연구소 3](src/main/java/Baekjoon/BOJ_17142.java)
 - 17143 - [낚시왕](src/main/java/Baekjoon/BOJ_17143.java)
 - 17144 - [미세먼지 안녕!](src/main/java/Baekjoon/BOJ_17144.java)
