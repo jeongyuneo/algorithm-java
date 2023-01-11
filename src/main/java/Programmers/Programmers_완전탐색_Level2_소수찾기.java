@@ -55,7 +55,7 @@ public class Programmers_완전탐색_Level2_소수찾기 {
         Arrays.fill(IS_PRIME_NUMBER, true);
         IS_PRIME_NUMBER[0] = false;
         IS_PRIME_NUMBER[1] = false;
-        for (int i = 2, half = MAXIMUM_SIZE / 2; i < half; i++) {
+        for (int i = 2, sqrt = (int)Math.sqrt(MAXIMUM_SIZE); i < sqrt; i++) {
             if (!IS_PRIME_NUMBER[i]) {
                 continue;
             }
