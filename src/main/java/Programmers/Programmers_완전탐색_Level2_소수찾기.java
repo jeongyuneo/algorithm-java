@@ -32,7 +32,7 @@ public class Programmers_완전탐색_Level2_소수찾기 {
             permutation(0);
         }
         return (int) NUMBERS.stream()
-                .filter(number -> IS_PRIME_NUMBER[number])
+                .filter(number -> number == 2 || number % 2 != 0 && IS_PRIME_NUMBER[number])
                 .count();
     }
 
@@ -55,7 +55,7 @@ public class Programmers_완전탐색_Level2_소수찾기 {
         Arrays.fill(IS_PRIME_NUMBER, true);
         IS_PRIME_NUMBER[0] = false;
         IS_PRIME_NUMBER[1] = false;
-        for (int i = 2, sqrt = (int)Math.sqrt(MAXIMUM_SIZE); i < sqrt; i++) {
+        for (int i = 3, sqrt = (int) Math.sqrt(MAXIMUM_SIZE); i < sqrt; i += 2) {
             if (!IS_PRIME_NUMBER[i]) {
                 continue;
             }
