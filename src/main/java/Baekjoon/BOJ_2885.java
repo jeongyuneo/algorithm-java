@@ -28,12 +28,9 @@ public class BOJ_2885 {
 
     private static void split(int k, int size) {
         int count = 0;
-        while ((size >> count) > 0) {
-            if (k % (size >> count) == 0) {
-                ANSWER.append(count);
-                return;
-            }
+        while (k % (size >> count) != 0) {
             count++;
         }
+        ANSWER.append(count);
     }
 }
