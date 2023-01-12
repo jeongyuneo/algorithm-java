@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 public class BOJ_2885 {
 
     private static final StringBuilder ANSWER = new StringBuilder();
-    private static final int MAX_SIZE = 1000000;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -17,25 +16,20 @@ public class BOJ_2885 {
     }
 
     private static int getChocolateSize(int k) {
-        int size = 1;
-        for (int i = 0; i < MAX_SIZE; i++) {
-            int chocolate = size << i;
+        int chocolate = 1;
+        while (true) {
             if (chocolate >= k) {
                 ANSWER.append(chocolate).append(" ");
                 return chocolate;
             }
+            chocolate <<= 1;
         }
-        return 0;
     }
 
     private static void split(int k, int size) {
-        if (k % size == 0) {
-            ANSWER.append(0);
-            return;
-        }
-        int count = 1;
-        while ((size >>= 1) > 0) {
-            if (k % size == 0) {
+        int count = 0;
+        while ((size >> count) > 0) {
+            if (k % (size >> count) == 0) {
                 ANSWER.append(count);
                 return;
             }
