@@ -102,6 +102,7 @@
 - 10815 - [숫자 카드](src/main/java/Baekjoon/BOJ_10815.java)
 - 10775 - [공항](src/main/java/Baekjoon/BOJ_10775.java)
 - 10816 - [숫자 카드 2](src/main/java/Baekjoon/BOJ_10816.java)
+- 11000 - [강의실 배정](src/main/java/Baekjoon/BOJ_11000.java)
 - 11053 - [가장 긴 증가하는 부분 수열](src/main/java/Baekjoon/BOJ_11053.java)
 - 11279 - [최대 힙](src/main/java/Baekjoon/BOJ_11279.java)
 - 11286 - [절댓값 힙](src/main/java/Baekjoon/BOJ_11286.java)
