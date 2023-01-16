@@ -16,32 +16,28 @@ public class BOJ_17609 {
         StringBuilder answer = new StringBuilder();
         while (n-- > 0) {
             String input = bufferedReader.readLine();
-            int notEqualCount = checkPalindrome(input, 0, 0, input.length() - 1);
-            if (notEqualCount == 0) {
-                answer.append(PALINDROME);
-            } else if (notEqualCount == 1) {
-                answer.append(PSEUDO_PALINDROME);
-            } else {
-                answer.append(NOT_PALINDROME);
-            }
-            answer.append("\n");
+            answer.append(checkPalindrome(input, 0, 0, input.length() - 1)).append("\n");
         }
         System.out.println(answer);
     }
 
     private static int checkPalindrome(String input, int notEqualCount, int start, int end) {
-        if (notEqualCount == NOT_PALINDROME) {
-            return NOT_PALINDROME;
-        }
         while (start <= end) {
             if (input.charAt(start) == input.charAt(end)) {
                 start++;
                 end--;
             } else {
-                notEqualCount = Math.min(checkPalindrome(input, notEqualCount + 1, start + 1, end), checkPalindrome(input, notEqualCount + 1, start, end - 1));
-                break;
+                if (notEqualCount == PSEUDO_PALINDROME) {
+                    return NOT_PALINDROME;
+                }
+                if (checkPalindrome(input, notEqualCount + 1, start + 1, end) == PALINDROME
+                        || checkPalindrome(input, notEqualCount + 1, start, end - 1) == PALINDROME) {
+                    return PSEUDO_PALINDROME;
+                } else {
+                    return NOT_PALINDROME;
+                }
             }
         }
-        return notEqualCount;
+        return PALINDROME;
     }
 }
