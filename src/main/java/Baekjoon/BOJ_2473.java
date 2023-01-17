@@ -17,6 +17,11 @@ public class BOJ_2473 {
             numbers[i] = Long.parseLong(stringTokenizer.nextToken());
         }
         Arrays.sort(numbers);
+        long[] answers = getAnswers(n, numbers);
+        System.out.println(answers[0] + " " + answers[1] + " " + answers[2]);
+    }
+
+    private static long[] getAnswers(int n, long[] numbers) {
         long minGap = Long.MAX_VALUE;
         long[] answers = new long[3];
         for (int start = 0; start < n - 2; start++) {
@@ -34,11 +39,13 @@ public class BOJ_2473 {
 
                 if (sum > 0) {
                     end--;
-                } else {
+                } else if (sum < 0) {
                     mid++;
+                } else {
+                    return answers;
                 }
             }
         }
-        System.out.println(answers[0] + " " + answers[1] + " " + answers[2]);
+        return answers;
     }
 }
