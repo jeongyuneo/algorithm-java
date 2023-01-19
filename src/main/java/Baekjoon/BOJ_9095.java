@@ -6,34 +6,25 @@ import java.io.InputStreamReader;
 
 public class BOJ_9095 {
 
-    private static final int[] SUMS = new int[11];
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
-        for (int i = 1; i <= 10; i++) {
-            sum(i, 0);
-        }
+        int[] sumWays = getSumWays();
         StringBuilder answer = new StringBuilder();
         while (n-- > 0) {
-            int number = Integer.parseInt(bufferedReader.readLine());
-            answer.append(SUMS[number]).append("\n");
+            answer.append(sumWays[Integer.parseInt(bufferedReader.readLine()) - 1]).append("\n");
         }
         System.out.println(answer);
     }
 
-    private static void sum(int result, int sum) {
-        if (sum == result) {
-            SUMS[sum]++;
-            return;
+    private static int[] getSumWays() {
+        int[] sums = new int[10];
+        sums[0] = 1;
+        sums[1] = 2;
+        sums[2] = 4;
+        for (int i = 3; i < 10; i++) {
+            sums[i] = sums[i - 1] + sums[i - 2] + sums[i - 3];
         }
-
-        if (sum > result) {
-            return;
-        }
-
-        for (int i = 1; i <= 3; i++) {
-            sum(result, sum + i);
-        }
+        return sums;
     }
 }
