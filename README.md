@@ -69,6 +69,7 @@
 - 2559 - [수열](src/main/java/Baekjoon/BOJ_2559.java)
 - 2563 - [색종이](src/main/java/Baekjoon/BOJ_2563.java)
 - 2564 - [경비원](src/main/java/Baekjoon/BOJ_2564.java)
+- 2573 - [빙산](src/main/java/Baekjoon/BOJ_2573.java)
 - 2578 - [빙고](src/main/java/Baekjoon/BOJ_2578.java)
 - 2605 - [줄 세우기](src/main/java/Baekjoon/BOJ_2605.java)
 - 2628 - [종이자르기](src/main/java/Baekjoon/BOJ_2628.java)
