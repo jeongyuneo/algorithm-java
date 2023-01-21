@@ -10,12 +10,12 @@ import java.util.Queue;
 public class BOJ_1941 {
 
     private static final int[][] DELTAS = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-    private static final Queue<int[]> QUEUE = new ArrayDeque<>();
+    private static final Queue<Integer> QUEUE = new ArrayDeque<>();
     private static final int SIZE = 5;
     private static final int GROUP_NUMBER = 7;
     private static final char[][] CLASSROOM = new char[SIZE][SIZE];
-    private static final boolean[][] IS_VISITED = new boolean[SIZE][SIZE];
-    private static final boolean[][] IS_MEMBER = new boolean[SIZE][SIZE];
+    private static final boolean[] IS_VISITED = new boolean[SIZE * SIZE];
+    private static final boolean[] IS_MEMBER = new boolean[SIZE * SIZE];
     private static final int[] SELECTED_STUDENTS = new int[GROUP_NUMBER];
     private static final char DASOM = 'S';
 
@@ -50,26 +50,27 @@ public class BOJ_1941 {
     private static void checkAdjacentAndDasoms() {
         initialize();
         for (int selectedStudent : SELECTED_STUDENTS) {
-            IS_MEMBER[selectedStudent / SIZE][selectedStudent % SIZE] = true;
+            IS_MEMBER[selectedStudent] = true;
         }
         int cnt = 1;
         int dasoms = 0;
-        QUEUE.offer(new int[]{SELECTED_STUDENTS[0] / SIZE, SELECTED_STUDENTS[0] % SIZE});
+        QUEUE.offer(SELECTED_STUDENTS[0]);
+        IS_VISITED[SELECTED_STUDENTS[0]] = true;
         while (!QUEUE.isEmpty()) {
-            int[] current = QUEUE.poll();
-            int x = current[0];
-            int y = current[1];
+            int current = QUEUE.poll();
+            int x = current / SIZE;
+            int y = current % SIZE;
             if (CLASSROOM[x][y] == DASOM) {
                 dasoms++;
             }
-            IS_VISITED[x][y] = true;
             for (int[] delta : DELTAS) {
                 int dx = x + delta[0];
                 int dy = y + delta[1];
-                if (dx >= 0 && dx < SIZE && dy >= 0 && dy < SIZE && !IS_VISITED[dx][dy] && IS_MEMBER[dx][dy]) {
+                int next = dx * SIZE + dy;
+                if (dx >= 0 && dx < SIZE && dy >= 0 && dy < SIZE && IS_MEMBER[next] && !IS_VISITED[next]) {
                     cnt++;
-                    IS_VISITED[dx][dy] = true;
-                    QUEUE.offer(new int[]{dx, dy});
+                    IS_VISITED[next] = true;
+                    QUEUE.offer(next);
                 }
             }
         }
@@ -79,9 +80,7 @@ public class BOJ_1941 {
     }
 
     private static void initialize() {
-        for (int i = 0; i < SIZE; i++) {
-            Arrays.fill(IS_VISITED[i], false);
-            Arrays.fill(IS_MEMBER[i], false);
-        }
+        Arrays.fill(IS_VISITED, false);
+        Arrays.fill(IS_MEMBER, false);
     }
 }
