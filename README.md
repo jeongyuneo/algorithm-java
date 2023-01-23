@@ -116,6 +116,7 @@
 - 11286 - [절댓값 힙](src/main/java/Baekjoon/BOJ_11286.java)
 - 11722 - [가장 긴 감소하는 부분 수열](src/main/java/Baekjoon/BOJ_11722.java)
 - 11723 - [집합](src/main/java/Baekjoon/BOJ_11723.java)
+- 11726 - [2×n 타일링](src/main/java/Baekjoon/BOJ_11726.java)
 - 11966 - [2의 제곱인가?](src/main/java/Baekjoon/BOJ_11966.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
 - 12851 - [숨바꼭질 2](src/main/java/Baekjoon/BOJ_12851.java)
