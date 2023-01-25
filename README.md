@@ -52,6 +52,7 @@
 - 2116 - [주사위 쌓기](src/main/java/Baekjoon/BOJ_2116.java)
 - 2146 - [다리 만들기](src/main/java/Baekjoon/BOJ_2146.java)
 - 2178 - [미로 탐색](src/main/java/Baekjoon/BOJ_2178.java)
+- 2206 - [벽 부수고 이동하기](src/main/java/Baekjoon/BOJ_2206.java)
 - 2210 - [숫자판 점프](src/main/java/Baekjoon/BOJ_2210.java)
 - 2230 - [수 고르기](src/main/java/Baekjoon/BOJ_2230.java)
 - 2234 - [성곽](src/main/java/Baekjoon/BOJ_2234.java)
