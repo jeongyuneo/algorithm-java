@@ -129,6 +129,7 @@
 - 13549 - [숨바꼭질 3](src/main/java/Baekjoon/BOJ_13549.java)
 - 13913 - [숨바꼭질 4](src/main/java/Baekjoon/BOJ_13913.java)
 - 14425 - [문자열 집합](src/main/java/Baekjoon/BOJ_14425.java)
+- 14442 - [벽 부수고 이동하기 2](src/main/java/Baekjoon/BOJ_14442.java)
 - 14499 - [주사위 굴리기](src/main/java/Baekjoon/BOJ_14499.java)
 - 14500 - [테트로미노](src/main/java/Baekjoon/BOJ_14500.java)
 - 14502 - [연구소](src/main/java/Baekjoon/BOJ_14502.java)
