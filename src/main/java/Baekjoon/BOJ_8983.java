@@ -30,16 +30,14 @@ public class BOJ_8983 {
             int end = launcherCount;
             while (start <= end) {
                 int mid = (start + end) / 2;
-                int range = Math.abs(launchers[mid] - x) + y;
-                if (range > l) {
-                    if (launchers[mid] - x > 0) {
-                        end = mid - 1;
-                    } else {
-                        start = mid + 1;
-                    }
-                } else {
+                if (Math.abs(launchers[mid] - x) + y <= l) {
                     catchableAnimals++;
                     break;
+                }
+                if (launchers[mid] > x) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
                 }
             }
         }
