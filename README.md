@@ -102,6 +102,7 @@
 - 6603 - [로또](src/main/java/Baekjoon/BOJ_6603.java)
 - 6087 - [레이저 통신](src/main/java/Baekjoon/BOJ_6087.java)
 - 7576 - [토마토](src/main/java/Baekjoon/BOJ_7576.java)
+- 8983 - [사냥꾼](src/main/java/Baekjoon/BOJ_8983.java)
 - 9095 - [1, 2, 3 더하기](src/main/java/Baekjoon/BOJ_9095.java)
 - 9205 - [맥주 마시면서 걸어가기](src/main/java/Baekjoon/BOJ_9205.java)
 - 9440 - [숫자 더하기](src/main/java/Baekjoon/BOJ_9440.java)
