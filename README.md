@@ -25,6 +25,7 @@
 - 1520 - [내리막 길](src/main/java/Baekjoon/BOJ_1520.java)
 - 1541 - [잃어버린 괄호](src/main/java/Baekjoon/BOJ_1541.java)
 - 1592 - [영식이와 친구들](src/main/java/Baekjoon/BOJ_1592.java)
+- 1600 - [말이 되고픈 원숭이](src/main/java/Baekjoon/BOJ_1600.java)
 - 1654 - [랜선 자르기](src/main/java/Baekjoon/BOJ_1654.java)
 - 1697 - [숨바꼭질](src/main/java/Baekjoon/BOJ_1697.java)
 - 1715 - [카드 정렬하기](src/main/java/Baekjoon/BOJ_1715.java)
