@@ -7,24 +7,15 @@ import java.util.StringTokenizer;
 
 public class BOJ_2458 {
 
-    private static final int MAX_VALUE = 1000001;
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int m = Integer.parseInt(stringTokenizer.nextToken());
-        int[][] comparable = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                comparable[i][j] = MAX_VALUE;
-            }
-        }
+        boolean[][] isComparable = new boolean[n][n];
         for (int i = 0; i < m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-            int a = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-            int b = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-            comparable[a][b] = 1;
+            isComparable[Integer.parseInt(stringTokenizer.nextToken()) - 1][Integer.parseInt(stringTokenizer.nextToken()) - 1] = true;
         }
         for (int pass = 0; pass < n; pass++) {
             for (int start = 0; start < n; start++) {
@@ -35,20 +26,23 @@ public class BOJ_2458 {
                     if (pass == end || start == end) {
                         continue;
                     }
-                    comparable[start][end] = Math.min(comparable[start][end], comparable[start][pass] + comparable[pass][end]);
+                    if (isComparable[start][pass] && isComparable[pass][end]) {
+                        isComparable[start][end] = true;
+                    }
                 }
             }
         }
 
         int comparableStudents = 0;
         for (int i = 0; i < n; i++) {
-            int comparingCount = 0;
+            boolean canComparable = true;
             for (int j = 0; j < n; j++) {
-                if (comparable[i][j] != MAX_VALUE || comparable[j][i] != MAX_VALUE) {
-                    comparingCount++;
+                if (i != j && !isComparable[i][j] && !isComparable[j][i]) {
+                    canComparable = false;
+                    break;
                 }
             }
-            if (comparingCount == n - 1) {
+            if (canComparable) {
                 comparableStudents++;
             }
         }
