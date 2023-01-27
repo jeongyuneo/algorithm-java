@@ -129,6 +129,7 @@
 - 12851 - [숨바꼭질 2](src/main/java/Baekjoon/BOJ_12851.java)
 - 12852 - [1로 만들기 2](src/main/java/Baekjoon/BOJ_12852.java)
 - 12904 - [A와 B](src/main/java/Baekjoon/BOJ_12904.java)
+- 12919 - [A와 B 2](src/main/java/Baekjoon/BOJ_12919.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
 - 13549 - [숨바꼭질 3](src/main/java/Baekjoon/BOJ_13549.java)
 - 13913 - [숨바꼭질 4](src/main/java/Baekjoon/BOJ_13913.java)
