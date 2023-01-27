@@ -10,7 +10,6 @@ public class Programmers_2023_Kakao_Level1_개인정보수집유효기간 {
         System.out.println(Arrays.toString(solution("2022.05.19", new String[]{"A 6", "B 12", "C 3"}, new String[]{"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"})));
     }
 
-
     private static final String DELIMITER = " ";
     private static final int KIND = 0;
     private static final int PERIOD = 1;
