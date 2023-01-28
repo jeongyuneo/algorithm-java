@@ -44,6 +44,7 @@
 - 1939 - [중량제한](src/main/java/Baekjoon/BOJ_1939.java)
 - 1941 - [소문난 칠공주](src/main/java/Baekjoon/BOJ_1941.java)
 - 1946 - [신입 사원](src/main/java/Baekjoon/BOJ_1946.java)
+- 1956 - [운동](src/main/java/Baekjoon/BOJ_1956.java)
 - 1987 - [알파벳](src/main/java/Baekjoon/BOJ_1987.java)
 - 1992 - [쿼드트리](src/main/java/Baekjoon/BOJ_1992.java)
 - 2002 - [추월](src/main/java/Baekjoon/BOJ_2002.java)
