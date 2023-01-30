@@ -167,6 +167,7 @@
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
 - 16918 - [봄버맨](src/main/java/Baekjoon/BOJ_16918.java)
 - 16926 - [배열 돌리기1](src/main/java/Baekjoon/BOJ_16926.java)
+- 16953 - [A → B](src/main/java/Baekjoon/BOJ_16953.java)
 - 17135 - [캐슬 디펜스](src/main/java/Baekjoon/BOJ_17135.java)
 - 17140 - [이차원 배열과 연산](src/main/java/Baekjoon/BOJ_17140.java)
 - 17141 - [연구소 2](src/main/java/Baekjoon/BOJ_17141.java)
