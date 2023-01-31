@@ -81,6 +81,7 @@
 - 2573 - [빙산](src/main/java/Baekjoon/BOJ_2573.java)
 - 2578 - [빙고](src/main/java/Baekjoon/BOJ_2578.java)
 - 2579 - [계단 오르기](src/main/java/Baekjoon/BOJ_2579.java)
+- 2589 - [보물섬](src/main/java/Baekjoon/BOJ_2589.java)
 - 2605 - [줄 세우기](src/main/java/Baekjoon/BOJ_2605.java)
 - 2628 - [종이자르기](src/main/java/Baekjoon/BOJ_2628.java)
 - 2635 - [수 이어가기](src/main/java/Baekjoon/BOJ_2635.java)
