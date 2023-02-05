@@ -17,15 +17,24 @@ public class BOJ_19238 {
     });
     private static final int WALL = 1000;
 
+    private static int[][] map;
+    private static boolean[][] isVisited;
+    private static int[][] destinations;
+    private static int n;
+    private static int m;
+    private static int fuel;
+    private static boolean hasPassenger;
+    private static int destination;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        int n = Integer.parseInt(stringTokenizer.nextToken());
-        int m = Integer.parseInt(stringTokenizer.nextToken());
-        int fuel = Integer.parseInt(stringTokenizer.nextToken());
-        int[][] map = new int[n][n];
-        boolean[][] isVisited = new boolean[n][n];
-        int[][] destinations = new int[m][2];
+        n = Integer.parseInt(stringTokenizer.nextToken());
+        m = Integer.parseInt(stringTokenizer.nextToken());
+        fuel = Integer.parseInt(stringTokenizer.nextToken());
+        map = new int[n][n];
+        destinations = new int[m][2];
+        isVisited = new boolean[n][n];
         for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < n; j++) {
@@ -43,8 +52,6 @@ public class BOJ_19238 {
             destinations[i][0] = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             destinations[i][1] = Integer.parseInt(stringTokenizer.nextToken()) - 1;
         }
-        boolean hasPassenger = false;
-        int destination = 0;
         driving:
         while (m > 0 && fuel >= 0) {
             int pass = -1;
@@ -57,32 +64,11 @@ public class BOJ_19238 {
                     int y = current[1];
                     if (!hasPassenger && map[x][y] > 0 && map[x][y] != WALL) {
                         PASSENGERS.offer(new int[]{x, y});
-                        int[] passenger = PASSENGERS.poll();
-                        int passengerX = passenger[0];
-                        int passengerY = passenger[1];
-                        TAXI.clear();
-                        TAXI.offer(new int[]{passengerX, passengerY});
-                        hasPassenger = true;
-                        destination = map[passengerX][passengerY] - 1;
-                        map[passengerX][passengerY] = 0;
-                        for (int i = 0; i < n; i++) {
-                            Arrays.fill(isVisited[i], false);
-                        }
-                        isVisited[passengerX][passengerY] = true;
-                        PASSENGERS.clear();
+                        carryPassenger();
                         continue driving;
                     }
                     if (hasPassenger && destinations[destination][0] == x && destinations[destination][1] == y) {
-                        TAXI.clear();
-                        TAXI.offer(new int[]{x, y});
-                        hasPassenger = false;
-                        destination = 0;
-                        for (int i = 0; i < n; i++) {
-                            Arrays.fill(isVisited[i], false);
-                        }
-                        isVisited[x][y] = true;
-                        fuel += pass * 2;
-                        m--;
+                        sendPassenger(pass, x, y);
                         continue driving;
                     }
                     for (int[] delta : DELTAS) {
@@ -101,19 +87,7 @@ public class BOJ_19238 {
                     break driving;
                 }
                 if (!PASSENGERS.isEmpty()) {
-                    int[] passenger = PASSENGERS.poll();
-                    int passengerX = passenger[0];
-                    int passengerY = passenger[1];
-                    TAXI.clear();
-                    TAXI.offer(new int[]{passengerX, passengerY});
-                    hasPassenger = true;
-                    destination = map[passengerX][passengerY] - 1;
-                    map[passengerX][passengerY] = 0;
-                    for (int i = 0; i < n; i++) {
-                        Arrays.fill(isVisited[i], false);
-                    }
-                    isVisited[passengerX][passengerY] = true;
-                    PASSENGERS.clear();
+                    carryPassenger();
                     continue driving;
                 }
             }
@@ -121,5 +95,36 @@ public class BOJ_19238 {
             break;
         }
         System.out.println(fuel);
+    }
+
+    private static void sendPassenger(int pass, int x, int y) {
+        TAXI.clear();
+        TAXI.offer(new int[]{x, y});
+        hasPassenger = false;
+        destination = 0;
+        initialize();
+        isVisited[x][y] = true;
+        fuel += pass * 2;
+        m--;
+    }
+
+    private static void carryPassenger() {
+        int[] passenger = PASSENGERS.poll();
+        int passengerX = passenger[0];
+        int passengerY = passenger[1];
+        TAXI.clear();
+        TAXI.offer(new int[]{passengerX, passengerY});
+        hasPassenger = true;
+        destination = map[passengerX][passengerY] - 1;
+        map[passengerX][passengerY] = 0;
+        initialize();
+        isVisited[passengerX][passengerY] = true;
+        PASSENGERS.clear();
+    }
+
+    private static void initialize() {
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(isVisited[i], false);
+        }
     }
 }
