@@ -170,6 +170,7 @@
 - 15961 - [회전 초밥](src/main/java/Baekjoon/BOJ_15961.java)
 - 15988 - [1, 2, 3 더하기 3](src/main/java/Baekjoon/BOJ_15988.java)
 - 16234 - [인구 이동](src/main/java/Baekjoon/BOJ_16234.java)
+- 16234 - [나무 재테크](src/main/java/Baekjoon/BOJ_16235.java)
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
 - 16918 - [봄버맨](src/main/java/Baekjoon/BOJ_16918.java)
 - 16926 - [배열 돌리기 1](src/main/java/Baekjoon/BOJ_16926.java)
