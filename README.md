@@ -15,6 +15,7 @@
 - 1149 - [RGB거리](src/main/java/Baekjoon/BOJ_1149.java)
 - 1158 - [요세푸스 문제](src/main/java/Baekjoon/BOJ_1158.java)
 - 1182 - [부분수열의 합](src/main/java/Baekjoon/BOJ_1182.java)
+- 1202 - [파티](src/main/java/Baekjoon/BOJ_1202.java)
 - 1238 - [파티](src/main/java/Baekjoon/BOJ_1238.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
