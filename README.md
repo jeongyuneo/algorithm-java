@@ -8,6 +8,7 @@
 - 1012 - [유기농 배추](src/main/java/Baekjoon/BOJ_1012.java)
 - 1018 - [체스판 다시 칠하기](src/main/java/Baekjoon/BOJ_1018.java)
 - 1026 - [보물](src/main/java/Baekjoon/BOJ_1026.java)
+- 1043 - [거짓말](src/main/java/Baekjoon/BOJ_1043.java)
 - 1062 - [가르침](src/main/java/Baekjoon/BOJ_1062.java)
 - 1074 - [Z](src/main/java/Baekjoon/BOJ_1074.java)
 - 1080 - [행렬](src/main/java/Baekjoon/BOJ_1080.java)
