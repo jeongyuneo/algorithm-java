@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -12,6 +11,7 @@ public class BOJ_1043 {
 
     private static int[] parents;
     private static List<Integer>[] parties;
+    private static int[] peopleWhoKnowTruth;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -20,13 +20,16 @@ public class BOJ_1043 {
         int m = Integer.parseInt(stringTokenizer.nextToken());
         int answer = m;
         parents = new int[n + 1];
-        Arrays.fill(parents, -1);
+        for (int i = 1; i <= n; i++) {
+            parents[i] = i;
+        }
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int peopleNumberWhoKnowsTruth = Integer.parseInt(stringTokenizer.nextToken());
+        peopleWhoKnowTruth = new int[peopleNumberWhoKnowsTruth];
         if (peopleNumberWhoKnowsTruth != 0) {
             for (int i = 0; i < peopleNumberWhoKnowsTruth; i++) {
                 int personWhoKnowsTruth = Integer.parseInt(stringTokenizer.nextToken());
-                parents[personWhoKnowsTruth] = personWhoKnowsTruth;
+                peopleWhoKnowTruth[i] = personWhoKnowsTruth;
             }
             parties = new List[m];
             for (int i = 0; i < m; i++) {
@@ -42,8 +45,8 @@ public class BOJ_1043 {
                     previousParticipant = participant;
                 }
             }
-            for (int i = 0; i < m; i++) {
-                if (!canLie(i)) {
+            for (int party = 0; party < m; party++) {
+                if (!canLie(party)) {
                     answer--;
                 }
             }
@@ -57,7 +60,7 @@ public class BOJ_1043 {
         if (rootA == rootB) {
             return;
         }
-        if (rootA == parents[rootA]) {
+        if (rootA < rootB) {
             parents[rootB] = rootA;
         } else {
             parents[rootA] = rootB;
@@ -65,17 +68,19 @@ public class BOJ_1043 {
     }
 
     private static int find(int value) {
-        if (parents[value] < 0 || parents[value] == value) {
+        if (parents[value] == value) {
             return value;
         }
         return parents[value] = find(parents[value]);
     }
 
     private static boolean canLie(int party) {
-        for (int participant : parties[party]) {
-            int root = find(participant);
-            if (parents[root] == root) {
-                return false;
+        for (int personWhoKnowTruth : peopleWhoKnowTruth) {
+            int root = find(personWhoKnowTruth);
+            for (int participant : parties[party]) {
+                if (find(participant) == root) {
+                    return false;
+                }
             }
         }
         return true;
