@@ -63,6 +63,7 @@
 - 2178 - [미로 탐색](src/main/java/Baekjoon/BOJ_2178.java)
 - 2206 - [벽 부수고 이동하기](src/main/java/Baekjoon/BOJ_2206.java)
 - 2210 - [숫자판 점프](src/main/java/Baekjoon/BOJ_2210.java)
+- 2211 - [네트워크 복구](src/main/java/Baekjoon/BOJ_2211.java)
 - 2230 - [수 고르기](src/main/java/Baekjoon/BOJ_2230.java)
 - 2234 - [성곽](src/main/java/Baekjoon/BOJ_2234.java)
 - 2246 - [콘도 선정](src/main/java/Baekjoon/BOJ_2246.java)
