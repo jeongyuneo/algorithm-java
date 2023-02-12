@@ -48,6 +48,7 @@
 - 1912 - [연속합](src/main/java/Baekjoon/BOJ_1912.java)
 - 1916 - [최소비용 구하기](src/main/java/Baekjoon/BOJ_1916.java)
 - 1920 - [수 찾기](src/main/java/Baekjoon/BOJ_1920.java)
+- 1922 - [네트워크 연결](src/main/java/Baekjoon/BOJ_1922.java)
 - 1927 - [최소 힙](src/main/java/Baekjoon/BOJ_1927.java)
 - 1939 - [중량제한](src/main/java/Baekjoon/BOJ_1939.java)
 - 1941 - [소문난 칠공주](src/main/java/Baekjoon/BOJ_1941.java)
