@@ -16,21 +16,17 @@ public class BOJ_11660 {
         for (int i = 1; i <= n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 1; j <= n; j++) {
-                sums[i][j] = Integer.parseInt(stringTokenizer.nextToken()) + sums[i][j - 1];
+                sums[i][j] = Integer.parseInt(stringTokenizer.nextToken()) + sums[i - 1][j] + sums[i][j - 1] - sums[i - 1][j - 1];
             }
         }
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-            int x1 = Integer.parseInt(stringTokenizer.nextToken());
+            int x1 = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int y1 = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int x2 = Integer.parseInt(stringTokenizer.nextToken());
             int y2 = Integer.parseInt(stringTokenizer.nextToken());
-            int sum = 0;
-            for (int j = x1; j <= x2; j++) {
-                sum += sums[j][y2] - sums[j][y1];
-            }
-            answer.append(sum).append("\n");
+            answer.append(sums[x2][y2] - sums[x2][y1] - sums[x1][y2] + sums[x1][y1]).append("\n");
         }
         System.out.println(answer);
     }
