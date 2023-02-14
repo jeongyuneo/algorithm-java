@@ -40,6 +40,7 @@
 - 1755 - [숫자놀이](src/main/java/Baekjoon/BOJ_1755.java)
 - 1759 - [암호 만들기](src/main/java/Baekjoon/BOJ_1759.java)
 - 1764 - [듣보잡](src/main/java/Baekjoon/BOJ_1764.java)
+- 1766 - [문제집](src/main/java/Baekjoon/BOJ_1766.java)
 - 1806 - [부분합](src/main/java/Baekjoon/BOJ_1806.java)
 - 1817 - [짐 챙기는 숌](src/main/java/Baekjoon/BOJ_1817.java)
 - 1865 - [웜홀](src/main/java/Baekjoon/BOJ_1865.java)
