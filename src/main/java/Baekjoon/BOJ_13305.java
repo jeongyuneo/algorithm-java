@@ -7,30 +7,26 @@ import java.util.StringTokenizer;
 
 public class BOJ_13305 {
 
-    private static final int DISTANCE = 0;
-    private static final int PRICE = 1;
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(bufferedReader.readLine()) - 1;
-        int[][] cities = new int[n][2];
+        int n = Integer.parseInt(bufferedReader.readLine());
+        int[] distances = new int[n];
+        long[] prices = new long[n];
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        for (int i = 0; i < n; i++) {
-            cities[i][DISTANCE] = Integer.parseInt(stringTokenizer.nextToken());
+        for (int i = 1; i < n; i++) {
+            distances[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         for (int i = 0; i < n; i++) {
-            cities[i][PRICE] = Integer.parseInt(stringTokenizer.nextToken());
+            prices[i] = Long.parseLong(stringTokenizer.nextToken());
         }
-        int car = 0;
+        long price = prices[0];
         long totalPrice = 0;
-        while (car < n) {
-            int price = cities[car][PRICE];
-            int distance = cities[car][DISTANCE];
-            while (++car < n && price < cities[car][PRICE]) {
-                distance += cities[car][DISTANCE];
+        for (int i = 1; i < n; i++) {
+            totalPrice += distances[i] * price;
+            if (prices[i] < price) {
+                price = prices[i];
             }
-            totalPrice += (long) price * distance;
         }
         System.out.println(totalPrice);
     }
