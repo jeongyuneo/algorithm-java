@@ -155,6 +155,7 @@
 - 12904 - [A와 B](src/main/java/Baekjoon/BOJ_12904.java)
 - 12919 - [A와 B 2](src/main/java/Baekjoon/BOJ_12919.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
+- 13305 - [주유소](src/main/java/Baekjoon/BOJ_13305.java)
 - 13549 - [숨바꼭질 3](src/main/java/Baekjoon/BOJ_13549.java)
 - 13913 - [숨바꼭질 4](src/main/java/Baekjoon/BOJ_13913.java)
 - 14425 - [문자열 집합](src/main/java/Baekjoon/BOJ_14425.java)
