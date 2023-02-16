@@ -16,7 +16,7 @@ public class BOJ_1655 {
         PriorityQueue<Integer> back = new PriorityQueue<>();
         for (int i = 0; i < n; i++) {
             int number = Integer.parseInt(bufferedReader.readLine());
-            if (front.size() == back.size()) {
+            if (i % 2 == 0) {
                 front.offer(number);
             } else {
                 back.offer(number);
