@@ -39,7 +39,7 @@ public class BOJ_13904 {
         int score = 0;
         int idx = 0;
         for (int day = lastDay; day >= 1; day--) {
-            while (idx < n && tasks[idx][REST_DAY] >= day) {
+            while (idx < n && tasks[idx][REST_DAY] == day) {
                 scores.offer(tasks[idx++][SCORE]);
             }
             if (!scores.isEmpty()) {
