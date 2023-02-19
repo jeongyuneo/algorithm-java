@@ -152,6 +152,7 @@
 - 11726 - [2×n 타일링](src/main/java/Baekjoon/BOJ_11726.java)
 - 11966 - [2의 제곱인가?](src/main/java/Baekjoon/BOJ_11966.java)
 - 12015 - [가장 긴 증가하는 부분 수열 2](src/main/java/Baekjoon/BOJ_12015.java)
+- 12738 - [가장 긴 증가하는 부분 수열 3](src/main/java/Baekjoon/BOJ_12738.java)
 - 12851 - [숨바꼭질 2](src/main/java/Baekjoon/BOJ_12851.java)
 - 12852 - [1로 만들기 2](src/main/java/Baekjoon/BOJ_12852.java)
 - 12904 - [A와 B](src/main/java/Baekjoon/BOJ_12904.java)
