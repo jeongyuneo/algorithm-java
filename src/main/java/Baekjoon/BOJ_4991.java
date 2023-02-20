@@ -19,6 +19,7 @@ public class BOJ_4991 {
     private static final int X = 0;
     private static final int Y = 1;
     private static final int CLEANED_DIRTY = 2;
+    private static final int MOVE = 3;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -42,38 +43,39 @@ public class BOJ_4991 {
                     } else if (input == INPUT_FURNITURE) {
                         room[i][j] = FURNITURE;
                     } else if (input == START) {
-                        ROBOT_CLEANER.offer(new int[]{i, j, 0});
+                        ROBOT_CLEANER.offer(new int[]{i, j, 0, 0});
                     }
                 }
             }
-            answer.append(getMinMove(width, height, (1 << dirtySpace) - 1, room, new int[1 << dirtySpace][height][width])).append("\n");
+            answer.append(getMinMove(width, height, (1 << dirtySpace) - 1, room, new boolean[1 << dirtySpace][height][width])).append("\n");
         }
         System.out.println(answer);
     }
 
-    private static int getMinMove(int width, int height, int done, int[][] room, int[][][] moves) {
+    private static int getMinMove(int width, int height, int done, int[][] room, boolean[][][] isVisited) {
         while (!ROBOT_CLEANER.isEmpty()) {
             int[] current = ROBOT_CLEANER.poll();
             int x = current[X];
             int y = current[Y];
             int cleanedDirties = current[CLEANED_DIRTY];
+            int move = current[MOVE];
             if (cleanedDirties == done) {
-                return moves[cleanedDirties][x][y];
+                return move;
             }
             for (int[] delta : DELTAS) {
                 int dx = x + delta[X];
                 int dy = y + delta[Y];
                 if (dx >= 0 && dx < height && dy >= 0 && dy < width && room[dx][dy] != FURNITURE) {
                     if (room[dx][dy] == CLEAN) {
-                        if (moves[cleanedDirties][dx][dy] == 0) {
-                            moves[cleanedDirties][dx][dy] = moves[cleanedDirties][x][y] + 1;
-                            ROBOT_CLEANER.offer(new int[]{dx, dy, cleanedDirties});
+                        if (!isVisited[cleanedDirties][dx][dy]) {
+                            isVisited[cleanedDirties][dx][dy] = true;
+                            ROBOT_CLEANER.offer(new int[]{dx, dy, cleanedDirties, move + 1});
                         }
                     } else {
                         int afterCleaning = cleanedDirties | (1 << (room[dx][dy] - 1));
-                        if (moves[afterCleaning][dx][dy] == 0) {
-                            moves[afterCleaning][dx][dy] = moves[cleanedDirties][x][y] + 1;
-                            ROBOT_CLEANER.offer(new int[]{dx, dy, afterCleaning});
+                        if (!isVisited[afterCleaning][dx][dy]) {
+                            isVisited[afterCleaning][dx][dy] = true;
+                            ROBOT_CLEANER.offer(new int[]{dx, dy, afterCleaning, move + 1});
                         }
                     }
                 }
