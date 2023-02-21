@@ -141,6 +141,7 @@
 - 10974 - [모든 순열](src/main/java/Baekjoon/BOJ_10974.java)
 - 11000 - [강의실 배정](src/main/java/Baekjoon/BOJ_11000.java)
 - 11047 - [동전 0](src/main/java/Baekjoon/BOJ_11047.java)
+- 11052 - [카드 구매하기](src/main/java/Baekjoon/BOJ_11052.java)
 - 11053 - [가장 긴 증가하는 부분 수열](src/main/java/Baekjoon/BOJ_11053.java)
 - 11055 - [가장 큰 증가 부분 수열](src/main/java/Baekjoon/BOJ_11055.java)
 - 11057 - [오르막 수](src/main/java/Baekjoon/BOJ_11055.java)
