@@ -75,6 +75,7 @@
 - 2234 - [성곽](src/main/java/Baekjoon/BOJ_2234.java)
 - 2246 - [콘도 선정](src/main/java/Baekjoon/BOJ_2246.java)
 - 2252 - [줄 세우기](src/main/java/Baekjoon/BOJ_2252.java)
+- 2293 - [동전 1](src/main/java/Baekjoon/BOJ_2293.java)
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
 - 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
