@@ -78,6 +78,7 @@
 - 2293 - [동전 1](src/main/java/Baekjoon/BOJ_2293.java)
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
 - 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
+- 2437 - [저울](src/main/java/Baekjoon/BOJ_2437.java)
 - 2439 - [별 찍기-2](src/main/java/Baekjoon/BOJ_2439.java)
 - 2456 - [나는 학급회장이다](src/main/java/Baekjoon/BOJ_2456.java)
 - 2458 - [키 순서](src/main/java/Baekjoon/BOJ_2458.java)
