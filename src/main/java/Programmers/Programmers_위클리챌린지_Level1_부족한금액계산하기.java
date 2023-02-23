@@ -11,9 +11,6 @@ public class Programmers_위클리챌린지_Level1_부족한금액계산하기 {
         for (int i = 1; i <= count; i++) {
             answer -= price * i;
         }
-        if (answer > 0) {
-            answer = 0;
-        }
         return Math.max(-answer, 0);
     }
 }
