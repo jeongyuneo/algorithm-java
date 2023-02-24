@@ -132,6 +132,7 @@
 - 9095 - [1, 2, 3 더하기](src/main/java/Baekjoon/BOJ_9095.java)
 - 9205 - [맥주 마시면서 걸어가기](src/main/java/Baekjoon/BOJ_9205.java)
 - 9440 - [숫자 더하기](src/main/java/Baekjoon/BOJ_9440.java)
+- 9663 - [N-Queen](src/main/java/Baekjoon/BOJ_9663.java)
 - 9935 - [문자열 폭발](src/main/java/Baekjoon/BOJ_9935.java)
 - 10026 - [적록색약](src/main/java/Baekjoon/BOJ_10026.java)
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
