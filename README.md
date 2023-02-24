@@ -47,6 +47,7 @@
 - 1865 - [웜홀](src/main/java/Baekjoon/BOJ_1865.java)
 - 1874 - [스택 수열](src/main/java/Baekjoon/BOJ_1874.java)
 - 1890 - [암호 만들기](src/main/java/Baekjoon/BOJ_1890.java)
+- 1904 - [01타일](src/main/java/Baekjoon/BOJ_1904.java)
 - 1912 - [연속합](src/main/java/Baekjoon/BOJ_1912.java)
 - 1916 - [최소비용 구하기](src/main/java/Baekjoon/BOJ_1916.java)
 - 1920 - [수 찾기](src/main/java/Baekjoon/BOJ_1920.java)
