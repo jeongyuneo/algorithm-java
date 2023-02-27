@@ -26,6 +26,7 @@
 - 1342 - [비밀 모임](src/main/java/Baekjoon/BOJ_1342.java)
 - 1374 - [강의실](src/main/java/Baekjoon/BOJ_1374.java)
 - 1463 - [1로 만들기](src/main/java/Baekjoon/BOJ_1463.java)
+- 1477 - [휴게소 세우기](src/main/java/Baekjoon/BOJ_1477.java)
 - 1484 - [다이어트](src/main/java/Baekjoon/BOJ_1484.java)
 - 1504 - [특정한 최단 경로](src/main/java/Baekjoon/BOJ_1504.java)
 - 1520 - [내리막 길](src/main/java/Baekjoon/BOJ_1520.java)
