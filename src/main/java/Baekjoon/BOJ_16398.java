@@ -3,44 +3,65 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class BOJ_16398 {
 
-    private static final int NUMBER = 0;
-    private static final int COST = 1;
+    private static final int FROM = 0;
+    private static final int TO = 1;
+    private static final int COST = 2;
+
+    private static int[] roots;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
-        List<int[]>[] edges = new List[n];
+        List<int[]> edges = new ArrayList<>();
         for (int from = 0; from < n; from++) {
-            edges[from] = new ArrayList<>();
             StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int to = 0; to < n; to++) {
                 int cost = Integer.parseInt(stringTokenizer.nextToken());
                 if (from == to) {
                     continue;
                 }
-                edges[from].add(new int[]{to, cost});
+                edges.add(new int[]{from, to, cost});
             }
         }
-        boolean[] isVisited = new boolean[n];
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(Comparator.comparing(edge -> edge[COST]));
-        priorityQueue.offer(new int[]{0, 0});
+        edges.sort(Comparator.comparing(edge -> edge[COST]));
+        setRoots(n);
         long cost = 0;
-        while (!priorityQueue.isEmpty()) {
-            int[] current = priorityQueue.poll();
-            int from = current[NUMBER];
-            if (isVisited[from]) {
-                continue;
-            }
-            cost += current[COST];
-            isVisited[from] = true;
-            for (int[] next : edges[from]) {
-                priorityQueue.offer(next);
+        for (int[] edge : edges) {
+            if (canCombine(edge[FROM], edge[TO])) {
+                cost += edge[COST];
             }
         }
         System.out.println(cost);
+    }
+
+    private static void setRoots(int n) {
+        roots = new int[n];
+        for (int i = 1; i < n; i++) {
+            roots[i] = i;
+        }
+    }
+
+    private static boolean canCombine(int a, int b) {
+        int rootA = find(a);
+        int rootB = find(b);
+        if (rootA == rootB) {
+            return false;
+        }
+        roots[rootA] = rootB;
+        return true;
+    }
+
+    private static int find(int value) {
+        if (value == roots[value]) {
+            return value;
+        }
+        return roots[value] = find(roots[value]);
     }
 }
