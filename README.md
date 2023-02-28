@@ -207,6 +207,7 @@
 - 16234 - [인구 이동](src/main/java/Baekjoon/BOJ_16234.java)
 - 16235 - [나무 재테크](src/main/java/Baekjoon/BOJ_16235.java)
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
+- 16398 - [행성 연결](src/main/java/Baekjoon/BOJ_16398.java)
 - 16918 - [봄버맨](src/main/java/Baekjoon/BOJ_16918.java)
 - 16926 - [배열 돌리기 1](src/main/java/Baekjoon/BOJ_16926.java)
 - 16928 - [뱀과 사다리 게임](src/main/java/Baekjoon/BOJ_16928.java)
