@@ -211,6 +211,7 @@
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
 - 16398 - [행성 연결](src/main/java/Baekjoon/BOJ_16398.java)
 - 16562 - [친구비](src/main/java/Baekjoon/BOJ_16562.java)
+- 16724 - [피리 부는 사나이](src/main/java/Baekjoon/BOJ_16724.java)
 - 16918 - [봄버맨](src/main/java/Baekjoon/BOJ_16918.java)
 - 16926 - [배열 돌리기 1](src/main/java/Baekjoon/BOJ_16926.java)
 - 16928 - [뱀과 사다리 게임](src/main/java/Baekjoon/BOJ_16928.java)
