@@ -46,8 +46,7 @@ public class BOJ_2412 {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             GROOVES.add(new Groove(Integer.parseInt(stringTokenizer.nextToken()), Integer.parseInt(stringTokenizer.nextToken())));
         }
-        int move = getMove(top);
-        System.out.println(move);
+        System.out.println(getMove(top));
     }
 
     private static int getMove(int top) {
