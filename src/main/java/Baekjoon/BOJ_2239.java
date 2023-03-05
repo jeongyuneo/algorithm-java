@@ -31,14 +31,7 @@ public class BOJ_2239 {
 
     private static void playSudoku(int cnt) {
         if (cnt == BLANKS.size()) {
-            StringBuilder answer = new StringBuilder();
-            for (int[] line : SUDOKU) {
-                for (int number : line) {
-                    answer.append(number);
-                }
-                answer.append("\n");
-            }
-            System.out.println(answer);
+            print();
             System.exit(0);
         }
         int blank = BLANKS.get(cnt);
@@ -54,18 +47,34 @@ public class BOJ_2239 {
     }
 
     private static boolean hasNumber(int x, int y, int number) {
-        boolean[] hasNumber = new boolean[10];
         for (int i = 0; i < SIZE; i++) {
-            hasNumber[SUDOKU[x][i]] = true;
-            hasNumber[SUDOKU[i][y]] = true;
+            if (SUDOKU[x][i] == number) {
+                return true;
+            }
+            if (SUDOKU[i][y] == number) {
+                return true;
+            }
         }
         int startX = (x / SMALL_SQUARE_SIZE) * SMALL_SQUARE_SIZE;
         int startY = (y / SMALL_SQUARE_SIZE) * SMALL_SQUARE_SIZE;
         for (int i = startX; i < startX + SMALL_SQUARE_SIZE; i++) {
             for (int j = startY; j < startY + SMALL_SQUARE_SIZE; j++) {
-                hasNumber[SUDOKU[i][j]] = true;
+                if (SUDOKU[i][j] == number) {
+                    return true;
+                }
             }
         }
-        return hasNumber[number];
+        return false;
+    }
+
+    private static void print() {
+        StringBuilder answer = new StringBuilder();
+        for (int[] line : SUDOKU) {
+            for (int number : line) {
+                answer.append(number);
+            }
+            answer.append("\n");
+        }
+        System.out.println(answer);
     }
 }
