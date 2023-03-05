@@ -77,6 +77,7 @@
 - 2217 - [로프](src/main/java/Baekjoon/BOJ_2217.java)
 - 2230 - [수 고르기](src/main/java/Baekjoon/BOJ_2230.java)
 - 2234 - [성곽](src/main/java/Baekjoon/BOJ_2234.java)
+- 2239 - [스도쿠](src/main/java/Baekjoon/BOJ_2239.java)
 - 2246 - [콘도 선정](src/main/java/Baekjoon/BOJ_2246.java)
 - 2252 - [줄 세우기](src/main/java/Baekjoon/BOJ_2252.java)
 - 2285 - [우체국](src/main/java/Baekjoon/BOJ_2285.java)
