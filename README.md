@@ -172,6 +172,7 @@
 - 12852 - [1로 만들기 2](src/main/java/Baekjoon/BOJ_12852.java)
 - 12904 - [A와 B](src/main/java/Baekjoon/BOJ_12904.java)
 - 12919 - [A와 B 2](src/main/java/Baekjoon/BOJ_12919.java)
+- 13164 - [행복 유치원](src/main/java/Baekjoon/BOJ_13164.java)
 - 13300 - [방배정](src/main/java/Baekjoon/BOJ_13300.java)
 - 13305 - [주유소](src/main/java/Baekjoon/BOJ_13305.java)
 - 13397 - [구간 나누기 2](src/main/java/Baekjoon/BOJ_13397.java)
