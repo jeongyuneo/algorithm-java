@@ -261,6 +261,7 @@
   - [해시-폰켓몬](src/main/java/Programmers/Programmers_해시_Level1_폰켓몬.java)
   - [스택/큐-같은 숫자는 싫어](src/main/java/Programmers/Programmers_스택큐_Level1_같은숫자는싫어.java)
   - [정렬-K번째수](src/main/java/Programmers/Programmers_정렬_Level1_K번째수.java)
+  - [탐욕법-체육복](src/main/java/Programmers/Programmers_탐욕법_Level1_체육복.java)
   - [2021-kakao-신규 아이디 추천](src/main/java/Programmers/Programmers_2021_Kakao_Level1_신규아이디추천.java)
   - [2022-kakao-internship-성격 유형 검사하기](src/main/java/Programmers/Programmers_2022_Kakao_Internship_Level1_성격유형검사하기.java)
   - [2022-kakao-신고 결과 받기](src/main/java/Programmers/Programmers_2022_Kakao_Level1_신고결과받기.java)
