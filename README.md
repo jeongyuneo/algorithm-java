@@ -111,6 +111,7 @@
 - 2628 - [종이자르기](src/main/java/Baekjoon/BOJ_2628.java)
 - 2635 - [수 이어가기](src/main/java/Baekjoon/BOJ_2635.java)
 - 2636 - [치즈](src/main/java/Baekjoon/BOJ_2636.java)
+- 2638 - [치즈](src/main/java/Baekjoon/BOJ_2638.java)
 - 2660 - [회장뽑기](src/main/java/Baekjoon/BOJ_2660.java)
 - 2667 - [단지번호붙이기](src/main/java/Baekjoon/BOJ_2667.java)
 - 2669 - [직사각형 네개의 합집합의 면적 구하기](src/main/java/Baekjoon/BOJ_2669.java)
