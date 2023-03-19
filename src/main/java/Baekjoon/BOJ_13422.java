@@ -22,21 +22,18 @@ public class BOJ_13422 {
                 money[i] = Integer.parseInt(stringTokenizer.nextToken());
             }
             int stolenMoney = 0;
-            for (int i = 0; i < m; i++) {
-                stolenMoney += money[i];
-            }
-            int count = n;
-            if (n == m) {
-                count = 1;
-            }
-            int idx = m;
             int caseOfTheft = 0;
-            while (count-- > 0) {
-                if (stolenMoney < k) {
-                    caseOfTheft++;
+            for (int i = 0; i < n + m - 1; i++) {
+                stolenMoney += money[i % n];
+                if (i >= m - 1) {
+                    if (stolenMoney < k) {
+                        caseOfTheft++;
+                    }
+                    stolenMoney -= money[i - m + 1];
                 }
-                stolenMoney -= money[idx - m];
-                stolenMoney += money[(idx++) % n];
+                if (n == m && i == n - 1) {
+                    break;
+                }
             }
             answer.append(caseOfTheft).append("\n");
         }
