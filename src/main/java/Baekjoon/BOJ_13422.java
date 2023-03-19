@@ -25,17 +25,18 @@ public class BOJ_13422 {
             for (int i = 0; i < m; i++) {
                 stolenMoney += money[i];
             }
-            int caseOfTheft = 0;
-            if (n == m && stolenMoney < k) {
-                answer.append(1).append("\n");
-                continue;
+            int count = n;
+            if (n == m) {
+                count = 1;
             }
-            for (int i = 0; i < n; i++) {
+            int idx = m;
+            int caseOfTheft = 0;
+            while (count-- > 0) {
                 if (stolenMoney < k) {
                     caseOfTheft++;
                 }
-                stolenMoney -= money[i];
-                stolenMoney += money[(i + m) % n];
+                stolenMoney -= money[idx - m];
+                stolenMoney += money[(idx++) % n];
             }
             answer.append(caseOfTheft).append("\n");
         }
