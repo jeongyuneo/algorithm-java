@@ -203,6 +203,7 @@
 - 14719 - [빗물](src/main/java/Baekjoon/BOJ_14719.java)
 - 14888 - [연산자 끼워넣기](src/main/java/Baekjoon/BOJ_14888.java)
 - 14889 - [스타트와 링크](src/main/java/Baekjoon/BOJ_14889.java)
+- 14890 - [경사로](src/main/java/Baekjoon/BOJ_14890.java)
 - 14891 - [톱니바퀴](src/main/java/Baekjoon/BOJ_14891.java)
 - 14938 - [서강그라운드](src/main/java/Baekjoon/BOJ_14938.java)
 - 15649 - [N과 M (1)](src/main/java/Baekjoon/BOJ_15649.java)
