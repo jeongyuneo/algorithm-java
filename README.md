@@ -240,6 +240,7 @@
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
 - 17609 - [회문](src/main/java/Baekjoon/BOJ_17609.java)
 - 17779 - [게리맨더링 2](src/main/java/Baekjoon/BOJ_17779.java)
+- 17822 - [원판 돌리기](src/main/java/Baekjoon/BOJ_17822.java)
 - 17837 - [새로운 게임 2](src/main/java/Baekjoon/BOJ_17837.java)
 - 17951 - [흩날리는 시험지 속에서 내 평점이 느껴진거야](src/main/java/Baekjoon/BOJ_17951.java)
 - 18405 - [경쟁적 전염](src/main/java/Baekjoon/BOJ_18405.java)
