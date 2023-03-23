@@ -134,6 +134,7 @@
 - 3078 - [좋은 친구](src/main/java/Baekjoon/BOJ_3078.java)
 - 3079 - [입국심사](src/main/java/Baekjoon/BOJ_3079.java)
 - 3109 - [빵집](src/main/java/Baekjoon/BOJ_3109.java)
+- 3151 - [합이 0](src/main/java/Baekjoon/BOJ_3151.java)
 - 3187 - [양치기 꿍](src/main/java/Baekjoon/BOJ_3187.java)
 - 3190 - [뱀](src/main/java/Baekjoon/BOJ_3190.java)
 - 3273 - [두 수의 합](src/main/java/Baekjoon/BOJ_3273.java)
