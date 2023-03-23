@@ -207,6 +207,7 @@
 - 14889 - [스타트와 링크](src/main/java/Baekjoon/BOJ_14889.java)
 - 14890 - [경사로](src/main/java/Baekjoon/BOJ_14890.java)
 - 14891 - [톱니바퀴](src/main/java/Baekjoon/BOJ_14891.java)
+- 14921 - [용액 합성하기](src/main/java/Baekjoon/BOJ_14921.java)
 - 14938 - [서강그라운드](src/main/java/Baekjoon/BOJ_14938.java)
 - 15649 - [N과 M (1)](src/main/java/Baekjoon/BOJ_15649.java)
 - 15650 - [N과 M (2)](src/main/java/Baekjoon/BOJ_15650.java)
