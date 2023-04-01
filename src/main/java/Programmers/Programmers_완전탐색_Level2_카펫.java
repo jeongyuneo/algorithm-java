@@ -14,7 +14,7 @@ public class Programmers_완전탐색_Level2_카펫 {
         int width = 0;
         int height = 0;
         int total = brown + yellow;
-        for (int i = 1; i < total; i++) {
+        for (int i = 1; i < brown; i++) {
             if (total % i != 0) {
                 continue;
             }
@@ -25,6 +25,7 @@ public class Programmers_완전탐색_Level2_카펫 {
             if (i * 2 + j * 2 - 4 == brown) {
                 width = i;
                 height = j;
+                break;
             }
         }
         return new int[]{width, height};
