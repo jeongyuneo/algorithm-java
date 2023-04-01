@@ -297,6 +297,7 @@
   - [스택/큐-주식가격](src/main/java/Programmers/Programmers_스택큐_Level2_주식가격.java)
   - [정렬-가장 큰 수](src/main/java/Programmers/Programmers_정렬_Level2_가장큰수.java)
   - [완전탐색-소수 찾기](src/main/java/Programmers/Programmers_완전탐색_Level2_소수찾기.java)
+  - [완전탐색-카펫](src/main/java/Programmers/Programmers_완전탐색_Level2_카펫.java)
   - [2020-kakao-문자열 압축](src/main/java/Programmers/Programmers_2020_Kakao_Level2_문자열압축.java)
   - [2022-kakao-주차 요금 계산](src/main/java/Programmers/Programmers_2022_Kakao_Level2_주차요금계산.java)
   - [2023-kakao-택배 배달과 수거하기](src/main/java/Programmers/Programmers_2023_Kakao_Level2_택배배달과수거하기.java)
