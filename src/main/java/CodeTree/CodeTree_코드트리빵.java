@@ -28,7 +28,6 @@ public class CodeTree_코드트리빵 {
     private static int[][] map;
     private static int[][] convenienceStores;
     private static boolean[][] isVisited;
-    private static int[][][] moves;
     private static PriorityQueue<int[]>[] people;
     private static int n;
     private static int m;
@@ -49,7 +48,6 @@ public class CodeTree_코드트리빵 {
         }
         convenienceStores = new int[m + 1][2];
         people = new PriorityQueue[m + 1];
-        moves = new int[m + 1][n][n];
         for (int i = 1; i <= m; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             convenienceStores[i][0] = Integer.parseInt(stringTokenizer.nextToken()) - 1;
@@ -76,7 +74,7 @@ public class CodeTree_코드트리빵 {
                 for (int[] delta : DELTAS) {
                     int dx = x + delta[0];
                     int dy = y + delta[1];
-                    if (isInRange(dx, dy) && moves[i][dx][dy] == EMPTY && map[dx][dy] >= EMPTY) {
+                    if (isInRange(dx, dy) && map[dx][dy] >= EMPTY) {
                         if (convenienceStores[i][0] == dx && convenienceStores[i][1] == dy) {
                             arrive++;
                             map[dx][dy] = -i;
@@ -104,7 +102,6 @@ public class CodeTree_코드트리빵 {
             int y = current[1];
             if (map[x][y] == BASECAMP) {
                 map[x][y] = -time;
-                moves[time][x][y] = time;
                 people[time].offer(new int[]{x, y, 0});
                 PRIORITY_QUEUE.clear();
                 return;
