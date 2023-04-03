@@ -15,7 +15,7 @@ public class CodeTree_코드트리빵 {
     private static final int BASECAMP = 1;
     private static final int MOVE = 2;
     private static final PriorityQueue<int[]> NEXT_MOVES = new PriorityQueue<>(Comparator.comparing(person -> person[MOVE]));
-    private static final PriorityQueue<int[]> PRIORITY_QUEUE = new PriorityQueue<>((p1, p2) -> {
+    private static final PriorityQueue<int[]> MOVES = new PriorityQueue<>((p1, p2) -> {
         if (p1[MOVE] == p2[MOVE]) {
             if (p1[0] == p2[0]) {
                 return p1[1] - p2[1];
@@ -92,18 +92,18 @@ public class CodeTree_코드트리빵 {
     }
 
     private static void moveToBasecamp(int time) {
-        PRIORITY_QUEUE.offer(new int[]{convenienceStores[time][0], convenienceStores[time][1], 0});
+        MOVES.offer(new int[]{convenienceStores[time][0], convenienceStores[time][1], 0});
         for (int i = 0; i < n; i++) {
             Arrays.fill(isVisited[i], false);
         }
-        while (!PRIORITY_QUEUE.isEmpty()) {
-            int[] current = PRIORITY_QUEUE.poll();
+        while (!MOVES.isEmpty()) {
+            int[] current = MOVES.poll();
             int x = current[0];
             int y = current[1];
             if (map[x][y] == BASECAMP) {
                 map[x][y] = -time;
                 people[time].offer(new int[]{x, y, 0});
-                PRIORITY_QUEUE.clear();
+                MOVES.clear();
                 return;
             }
             for (int[] delta : DELTAS) {
@@ -111,7 +111,7 @@ public class CodeTree_코드트리빵 {
                 int dy = y + delta[1];
                 if (isInRange(dx, dy) && !isVisited[dx][dy] && map[dx][dy] >= EMPTY) {
                     isVisited[dx][dy] = true;
-                    PRIORITY_QUEUE.offer(new int[]{dx, dy, current[MOVE] + 1});
+                    MOVES.offer(new int[]{dx, dy, current[MOVE] + 1});
                 }
             }
         }
