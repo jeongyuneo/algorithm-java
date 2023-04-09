@@ -40,6 +40,7 @@
 - 1654 - [랜선 자르기](src/main/java/Baekjoon/BOJ_1654.java)
 - 1655 - [가운데를 말해요](src/main/java/Baekjoon/BOJ_1655.java)
 - 1697 - [숨바꼭질](src/main/java/Baekjoon/BOJ_1697.java)
+- 1713 - [후보 추천하기](src/main/java/Baekjoon/BOJ_1713.java)
 - 1715 - [카드 정렬하기](src/main/java/Baekjoon/BOJ_1715.java)
 - 1717 - [집합의 표현](src/main/java/Baekjoon/BOJ_1717.java)
 - 1719 - [택배](src/main/java/Baekjoon/BOJ_1719.java)
