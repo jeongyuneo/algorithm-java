@@ -3,6 +3,8 @@ package Baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BOJ_16472 {
 
@@ -12,25 +14,28 @@ public class BOJ_16472 {
         String input = bufferedReader.readLine();
         int maxLength = 1;
         int start = 0;
-        int end = 0;
-        int[] alphabets = new int[26];
-        alphabets[input.charAt(start) - 'a']++;
-        int length = 1;
-        while (end < input.length() - 1) {
-            end++;
-            char alphabet = input.charAt(end);
-            int index = alphabet - 'a';
-            if (++alphabets[index] == 1) {
-                length++;
-            }
-            while (length > n) {
-                int index2 = input.charAt(start) - 'a';
-                if (--alphabets[index2] == 0) {
-                    length--;
+        if (input.length() > 1) {
+            Map<Character, Integer> map = new HashMap<>();
+            map.put(input.charAt(start), start);
+            int end = 1;
+            while (end < input.length()) {
+                char alphabet = input.charAt(end);
+                map.put(alphabet, end);
+                if (map.size() - 1 >= n) {
+                    int removeIndex = input.length();
+                    char removeAlphabet = ' ';
+                    for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+                        if (entry.getValue() < removeIndex) {
+                            removeIndex = entry.getValue();
+                            removeAlphabet = entry.getKey();
+                        }
+                    }
+                    map.remove(removeAlphabet);
+                    start = removeIndex + 1;
                 }
-                start++;
+                maxLength = Math.max(maxLength, end - start + 1);
+                end++;
             }
-            maxLength = Math.max(maxLength, end - start + 1);
         }
         System.out.println(maxLength);
     }
