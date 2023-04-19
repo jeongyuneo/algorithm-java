@@ -232,6 +232,7 @@
 - 16235 - [나무 재테크](src/main/java/Baekjoon/BOJ_16235.java)
 - 16236 - [아기 상어](src/main/java/Baekjoon/BOJ_16236.java)
 - 16398 - [행성 연결](src/main/java/Baekjoon/BOJ_16398.java)
+- 16400 - [소수 화폐](src/main/java/Baekjoon/BOJ_16400.java)
 - 16472 - [고냥이](src/main/java/Baekjoon/BOJ_16472.java)
 - 16562 - [친구비](src/main/java/Baekjoon/BOJ_16562.java)
 - 16724 - [피리 부는 사나이](src/main/java/Baekjoon/BOJ_16724.java)
