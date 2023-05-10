@@ -76,6 +76,7 @@
 - 2075 - [N번째 큰 수](src/main/java/Baekjoon/BOJ_2075.java)
 - 2110 - [공유기 설치](src/main/java/Baekjoon/BOJ_2110.java)
 - 2116 - [주사위 쌓기](src/main/java/Baekjoon/BOJ_2116.java)
+- 2121 - [넷이 놀기](src/main/java/Baekjoon/BOJ_2121.java)
 - 2138 - [전구와 스위치](src/main/java/Baekjoon/BOJ_2138.java)
 - 2146 - [다리 만들기](src/main/java/Baekjoon/BOJ_2146.java)
 - 2151 - [거울 설치](src/main/java/Baekjoon/BOJ_2151.java)
