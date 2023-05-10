@@ -130,6 +130,7 @@
 - 2696 - [중앙값 구하기](src/main/java/Baekjoon/BOJ_2696.java)
 - 2805 - [나무 자르기](src/main/java/Baekjoon/BOJ_2805.java)
 - 2839 - [설탕 배달](src/main/java/Baekjoon/BOJ_2839.java)
+- 2852 - [NBA 농구](src/main/java/Baekjoon/BOJ_2852.java)
 - 2884 - [알람 시계](src/main/java/Baekjoon/BOJ_2884.java)
 - 2885 - [초콜릿 식사](src/main/java/Baekjoon/BOJ_2885.java)
 - 2961 - [도영이가 만든 맛있는 음식](src/main/java/Baekjoon/BOJ_2961.java)
