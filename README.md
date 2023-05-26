@@ -94,6 +94,7 @@
 - 2262 - [토너먼트 만들기](src/main/java/Baekjoon/BOJ_2262.java)
 - 2285 - [우체국](src/main/java/Baekjoon/BOJ_2285.java)
 - 2293 - [동전 1](src/main/java/Baekjoon/BOJ_2293.java)
+- 2294 - [동전 2](src/main/java/Baekjoon/BOJ_2294.java)
 - 2304 - [창고 다각형](src/main/java/Baekjoon/BOJ_2304.java)
 - 2309 - [일곱 난쟁이](src/main/java/Baekjoon/BOJ_2309.java)
 - 2412 - [암벽 등반](src/main/java/Baekjoon/BOJ_2412.java)
