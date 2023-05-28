@@ -307,6 +307,7 @@
   - [정렬-가장 큰 수](src/main/java/Programmers/Programmers_정렬_Level2_가장큰수.java)
   - [정렬-H-Index](src/main/java/Programmers/Programmers_정렬_Level2_HIndex.java)
   - [탐욕법-큰 수 만들기](src/main/java/Programmers/Programmers_탐욕법_Level2_큰수만들기.java)
+  - [탐욕법-구명보트](src/main/java/Programmers/Programmers_탐욕법_Level2_구명보트.java)
   - [완전탐색-소수 찾기](src/main/java/Programmers/Programmers_완전탐색_Level2_소수찾기.java)
   - [완전탐색-카펫](src/main/java/Programmers/Programmers_완전탐색_Level2_카펫.java)
   - [완전탐색-모음사전](src/main/java/Programmers/Programmers_완전탐색_Level2_모음사전.java)
