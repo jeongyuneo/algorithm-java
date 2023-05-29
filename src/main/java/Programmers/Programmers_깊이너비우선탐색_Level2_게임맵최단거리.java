@@ -19,28 +19,24 @@ public class Programmers_깊이너비우선탐색_Level2_게임맵최단거리 {
         int m = maps[0].length;
         MOVES.clear();
         boolean[][] isVisited = new boolean[n][m];
-        MOVES.offer(new int[]{0, 0});
-        int move = 0;
+        MOVES.offer(new int[]{0, 0, 1});
         while (!MOVES.isEmpty()) {
-            int size = MOVES.size();
-            move++;
-            while (size-- > 0) {
-                int[] current = MOVES.poll();
-                int x = current[0];
-                int y = current[1];
-                if (x == n - 1 && y == m - 1) {
-                    return move;
-                }
-                if (isVisited[x][y]) {
-                    continue;
-                }
-                isVisited[x][y] = true;
-                for (int[] delta : DELTAS) {
-                    int dx = x + delta[0];
-                    int dy = y + delta[1];
-                    if (dx >= 0 && dx < n && dy >= 0 && dy < m && !isVisited[dx][dy] && maps[dx][dy] != WALL) {
-                        MOVES.offer(new int[]{dx, dy});
-                    }
+            int[] current = MOVES.poll();
+            int x = current[0];
+            int y = current[1];
+            int move = current[2];
+            if (x == n - 1 && y == m - 1) {
+                return move;
+            }
+            if (isVisited[x][y]) {
+                continue;
+            }
+            isVisited[x][y] = true;
+            for (int[] delta : DELTAS) {
+                int dx = x + delta[0];
+                int dy = y + delta[1];
+                if (dx >= 0 && dx < n && dy >= 0 && dy < m && !isVisited[dx][dy] && maps[dx][dy] != WALL) {
+                    MOVES.offer(new int[]{dx, dy, move + 1});
                 }
             }
         }
