@@ -145,6 +145,7 @@
 - 3187 - [양치기 꿍](src/main/java/Baekjoon/BOJ_3187.java)
 - 3190 - [뱀](src/main/java/Baekjoon/BOJ_3190.java)
 - 3273 - [두 수의 합](src/main/java/Baekjoon/BOJ_3273.java)
+- 3980 - [선발 명단](src/main/java/Baekjoon/BOJ_3980.java)
 - 4195 - [친구 네트워크](src/main/java/Baekjoon/BOJ_4195.java)
 - 4344 - [평균은 넘겠지](src/main/java/Baekjoon/BOJ_4344.java)
 - 4386 - [별자리 만들기](src/main/java/Baekjoon/BOJ_4386.java)
