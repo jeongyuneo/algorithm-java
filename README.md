@@ -204,6 +204,7 @@
 - 13913 - [숨바꼭질 4](src/main/java/Baekjoon/BOJ_13913.java)
 - 13975 - [파일 합치기 3](src/main/java/Baekjoon/BOJ_13975.java)
 - 14002 - [가장 긴 증가하는 부분 수열 4](src/main/java/Baekjoon/BOJ_14002.java)
+- 14284 - [간선 이어가기 2](src/main/java/Baekjoon/BOJ_14284.java)
 - 14425 - [문자열 집합](src/main/java/Baekjoon/BOJ_14425.java)
 - 14442 - [벽 부수고 이동하기 2](src/main/java/Baekjoon/BOJ_14442.java)
 - 14499 - [주사위 굴리기](src/main/java/Baekjoon/BOJ_14499.java)
