@@ -1,5 +1,8 @@
 package Programmers;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class Programmers_깊이너비우선탐색_Level2_타겟넘버 {
 
     public static void main(String[] args) {
@@ -7,27 +10,24 @@ public class Programmers_깊이너비우선탐색_Level2_타겟넘버 {
         System.out.println(solution(new int[]{4, 1, 2, 1,}, 4));
     }
 
-    private static int numberCount;
-    private static int answer;
-
     public static int solution(int[] numbers, int target) {
-        numberCount = numbers.length;
-        answer = 0;
-        operate(numbers, target, 0, 0, 0);
-        return answer;
-    }
-
-    private static void operate(int[] numbers, int target, int cnt, int start, int result) {
-        if (cnt == numberCount) {
-            if (result == target) {
-                answer++;
+        int numberCount = numbers.length;
+        int answer = 0;
+        Queue<int[]> operation = new ArrayDeque<>();
+        operation.offer(new int[]{0, 0});
+        while (!operation.isEmpty()) {
+            int[] current = operation.poll();
+            int number = current[0];
+            int count = current[1];
+            if (count == numberCount) {
+                if (number == target) {
+                    answer++;
+                }
+                continue;
             }
-            return;
+            operation.offer(new int[]{number + numbers[count], count + 1});
+            operation.offer(new int[]{number - numbers[count], count + 1});
         }
-        for (int i = start; i < numberCount; i++) {
-            int number = numbers[i];
-            operate(numbers, target, cnt + 1, i + 1, result + number);
-            operate(numbers, target, cnt + 1, i + 1, result - number);
-        }
+        return answer;
     }
 }
