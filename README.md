@@ -5,6 +5,7 @@
 <details>
     <summary>Baekjoon Online Judge</summary>
 
+- 1010 - [다리 놓기](src/main/java/Baekjoon/BOJ_1010.java)
 - 1012 - [유기농 배추](src/main/java/Baekjoon/BOJ_1012.java)
 - 1018 - [체스판 다시 칠하기](src/main/java/Baekjoon/BOJ_1018.java)
 - 1026 - [보물](src/main/java/Baekjoon/BOJ_1026.java)
