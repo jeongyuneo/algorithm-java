@@ -265,6 +265,7 @@
 - 19236 - [청소년 상어](src/main/java/Baekjoon/BOJ_19236.java)
 - 19237 - [어른 상어](src/main/java/Baekjoon/BOJ_19237.java)
 - 19238 - [스타트 택시](src/main/java/Baekjoon/BOJ_19238.java)
+- 19583 - [싸이버개강총회](src/main/java/Baekjoon/BOJ_19583.java)
 - 20007 - [떡 돌리기](src/main/java/Baekjoon/BOJ_20007.java)
 - 20055 - [컨베이어 벨트 위의 로봇](src/main/java/Baekjoon/BOJ_20055.java)
 - 20056 - [마법사 상어와 파이어볼](src/main/java/Baekjoon/BOJ_20056.java)
