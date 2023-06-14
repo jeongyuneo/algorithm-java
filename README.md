@@ -278,6 +278,7 @@
 - 21609 - [상어 중학교](src/main/java/Baekjoon/BOJ_21609.java)
 - 21610 - [마법사 상어와 비바라기](src/main/java/Baekjoon/BOJ_21610.java)
 - 21611 - [마법사 상어와 블리자드](src/main/java/Baekjoon/BOJ_21611.java)
+- 21924 - [도시 건설](src/main/java/Baekjoon/BOJ_21924.java)
 - 21939 - [문제 추천 시스템 Version 1](src/main/java/Baekjoon/BOJ_21939.java)
 - 22862 - [가장 긴 짝수 연속한 부분 수열 (large)](src/main/java/Baekjoon/BOJ_22862.java)
 - 23288 - [주사위 굴리기 2](src/main/java/Baekjoon/BOJ_23288.java)
