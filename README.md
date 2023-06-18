@@ -154,6 +154,7 @@
 - 4991 - [로봇 청소기](src/main/java/Baekjoon/BOJ_4991.java)
 - 5430 - [AC](src/main/java/Baekjoon/BOJ_5430.java)
 - 5972 - [택배 배송](src/main/java/Baekjoon/BOJ_5972.java)
+- 6443 - [애너그램](src/main/java/Baekjoon/BOJ_6443.java)
 - 6603 - [로또](src/main/java/Baekjoon/BOJ_6603.java)
 - 6087 - [레이저 통신](src/main/java/Baekjoon/BOJ_6087.java)
 - 7576 - [토마토](src/main/java/Baekjoon/BOJ_7576.java)
