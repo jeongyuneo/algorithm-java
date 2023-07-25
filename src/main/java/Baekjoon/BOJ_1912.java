@@ -16,12 +16,12 @@ public class BOJ_1912 {
             numbers[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
         int[] sums = new int[n];
-        int answer = numbers[0];
         sums[0] = numbers[0];
+        int max = numbers[0];
         for (int i = 1; i < n; i++) {
             sums[i] = Math.max(sums[i - 1] + numbers[i], numbers[i]);
-            answer = Math.max(answer, sums[i]);
+            max = Math.max(max, sums[i]);
         }
-        System.out.println(answer);
+        System.out.println(max);
     }
 }
