@@ -87,6 +87,7 @@
 - 2211 - [네트워크 복구](src/main/java/Baekjoon/BOJ_2211.java)
 - 2212 - [센서](src/main/java/Baekjoon/BOJ_2212.java)
 - 2217 - [로프](src/main/java/Baekjoon/BOJ_2217.java)
+- 2229 - [조 짜기](src/main/java/Baekjoon/BOJ_2229.java)
 - 2230 - [수 고르기](src/main/java/Baekjoon/BOJ_2230.java)
 - 2234 - [성곽](src/main/java/Baekjoon/BOJ_2234.java)
 - 2239 - [스도쿠](src/main/java/Baekjoon/BOJ_2239.java)
