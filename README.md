@@ -172,6 +172,7 @@
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
 - 10250 - [ACM 호텔](src/main/java/Baekjoon/BOJ_10250.java)
+- 10282 - [해킹](src/main/java/Baekjoon/BOJ_10282.java)
 - 10815 - [숫자 카드](src/main/java/Baekjoon/BOJ_10815.java)
 - 10775 - [공항](src/main/java/Baekjoon/BOJ_10775.java)
 - 10816 - [숫자 카드 2](src/main/java/Baekjoon/BOJ_10816.java)
