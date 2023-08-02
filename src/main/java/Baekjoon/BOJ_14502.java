@@ -14,8 +14,10 @@ public class BOJ_14502 {
     private static final int WALL_COUNT = 3;
     private static final List<int[]> VIRUSES = new ArrayList<>();
     private static final List<int[]> EMPTY_SPACES = new ArrayList<>();
+    private static final Queue<int[]> MOVES = new ArrayDeque<>();
 
     private static int[][] laboratory;
+    private static boolean[][] isVisited;
     private static int maxSafeZone;
     private static int n;
     private static int m;
@@ -26,13 +28,14 @@ public class BOJ_14502 {
         n = Integer.parseInt(stringTokenizer.nextToken());
         m = Integer.parseInt(stringTokenizer.nextToken());
         laboratory = new int[n][m];
+        isVisited = new boolean[n][m];
         for (int i = 0; i < n; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int j = 0; j < m; j++) {
                 int input = Integer.parseInt(stringTokenizer.nextToken());
                 if (input == EMPTY_SPACE) {
                     EMPTY_SPACES.add(new int[]{i, j});
-                } else if(input == VIRUS) {
+                } else if (input == VIRUS) {
                     VIRUSES.add(new int[]{i, j});
                 }
                 laboratory[i][j] = input;
@@ -43,44 +46,52 @@ public class BOJ_14502 {
         System.out.println(maxSafeZone);
     }
 
-    private static void spreadVirus() {
-        int[][] laboratoryWithNewWalls = copyLaboratory();
-
-        Queue<int[]> queue = new LinkedList<>();
-        for (int[] virus : VIRUSES) {
-            queue.offer(virus);
+    private static void installWalls(int cnt, int start) {
+        if (cnt == WALL_COUNT) {
+            spreadVirus();
+            return;
         }
-        while (!queue.isEmpty()) {
-            int[] virus = queue.poll();
-            int x = virus[0];
-            int y = virus[1];
-            for (int[] delta : DELTAS) {
-                int dx = x + delta[0];
-                int dy = y + delta[1];
-                if (dx >= 0 && dx < n && dy >= 0 && dy < m && laboratoryWithNewWalls[dx][dy] == EMPTY_SPACE) {
-                    laboratoryWithNewWalls[dx][dy] = VIRUS;
-                    queue.offer(new int[]{dx, dy});
+        for (int i = start; i < EMPTY_SPACES.size(); i++) {
+            int[] emptySpace = EMPTY_SPACES.get(i);
+            laboratory[emptySpace[0]][emptySpace[1]] = WALL;
+            installWalls(cnt + 1, i + 1);
+            laboratory[emptySpace[0]][emptySpace[1]] = EMPTY_SPACE;
+        }
+    }
+
+    private static void spreadVirus() {
+        int[][] copyOfLaboratory = copyLaboratory();
+        initializeVisits();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (copyOfLaboratory[i][j] == VIRUS && !isVisited[i][j]) {
+                    MOVES.offer(new int[]{i, j});
+                    isVisited[i][j] = true;
+                    while (!MOVES.isEmpty()) {
+                        int[] current = MOVES.poll();
+                        int x = current[0];
+                        int y = current[1];
+                        for (int[] delta : DELTAS) {
+                            int dx = x + delta[0];
+                            int dy = y + delta[1];
+                            if (isInLaboratory(dx, dy) && copyOfLaboratory[dx][dy] == EMPTY_SPACE && !isVisited[dx][dy]) {
+                                isVisited[dx][dy] = true;
+                                copyOfLaboratory[dx][dy] = VIRUS;
+                                MOVES.offer(new int[]{dx, dy});
+                            }
+                        }
+                    }
                 }
             }
         }
-        checkSafeZone(laboratoryWithNewWalls);
+        checkSafeZoe(copyOfLaboratory);
     }
 
-    private static int[][] copyLaboratory() {
-        int[][] laboratoryWithNewWalls = new int[n][m];
+    private static void checkSafeZoe(int[][] laboratory) {
+        int safeZone = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                laboratoryWithNewWalls[i][j] = laboratory[i][j];
-            }
-        }
-        return laboratoryWithNewWalls;
-    }
-
-    private static void checkSafeZone(int[][] laboratoryWithNewWalls) {
-        int safeZone = 0;
-        for (int[] laboratoryWithNewWall : laboratoryWithNewWalls) {
-            for (int space : laboratoryWithNewWall) {
-                if (space == EMPTY_SPACE) {
+                if (laboratory[i][j] == EMPTY_SPACE) {
                     safeZone++;
                 }
             }
@@ -88,16 +99,21 @@ public class BOJ_14502 {
         maxSafeZone = Math.max(maxSafeZone, safeZone);
     }
 
-    private static void installWalls(int cnt, int start) {
-        if (cnt == WALL_COUNT) {
-            spreadVirus();
-            return;
+    private static int[][] copyLaboratory() {
+        int[][] copyOfLaboratory = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            copyOfLaboratory[i] = laboratory[i].clone();
         }
+        return copyOfLaboratory;
+    }
 
-        for (int i = start; i < EMPTY_SPACES.size(); i++) {
-            laboratory[EMPTY_SPACES.get(i)[0]][EMPTY_SPACES.get(i)[1]] = WALL;
-            installWalls(cnt+1, i+1);
-            laboratory[EMPTY_SPACES.get(i)[0]][EMPTY_SPACES.get(i)[1]] = EMPTY_SPACE;
+    private static boolean isInLaboratory(int dx, int dy) {
+        return dx >= 0 && dx < n && dy >= 0 && dy < m;
+    }
+
+    private static void initializeVisits() {
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(isVisited[i], false);
         }
     }
 }
