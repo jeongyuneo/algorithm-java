@@ -31,8 +31,7 @@ public class BOJ_4963 {
                     map[i][j] = Integer.parseInt(stringTokenizer.nextToken());
                 }
             }
-            stringBuilder.append(getIsland(map, h, w))
-                    .append("\n");
+            stringBuilder.append(getIsland(map, h, w)).append("\n");
         }
         System.out.println(stringBuilder);
     }
@@ -45,11 +44,11 @@ public class BOJ_4963 {
                 if (map[i][j] == LAND) {
                     cnt++;
                     queue.offer(new int[]{i, j});
+                    map[i][j] = VISIT;
                     while (!queue.isEmpty()) {
                         int[] location = queue.poll();
                         int x = location[0];
                         int y = location[1];
-                        map[x][y] = VISIT;
                         for (int[] delta : DELTAS) {
                             int dx = x + delta[0];
                             int dy = y + delta[1];
