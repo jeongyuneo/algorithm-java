@@ -1,6 +1,9 @@
 package Programmers;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 public class Programmers_스택큐_Level2_기능개발 {
 
@@ -10,15 +13,32 @@ public class Programmers_스택큐_Level2_기능개발 {
     }
 
     public static int[] solution(int[] progresses, int[] speeds) {
-        int[] distributionDays = new int[100];
-        int previousDistribution = 0;
-        for (int i = 0; i < progresses.length; i++) {
-            int distribution = (int) Math.ceil((100 - progresses[i]) / (double) speeds[i]);
-            if (previousDistribution < distribution) {
-                previousDistribution = distribution;
-            }
-            distributionDays[previousDistribution]++;
+        List<Integer> releases = new ArrayList<>();
+        int length = progresses.length;
+        int[] done = new int[length];
+        for (int i = 0; i < length; i++) {
+            done[i] += (int) Math.ceil((100.0 - progresses[i]) / speeds[i]);
         }
-        return Arrays.stream(distributionDays).filter(distributionDay -> distributionDay != 0).toArray();
+        Stack<Integer> stack = new Stack<>();
+        int first = done[0];
+        stack.push(first);
+        for (int i = 1; i < length; i++) {
+            if (first >= done[i]) {
+                stack.push(done[i]);
+            } else {
+                releases.add(stack.size());
+                stack.clear();
+                first = done[i];
+                stack.push(first);
+            }
+        }
+        if (!stack.isEmpty()) {
+            releases.add(stack.size());
+        }
+        int[] result = new int[releases.size()];
+        for (int i = 0; i < releases.size(); i++) {
+            result[i] = releases.get(i);
+        }
+        return result;
     }
 }
