@@ -11,7 +11,6 @@ public class BOJ_18404 {
 
     private static final int[][] DELTAS = {{-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}, {-2, -1}, {-1, -2}};
     private static final int EMPTY = 0;
-    private static final int KNIGHT = -1;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -22,14 +21,13 @@ public class BOJ_18404 {
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int knightX = Integer.parseInt(stringTokenizer.nextToken()) - 1;
         int knightY = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-//        board[knightX][knightY] = KNIGHT;
         int[] enemies = new int[m + 1];
         StringBuilder result = new StringBuilder();
-        for (int i = 1; i <= m; i++) {
+        for (int enemy = 1; enemy <= m; enemy++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int enemyX = Integer.parseInt(stringTokenizer.nextToken()) - 1;
             int enemyY = Integer.parseInt(stringTokenizer.nextToken()) - 1;
-            board[enemyX][enemyY] = i;
+            board[enemyX][enemyY] = enemy;
         }
         move(board, enemies, n, knightX, knightY);
         for (int i = 1; i <= m; i++) {
