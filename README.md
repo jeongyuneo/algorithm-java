@@ -274,6 +274,7 @@
 - 17951 - [흩날리는 시험지 속에서 내 평점이 느껴진거야](src/main/java/Baekjoon/BOJ_17951.java)
 - 18404 - [현명한 나이트](src/main/java/Baekjoon/BOJ_18404.java)
 - 18405 - [경쟁적 전염](src/main/java/Baekjoon/BOJ_18405.java)
+- 18429 - [근손실](src/main/java/Baekjoon/BOJ_18429.java)
 - 19236 - [청소년 상어](src/main/java/Baekjoon/BOJ_19236.java)
 - 19237 - [어른 상어](src/main/java/Baekjoon/BOJ_19237.java)
 - 19238 - [스타트 택시](src/main/java/Baekjoon/BOJ_19238.java)
