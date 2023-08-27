@@ -28,6 +28,7 @@
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
 - 1261 - [알고스팟](src/main/java/Baekjoon/BOJ_1261.java)
 - 1269 - [대칭 차집합](src/main/java/Baekjoon/BOJ_1269.java)
+- 1325 - [효율적인 해킹](src/main/java/Baekjoon/BOJ_1325.java)
 - 1339 - [단어 수학](src/main/java/Baekjoon/BOJ_1339.java)
 - 1342 - [비밀 모임](src/main/java/Baekjoon/BOJ_1342.java)
 - 1374 - [강의실](src/main/java/Baekjoon/BOJ_1374.java)
