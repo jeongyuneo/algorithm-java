@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_1342 {
+public class BOJ_13424 {
 
     private static final int NUMBER = 0;
     private static final int DISTANCE = 1;
