@@ -271,6 +271,7 @@
 - 17143 - [낚시왕](src/main/java/Baekjoon/BOJ_17143.java)
 - 17144 - [미세먼지 안녕!](src/main/java/Baekjoon/BOJ_17144.java)
 - 17216 - [가장 큰 감소 부분 수열](src/main/java/Baekjoon/BOJ_17216.java)
+- 17265 - [나의 인생에는 수학과 함께](src/main/java/Baekjoon/BOJ_17265.java)
 - 17478 - [재귀함수가 뭔가요?](src/main/java/Baekjoon/BOJ_17478.java)
 - 17609 - [회문](src/main/java/Baekjoon/BOJ_17609.java)
 - 17779 - [게리맨더링 2](src/main/java/Baekjoon/BOJ_17779.java)
