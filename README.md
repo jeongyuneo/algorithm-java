@@ -265,6 +265,7 @@
 - 16926 - [배열 돌리기 1](src/main/java/Baekjoon/BOJ_16926.java)
 - 16928 - [뱀과 사다리 게임](src/main/java/Baekjoon/BOJ_16928.java)
 - 16953 - [A → B](src/main/java/Baekjoon/BOJ_16953.java)
+- 17123 - [배열 놀이](src/main/java/Baekjoon/BOJ_17123.java)
 - 17135 - [캐슬 디펜스](src/main/java/Baekjoon/BOJ_17135.java)
 - 17140 - [이차원 배열과 연산](src/main/java/Baekjoon/BOJ_17140.java)
 - 17141 - [연구소 2](src/main/java/Baekjoon/BOJ_17141.java)
