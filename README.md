@@ -178,6 +178,7 @@
 - 10025 - [게으른 백곰](src/main/java/Baekjoon/BOJ_10025.java)
 - 10026 - [적록색약](src/main/java/Baekjoon/BOJ_10026.java)
 - 10157 - [자리배정](src/main/java/Baekjoon/BOJ_10157.java)
+- 10159 - [저울](src/main/java/Baekjoon/BOJ_10159.java)
 - 10163 - [색종이](src/main/java/Baekjoon/BOJ_10163.java)
 - 10250 - [ACM 호텔](src/main/java/Baekjoon/BOJ_10250.java)
 - 10282 - [해킹](src/main/java/Baekjoon/BOJ_10282.java)
