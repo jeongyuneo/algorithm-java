@@ -23,6 +23,7 @@
 - 1197 - [최소 스패닝 트리](src/main/java/Baekjoon/BOJ_1197.java)
 - 1202 - [파티](src/main/java/Baekjoon/BOJ_1202.java)
 - 1238 - [파티](src/main/java/Baekjoon/BOJ_1238.java)
+- 1240 - [노드사이의 거리](src/main/java/Baekjoon/BOJ_1240.java)
 - 1244 - [스위치 켜고 끄기](src/main/java/Baekjoon/BOJ_1244.java)
 - 1253 - [좋다](src/main/java/Baekjoon/BOJ_1253.java)
 - 1260 - [DFS와 BFS](src/main/java/Baekjoon/BOJ_1260.java)
