@@ -351,6 +351,7 @@
   - [2020-kakao-문자열 압축](src/main/java/Programmers/Programmers_2020_Kakao_Level2_문자열압축.java)
   - [2022-kakao-주차 요금 계산](src/main/java/Programmers/Programmers_2022_Kakao_Level2_주차요금계산.java)
   - [2023-kakao-택배 배달과 수거하기](src/main/java/Programmers/Programmers_2023_Kakao_Level2_택배배달과수거하기.java)
+  - [2023-kakao-이모티콘 할인행사](src/main/java/Programmers/Programmers_2023_Kakao_Level2_이모티콘할인행사.java)
   - [Summer/Winter-Coding-배달](src/main/java/Programmers/Programmers_startup_intership_Level2_배달.java)
   - [Summer/Winter-Coding-영어 끝말잇기](src/main/java/Programmers/Programmers_startup_internship_Level2_영어끝말잇기.java)
 - Level 3
