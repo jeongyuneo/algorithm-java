@@ -346,6 +346,7 @@
   - [완전탐색-소수 찾기](src/main/java/Programmers/Programmers_완전탐색_Level2_소수찾기.java)
   - [완전탐색-카펫](src/main/java/Programmers/Programmers_완전탐색_Level2_카펫.java)
   - [완전탐색-모음사전](src/main/java/Programmers/Programmers_완전탐색_Level2_모음사전.java)
+  - [완전탐색-피로도](src/main/java/Programmers/Programmers_완전탐색_Level2_피로도.java)
   - [깊이/너비우선탐색-게임 맵 최단거리](src/main/java/Programmers/Programmers_깊이너비우선탐색_Level2_게임맵최단거리.java)
   - [깊이/너비우선탐색-타겟 넘버](src/main/java/Programmers/Programmers_깊이너비우선탐색_Level2_타겟넘버.java)
   - [2022-kakao-internship-두 큐 합 같게 만들기](src/main/java/Programmers/Programmers_2022_Kakao_Internship_Level2_두큐합같게만들기.java)
