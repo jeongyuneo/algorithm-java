@@ -8,7 +8,7 @@ public class Programmers_2022_Kakao_Level2_양궁대회 {
         System.out.println(Arrays.toString(solution(5, new int[]{2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0})));
         System.out.println(Arrays.toString(solution(1, new int[]{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})));
         System.out.println(Arrays.toString(solution(9, new int[]{0, 0, 1, 2, 0, 1, 1, 1, 1, 1, 1})));
-        System.out.println(Arrays.toString(solution(MAX_SCORE, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3})));
+        System.out.println(Arrays.toString(solution(10, new int[]{0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3})));
     }
 
     private static final int MAX_SCORE = 10;
