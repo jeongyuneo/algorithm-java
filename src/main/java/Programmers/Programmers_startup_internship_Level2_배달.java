@@ -2,7 +2,7 @@ package Programmers;
 
 import java.util.*;
 
-public class Programmers_startup_intership_Level2_배달 {
+public class Programmers_startup_internship_Level2_배달 {
 
     public static void main(String[] args) {
         System.out.println(solution(5, new int[][]{{1, 2, 1}, {2, 3, 3}, {5, 2, 2}, {1, 4, 2}, {5, 3, 1}, {5, 4, 2}}, 3));

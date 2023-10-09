@@ -356,7 +356,7 @@
   - [2022-kakao-양궁대회](src/main/java/Programmers/Programmers_2022_Kakao_Level2_양궁대회.java)
   - [2023-kakao-택배 배달과 수거하기](src/main/java/Programmers/Programmers_2023_Kakao_Level2_택배배달과수거하기.java)
   - [2023-kakao-이모티콘 할인행사](src/main/java/Programmers/Programmers_2023_Kakao_Level2_이모티콘할인행사.java)
-  - [Summer/Winter-Coding-배달](src/main/java/Programmers/Programmers_startup_intership_Level2_배달.java)
+  - [Summer/Winter-Coding-배달](src/main/java/Programmers/Programmers_startup_internship_Level2_배달.java)
   - [Summer/Winter-Coding-영어 끝말잇기](src/main/java/Programmers/Programmers_startup_internship_Level2_영어끝말잇기.java)
 - Level 3
   - [그래프-가장 먼 노드](src/main/java/Programmers/Programmers_그래프_Level3_가장먼노드.java)
