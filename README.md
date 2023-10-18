@@ -333,6 +333,7 @@
 - Level 2
   - [연습문제-N개의 최소공배수](src/main/java/Programmers/Programmers_연습문제_Level2_N개의최소공배수.java)
   - [연습문제-호텔 대실](src/main/java/Programmers/Programmers_연습문제_Level2_호텔대실.java)
+  - [연습문제-124 나라의 숫자](src/main/java/Programmers/Programmers_연습문제_Level2_124나라의숫자.java)
   - [힙-더 맵게](src/main/java/Programmers/Programmers_힙_Level2_더맵게.java)
   - [해시-전화번호 목록](src/main/java/Programmers/Programmers_해시_Level2_전화번호목록.java)
   - [해시-위장](src/main/java/Programmers/Programmers_해시_Level2_위장.java)
