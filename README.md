@@ -417,3 +417,9 @@
 - [포탑 부수기](src/main/java/CodeTree/CodeTree_포탑부수기.java)
 - [메이즈 러너](src/main/java/CodeTree/CodeTree_메이즈러너.java)
 </details>
+
+<details>
+    <summary>LeetCode</summary>
+
+- [6. Zigzag Conversion](src/main/java/LeetCode/LeetCode_6.java)
+</details>
