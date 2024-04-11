@@ -422,5 +422,6 @@
     <summary>LeetCode</summary>
 
 - [6. Zigzag Conversion](src/main/java/LeetCode/LeetCode_6.java)
+- [14. Longest Common Prefix](src/main/java/LeetCode/LeetCode_14.java)
 - [172. Factorial Trailing Zeroes](src/main/java/LeetCode/LeetCode_172.java)
 </details>
