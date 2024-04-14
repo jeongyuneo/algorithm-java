@@ -421,6 +421,7 @@
 <details>
     <summary>LeetCode</summary>
 
+- [2. Add Two Numbers](src/main/java/LeetCode/LeetCode_2.java)
 - [6. Zigzag Conversion](src/main/java/LeetCode/LeetCode_6.java)
 - [14. Longest Common Prefix](src/main/java/LeetCode/LeetCode_14.java)
 - [88. Merge Sorted Array](src/main/java/LeetCode/LeetCode_88.java)
