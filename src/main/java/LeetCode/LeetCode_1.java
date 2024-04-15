@@ -1,15 +1,18 @@
 package LeetCode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LeetCode_1 {
 
     public int[] twoSum(int[] nums, int target) {
-        int len = nums.length;
-        for (int left = 0; left < len; left++) {
-            for (int right = left + 1; right < len; right++) {
-                if (nums[left] + nums[right] == target) {
-                    return new int[]{left, right};
-                }
+        Map<Integer, Integer> numIndexes = new HashMap<>();
+        for (int idx = 0, len = nums.length; idx < len; idx++) {
+            int gap = target - nums[idx];
+            if (numIndexes.containsKey(gap)) {
+                return new int[]{numIndexes.get(gap), idx};
             }
+            numIndexes.put(nums[idx], idx);
         }
         return new int[2];
     }
