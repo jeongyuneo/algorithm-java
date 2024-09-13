@@ -33,6 +33,7 @@
 - 1339 - [단어 수학](src/main/java/Baekjoon/BOJ_1339.java)
 - 1342 - [행운의 문자열](src/main/java/Baekjoon/BOJ_1342.java)
 - 1374 - [강의실](src/main/java/Baekjoon/BOJ_1374.java)
+- 1392 - [노래 악보](src/main/java/Baekjoon/BOJ_1392.java)
 - 1439 - [뒤집기](src/main/java/Baekjoon/BOJ_1439.java)
 - 1463 - [1로 만들기](src/main/java/Baekjoon/BOJ_1463.java)
 - 1477 - [휴게소 세우기](src/main/java/Baekjoon/BOJ_1477.java)
