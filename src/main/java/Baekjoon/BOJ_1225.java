@@ -12,12 +12,14 @@ public class BOJ_1225 {
         final StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         final String A = stringTokenizer.nextToken();
         final String B = stringTokenizer.nextToken();
-        long result = 0;
-        for (int i = 0, aLength = A.length(); i < aLength; i++) {
-            for (int j = 0, bLength = B.length(); j < bLength; j++) {
-                result += (long) (A.charAt(i) - '0') * (B.charAt(j) - '0');
-            }
+        System.out.println(sumOfEachNumber(A) * sumOfEachNumber(B));
+    }
+
+    private static long sumOfEachNumber(String input) {
+        long sumOfEachNumber = 0;
+        for (int i = 0, aLength = input.length(); i < aLength; i++) {
+            sumOfEachNumber += input.charAt(i) - '0';
         }
-        System.out.println(result);
+        return sumOfEachNumber;
     }
 }
