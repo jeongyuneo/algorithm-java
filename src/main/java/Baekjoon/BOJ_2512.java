@@ -12,48 +12,37 @@ public class BOJ_2512 {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
         int[] requests = new int[n];
-        StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        int sum = 0;
-        int maxBudget = 0;
-        for (int i = 0; i < n; i++) {
-            int request = Integer.parseInt(stringTokenizer.nextToken());
-            requests[i] = request;
-            sum += request;
-            if (maxBudget < request) {
-                maxBudget = request;
-            }
+        final StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+        int totalRequest = 0;
+        for (int area = 0; area < n; area++) {
+            final int request = Integer.parseInt(stringTokenizer.nextToken());
+            requests[area] = request;
+            totalRequest += request;
         }
+        Arrays.sort(requests);
+        int upperLimit = requests[n - 1];
         int budget = Integer.parseInt(bufferedReader.readLine());
-        if (sum > budget) {
-            Arrays.sort(requests);
+        if (totalRequest > budget) {
             int start = 0;
-            int end = budget;
-            maxBudget = 0;
+            int end = upperLimit;
             while (start <= end) {
-                int mid = (start + end) / 2;
-                sum = 0;
-                int max = 0;
+                int limit = (start + end) / 2;
+                int allocatedBudget = 0;
                 for (int request : requests) {
-                    int assign = 0;
-                    if (mid < request) {
-                        assign = mid;
+                    if (request <= limit) {
+                        allocatedBudget += request;
                     } else {
-                        assign = request;
-                    }
-                    sum += assign;
-                    if (max < assign) {
-                        max = assign;
+                        allocatedBudget += limit;
                     }
                 }
-
-                if (sum <= budget && maxBudget < max) {
-                    maxBudget = max;
-                    start = mid + 1;
+                if (budget >= allocatedBudget) {
+                    start = limit + 1;
+                    upperLimit = limit;
                 } else {
-                    end = mid - 1;
+                    end = limit - 1;
                 }
             }
         }
-        System.out.println(maxBudget);
+        System.out.println(upperLimit);
     }
 }
