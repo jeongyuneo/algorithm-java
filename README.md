@@ -163,6 +163,7 @@
 - 4386 - [별자리 만들기](src/main/java/Baekjoon/BOJ_4386.java)
 - 4963 - [섬의 개수](src/main/java/Baekjoon/BOJ_4963.java)
 - 4991 - [로봇 청소기](src/main/java/Baekjoon/BOJ_4991.java)
+- 5073 - [삼각형과 세 변](src/main/java/Baekjoon/BOJ_5073.java)
 - 5430 - [AC](src/main/java/Baekjoon/BOJ_5430.java)
 - 5883 - [아이폰 9S](src/main/java/Baekjoon/BOJ_5883.java)
 - 5972 - [택배 배송](src/main/java/Baekjoon/BOJ_5972.java)
